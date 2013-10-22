@@ -1,0 +1,14 @@
+{
+    "name": "purebilling/sdk",
+    "type": "library",
+    "license": "MIT",
+    "description": "PureMachine SDK",
+    "keywords": ["framework"],
+    "autoload": {
+        "psr-0": { "PureBilling": "src/" }
+    },
+    "require": {
+        "php": ">=5.3.3"
+    }
+}
+
