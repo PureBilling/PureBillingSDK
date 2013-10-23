@@ -2,7 +2,7 @@
     "name": "purebilling/sdk",
     "type": "library",
     "license": "MIT",
-    "description": "PureMachine SDK",
+    "description": "PureBilling SDK",
     "keywords": ["framework"],
     "autoload": {
         "psr-0": { "PureBilling": "src/" }
