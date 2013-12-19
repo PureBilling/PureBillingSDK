@@ -4,21 +4,20 @@ namespace PureBilling\Bundle\SDKBundle\Store\V1\Invoice;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
+use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
 class Invoice extends NewInvoice
 {
     /**
      * @Store\Property(description="Invoice id")
-     * @Assert\Type("string")
-     * @Assert\Regex(pattern="/^invoice_/", message="owner id should start with 'invoice_' prefix")
+     * * @PBAssert\Type(type="id", idPrefixes={"invoice"})
      * @Assert\NotBlank()
      */
     protected $id;
 
     /**
      * @Store\Property(description="customer associated to the invoice")
-     * @Assert\Type("string")
-     * @Assert\Regex(pattern="/^customer_/", message="owner id should start with 'customer_' prefix")
+     * * @PBAssert\Type(type="id", idPrefixes={"customer"})
      * @Store\Entity()
      * @Assert\NotBlank()
      */
@@ -82,8 +81,7 @@ class Invoice extends NewInvoice
 
     /**
      * @Store\Property(description="Current payment method attached to the invoice")
-     * @Assert\Type("string")
-     * @Assert\Regex(pattern="/^creditcard_/", message="Invoice.paymentMethod invalid")
+     * * @PBAssert\Type(type="id", idPrefixes={"creditcard"})
      */
     protected $paymentMethod = null;
 }
