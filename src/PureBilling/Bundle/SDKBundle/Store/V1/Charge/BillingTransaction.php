@@ -90,4 +90,16 @@ class BillingTransaction extends Element
      * @Assert\Type("string")
      */
     protected $externalId;
+
+    /**
+     * @Store\Property(description="last error code")
+     * @Assert\Type("string")
+     */
+    protected $errorCode;
+
+    /**
+     * @Store\Property(description="Message associated to the last operation (usually a error message)")
+     * @Assert\Type("string")
+     */
+    protected $message;
 }
