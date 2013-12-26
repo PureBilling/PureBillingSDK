@@ -29,15 +29,4 @@ abstract class Element extends SymfonyBaseStore
 
         return end($class);
     }
-
-    /**
-     * Element that has ID functions are generaly tied to a Entity
-     * This getter is a shortcut to get it.
-     */
-    public function getEntity()
-    {
-        if (!property_exists($this, 'id')) return null;
-
-        return $this->getIdEntity();
-    }
 }
