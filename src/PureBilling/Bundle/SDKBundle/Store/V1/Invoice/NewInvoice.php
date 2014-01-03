@@ -5,13 +5,13 @@ namespace PureBilling\Bundle\SDKBundle\Store\V1\Invoice;
 use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Store\Base\Element;
+use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
 class NewInvoice extends Element
 {
     /**
      * @Store\Property(description="customer id. If null, a new customer will be created")
-     * @Assert\Type("string")
-     * @Assert\Regex(pattern="/^customer_/", message="owner id should start with 'customer_' prefix")
+     * @PBAssert\Type(type="id", idPrefixes={"customer"})
      * @Store\Entity()
      */
     protected $customer;
@@ -19,15 +19,14 @@ class NewInvoice extends Element
     /**
      * @Store\Property(description="owner public key. If null, default owner will be used.")
      * @Assert\Type("string")
-     * @Assert\Regex(pattern="/^owner_/", message="owner id should start with 'owner_' prefix")
+     * @PBAssert\Type(type="id", idPrefixes={"owner"})
      * @Store\Entity()
      */
     protected $owner;
 
     /**
      * @Store\Property(description="origin of the invoice. if null, default one is used")
-     * @Assert\Type("string")
-     * @Assert\Regex(pattern="/^origin_/", message="origin id should start with 'origin_' prefix")
+     * @PBAssert\Type(type="id", idPrefixes={"origin"})
      * @Store\Entity()
      */
     protected $origin;

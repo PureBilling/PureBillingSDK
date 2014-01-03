@@ -24,14 +24,6 @@ class NewInvoiceItem extends InvoiceItemBase
     protected $amount;
 
     /**
-     * @Store\Property(description="VAT rate to apply. 19.00 is a taxe rate of 19%")
-     * @Assert\Type("float")
-     * @Assert\Range(min=0, max=100)
-     * @Assert\NotBlank()
-     */
-    protected $vatRate = 0;
-
-    /**
      * @Store\Property(description="quantity of product sold. if amount is 100 and quantity is 2, invoice total will be 200. only 1 is supported for now")
      * @Assert\Type("integer")
      * @Assert\Range(min=1, max=1)

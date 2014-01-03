@@ -4,7 +4,7 @@ namespace PureBilling\Bundle\SDKBundle\Store\V1\Charge\Action;
 
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 use PureBilling\Bundle\SDKBundle\Store\Base\CaptureBase;
 
 class Capture extends CaptureBase
@@ -37,16 +37,14 @@ class Capture extends CaptureBase
 
     /**
      * @Store\Property(description="origin of the invoice. if null, owner default one is used")
-     * @Assert\Type("string")
-     * @Assert\Regex(pattern="/^origin_/", message="origin id should start with 'origin_' prefix")
+     * @PBAssert\Type(type="id", idPrefixes={"origin"})
      * @Store\Entity()
      */
     protected $origin;
 
     /**
      * @Store\Property(description="customer associated to the invoice")
-     * @Assert\Type("string")
-     * @Assert\Regex(pattern="/^customer_/", message="owner id should start with 'customer_' prefix")
+     * @PBAssert\Type(type="id", idPrefixes={"customer"})
      * @Store\Entity()
      * @Assert\NotBlank()
      */
@@ -54,9 +52,8 @@ class Capture extends CaptureBase
 
     /**
      * @Store\Property(description="invoice to attached to the capture, if any")
-     * @Assert\Type("string")
+     * @PBAssert\Type(type="id", idPrefixes={"invoice"})
      * @Store\Entity()
-     * @Assert\Regex(pattern="/^invoice_/", message="owner id should start with 'invoice_' prefix")
      */
     protected $invoice;
 

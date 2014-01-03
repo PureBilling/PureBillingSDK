@@ -21,6 +21,7 @@ class Creditcard extends PaymentMethod
      * @Store\Property(description="creditcard last 4 digits")
      * @Assert\Type("numeric")
      * @Assert\Length(min=4, max=4)
+     * @Store\EntityMapping("last4Digits")
      * @Assert\NotBlank
      */
     protected $last4Digits;
@@ -29,6 +30,7 @@ class Creditcard extends PaymentMethod
      * @Store\Property(description="creditcard expiration month")
      * @Assert\Type("integer")
      * @Assert\Range(min=0, max=12)
+     * @Store\EntityMapping("expirationMonth")
      * @Assert\NotBlank
      */
     protected $expirationMonth;
@@ -37,6 +39,7 @@ class Creditcard extends PaymentMethod
      * @Store\Property(description="creditcard expiration year")
      * @Assert\Type("integer")
      * @Assert\Range(min=2000, max=2099)
+     * @Store\EntityMapping("expirationYear")
      * @Assert\NotBlank
      */
     protected $expirationYear;

@@ -68,7 +68,7 @@ class BillingTransaction extends Element
      * @Assert\NotNull()
      */
     protected $amount;
-    
+
     /**
      * @Store\Property(description="transaction currency")
      * @Assert\Type("string")
@@ -77,7 +77,7 @@ class BillingTransaction extends Element
      * @Assert\NotBlank()
      */
     protected $currency;
-    
+
     /**
      * @Store\Property(description="transaction country")
      * @Assert\Type("string")
@@ -131,19 +131,19 @@ class BillingTransaction extends Element
      * @Store\EntityMapping("errorMessage")
      */
     protected $message;
-    
+
     public function setDetailledStatus($status)
     {
         $this->detailledStatus = strtolower($status);
     }
-    
+
     public function setStatus($status)
     {
         switch ($status) {
             case 'success':
                 if ($this->getDetailledStatus() == 'collected' ||
                     $this->getDetailledStatus() == 'refunded') {
-                    
+
                     $this->status = 'paid';
                     break;
                 }
@@ -158,17 +158,17 @@ class BillingTransaction extends Element
                 break;
         }
     }
-    
+
     public function setErrorCode($code)
     {
         $this->errorCode =(string) $code;
     }
-    
+
     public function setCurrency($currency)
     {
         $this->currency = strtoupper($currency);
     }
-    
+
     public function setCountry($country)
     {
         $this->country = strtoupper($country);

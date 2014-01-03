@@ -10,14 +10,15 @@ class Invoice extends NewInvoice
 {
     /**
      * @Store\Property(description="Invoice id")
-     * * @PBAssert\Type(type="id", idPrefixes={"invoice"})
+     * @PBAssert\Type(type="id", idPrefixes={"invoice"})
      * @Assert\NotBlank()
+     * @Store\Entity()
      */
     protected $id;
 
     /**
      * @Store\Property(description="customer associated to the invoice")
-     * * @PBAssert\Type(type="id", idPrefixes={"customer"})
+     * @PBAssert\Type(type="id", idPrefixes={"customer"})
      * @Store\Entity()
      * @Assert\NotBlank()
      */
