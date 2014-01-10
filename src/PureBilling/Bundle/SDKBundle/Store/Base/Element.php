@@ -22,11 +22,4 @@ abstract class Element extends SymfonyBaseStore
      * @Assert\NotBlank
      */
     protected $type;
-
-    public function getClassName()
-    {
-        $class = explode('\\', get_called_class());
-
-        return end($class);
-    }
 }
