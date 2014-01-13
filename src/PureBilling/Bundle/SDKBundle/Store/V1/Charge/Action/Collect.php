@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Collect extends Action
 {
     /**
-     * @Store\Property(description="billing Transaction to refund")
+     * @Store\Property(description="Previously authorized billingTransaction to collect")
      * @PBAssert\Type(type="id", idPrefixes={"billing"})
      * @Assert\NotNull()
      * @Store\Entity()
@@ -19,7 +19,7 @@ class Collect extends Action
     protected $billingTransaction;
 
     /**
-     * @Store\Property(description="amount to bill. bill all the invoice if null")
+     * @Store\Property(description="amount to bill if different from the authorization amount")
      * @Assert\Type("float")
      * @Assert\GreaterThan(0)
      * @Assert\NotNull()

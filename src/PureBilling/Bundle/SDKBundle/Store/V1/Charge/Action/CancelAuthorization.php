@@ -10,7 +10,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 class CancelAuthorization extends Action
 {
     /**
-     * @Store\Property(description="billingTransaction authorized to cancel")
+     * @Store\Property(description="Previously authorized billingTransaction to cancel")
      * @PBAssert\Type(type="id", idPrefixes={"billing"})
      * @Store\Entity()
      * @Assert\NotBlank()

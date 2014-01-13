@@ -62,7 +62,7 @@ class BillingTransaction extends Element
     protected $detailledStatus;
 
     /**
-     * @Store\Property(description="amount to bill")
+     * @Store\Property(description="amount (billed or to bill)")
      * @Assert\Type("float")
      * @Store\EntityMapping("amount")
      * @Assert\NotNull()
@@ -102,7 +102,7 @@ class BillingTransaction extends Element
     protected $parentBillingTransaction;
 
     /**
-     * @Store\Property(description="customer associated to the invoice")
+     * @Store\Property(description="customer associated to the transaction")
      * @Assert\Type("string")
      * @Store\EntityMapping("endUser.publicKey")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})

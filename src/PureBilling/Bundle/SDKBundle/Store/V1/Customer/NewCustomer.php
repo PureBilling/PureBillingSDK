@@ -5,6 +5,7 @@ namespace PureBilling\Bundle\SDKBundle\Store\V1\Customer;
 use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Store\Base\Element;
+use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
 class NewCustomer extends Element
 {
@@ -22,7 +23,7 @@ class NewCustomer extends Element
     protected $externalId;
 
     /**
-     * @Store\Property(description="customer signup ip")
+     * @Store\Property(description="customer signup ip. if not defined, 0.0.0.0 is used. Define to improve fraud detection.")
      * @Assert\Type("string")
      * @Assert\Ip()
      * @Assert\NotBlank()
@@ -31,8 +32,7 @@ class NewCustomer extends Element
 
     /**
      * @Store\Property(description="owner public key. If null, default owner will be used.")
-     * @Assert\Type("string")
-     * @Assert\Regex(pattern="/^owner_/", message="owner id should start with 'owner_' prefix")
+     * @PBAssert\Type(type="id", idPrefixes={"owner"})
      * @Store\Entity()
      */
     protected $owner;

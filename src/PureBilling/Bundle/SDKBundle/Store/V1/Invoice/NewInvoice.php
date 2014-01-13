@@ -66,13 +66,13 @@ class NewInvoice extends Element
     protected $invoiceItems;
 
     /**
-     * @Store\Property(description="metadata to keep with the invoice")
+     * @Store\Property(description="metadata you want to associate to the invoice")
      * @Assert\Type("array")
      */
     protected $metadata = array();
 
     /**
-     * @Store\Property(description="customer ip when the purchase is done.")
+     * @Store\Property(description="customer ip during the purchase")
      * @Assert\Type("string")
      * @Assert\Ip()
      * @Assert\NotNull()

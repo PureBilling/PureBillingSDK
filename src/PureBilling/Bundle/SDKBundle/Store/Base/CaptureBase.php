@@ -8,7 +8,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 abstract class CaptureBase extends Action
 {
     /**
-     * @Store\Property(description="amount to bill. bill all the invoice if null")
+     * @Store\Property(description="amount to bill. 5.00 in USD will bill 5.00 USD.")
      * @Assert\Type("float")
      * @Assert\GreaterThan(0)
      * @Assert\NotNull()
@@ -20,7 +20,7 @@ abstract class CaptureBase extends Action
      * @PBAssert\Type(type="objectOrId", idPrefixes={"creditcard"})
      * @Assert\NotNull()
      * @Store\Entity()
-     * @Store\StoreClass({"PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\NewCreditCard"})
+     * @Store\StoreClass({"PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\NewCreditcard"})
      */
     protected $paymentMethod;
 }

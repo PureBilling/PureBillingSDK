@@ -19,7 +19,7 @@ class Capture extends CaptureBase
     protected $country;
 
     /**
-     * @Store\Property(description="Transaction source IP")
+     * @Store\Property(description="Transaction source IP (used for fraud detection)")
      * @Assert\Type("string")
      * @Assert\Ip()
      * @Assert\NotNull()
@@ -27,7 +27,7 @@ class Capture extends CaptureBase
     protected $ip = '0.0.0.0';
 
     /**
-     * @Store\Property(description="invoice currency")
+     * @Store\Property(description="transaction currency")
      * @Assert\Type("string")
      * @Assert\Currency()
      * @Store\Entity()
@@ -36,14 +36,14 @@ class Capture extends CaptureBase
     protected $currency;
 
     /**
-     * @Store\Property(description="origin of the invoice. if null, owner default one is used")
+     * @Store\Property(description="Transaction origin. if null, owner default origin is used")
      * @PBAssert\Type(type="id", idPrefixes={"origin"})
      * @Store\Entity()
      */
     protected $origin;
 
     /**
-     * @Store\Property(description="customer associated to the invoice")
+     * @Store\Property(description="customer associated to the transaction")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
      * @Store\Entity()
      * @Assert\NotBlank()
@@ -51,7 +51,7 @@ class Capture extends CaptureBase
     protected $customer;
 
     /**
-     * @Store\Property(description="invoice to attached to the capture, if any")
+     * @Store\Property(description="invoice to attach to the capture, if any")
      * @PBAssert\Type(type="id", idPrefixes={"invoice"})
      * @Store\Entity()
      */
