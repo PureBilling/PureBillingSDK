@@ -8,7 +8,16 @@
         "psr-0": { "PureBilling": "src/" }
     },
     "require": {
-        "php": ">=5.3.3"
-    }
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.3.*",
+        "doctrine/orm": ">=2.2.3,<2.4-dev",
+        "puremachine/sdk": "dev-master"
+    },
+    "repositories": [
+        {
+          "type": "vcs",
+          "url": "git@bitbucket.org:purebilling/puremachinesdk.git"
+        }
+    ]
 }
 
