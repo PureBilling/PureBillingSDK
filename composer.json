@@ -16,7 +16,7 @@
     "repositories": [
         {
           "type": "vcs",
-          "url": "git@bitbucket.org:purebilling/puremachinesdk.git"
+          "url": "https://bitbucket.org/PureBilling/puremachinesdk.git"
         }
     ]
 }
