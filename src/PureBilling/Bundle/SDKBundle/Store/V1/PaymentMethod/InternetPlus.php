@@ -6,10 +6,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Store\Base\PaymentMethod;
 
-class BillingForm extends PaymentMethod
+class InternetPlus extends PaymentMethod
 {
     /**
-     * @Store\Property(description="callback we will call after billing from")
+     * @Store\Property(description="callback we will call after internet plus from")
      * @Assert\Type("string")
      * @Assert\NotBlank
      */
