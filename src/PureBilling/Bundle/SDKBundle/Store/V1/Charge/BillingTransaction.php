@@ -20,16 +20,16 @@ class BillingTransaction extends Element
     /**
      * @Store\Property(description="used payment method name")
      * @Assert\Type("string")
-     * @Store\EntityMapping("paymentServiceProviderAccount.paymentMethod.name")
+     * @Store\EntityMapping("paymentServiceProviderAccount.paymentMethodType.name")
      * @Assert\Choice({"creditcard"})
      * @Assert\NotBlank()
      */
-    protected $paymentMethodName;
+    protected $paymentMethodType;
 
     /**
      * @Store\Property(description="used payment method id")
      * @PBAssert\Type(type="id", idPrefixes={"creditcard"})
-     * @Store\EntityMapping("creditcardAlias.publicKey")
+     * @Store\EntityMapping("paymentMethod.publicKey")
      * @Assert\NotBlank()
      */
     protected $paymentMethod;
@@ -104,7 +104,7 @@ class BillingTransaction extends Element
     /**
      * @Store\Property(description="customer associated to the transaction")
      * @Assert\Type("string")
-     * @Store\EntityMapping("endUser.publicKey")
+     * @Store\EntityMapping("customer.publicKey")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
      * @Store\Entity()
      * @Assert\NotBlank()
