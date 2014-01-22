@@ -22,6 +22,6 @@ abstract class Element extends SymfonyBaseStore
      * @Assert\NotBlank
      */
     protected $type;
-    
-    public function setType($type){}
+
+    public function setType($type) {}
 }

@@ -5,7 +5,7 @@ namespace PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Store\Base\RemotePaymentMethod;
 
-class InternetPlus extends RemotePaymentMethod
+class PayPal extends RemotePaymentMethod
 {
 
 }
