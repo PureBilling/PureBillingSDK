@@ -17,9 +17,11 @@ abstract class Element extends SymfonyBaseStore
     }
 
     /**
-     * @Store\Property(description="type of the current answer")
+     * @Store\Property(description="type of the current store")
      * @Assert\Type("string")
      * @Assert\NotBlank
      */
     protected $type;
+    
+    public function setType($type){}
 }

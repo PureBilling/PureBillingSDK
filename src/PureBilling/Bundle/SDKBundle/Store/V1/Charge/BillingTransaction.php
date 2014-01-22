@@ -41,7 +41,7 @@ class BillingTransaction extends Element
      * @Assert\Choice({"capture", "authorize", "refund"})
      * @Assert\NotBlank()
      */
-    protected $type;
+    protected $billingTransactionType;
 
     /**
      * @Store\Property(description="billing transaction status")
