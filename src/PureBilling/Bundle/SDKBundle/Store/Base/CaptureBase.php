@@ -23,4 +23,10 @@ abstract class CaptureBase extends Action
      * @Store\StoreClass({"PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\NewCreditcard"})
      */
     protected $paymentMethod;
+
+    /**
+     * @Store\Property(description="External id")
+     * @Assert\Type("string")
+     */
+    protected $externalId;
 }

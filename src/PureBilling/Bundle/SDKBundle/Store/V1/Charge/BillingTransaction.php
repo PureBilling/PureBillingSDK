@@ -114,7 +114,7 @@ class BillingTransaction extends Element
     /**
      * @Store\Property(description="your user internal Id. if null at creation, pureBilling id is used")
      * @Assert\Type("string")
-     * @Store\EntityMapping("publicKey")
+     * @Store\EntityMapping("externalId")
      */
     protected $externalId;
 
