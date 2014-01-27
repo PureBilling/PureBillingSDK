@@ -4,18 +4,27 @@ namespace PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
+use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 use PureBilling\Bundle\SDKBundle\Store\Base\PaymentMethod;
 
 class Creditcard extends PaymentMethod
 {
     /**
      * @Store\Property(description="creditcard id")
-     * @Assert\Type("string")
+     * @PBAssert\Type(type="id", idPrefixes={"string"})
      * @Store\Entity()
-     * @Assert\Regex(pattern="/^creditcard_/", message="owner id should start with 'creditcard_' prefix")
      * @Assert\NotBlank()
      */
     protected $id;
+    
+    /**
+     * @Store\Property(description="creditcard bin")
+     * @Assert\Type("numeric")
+     * @Assert\Length(min=6, max=6)
+     * @Store\EntityMapping("bin")
+     * @Assert\NotBlank
+     */
+    protected $bin;
 
     /**
      * @Store\Property(description="creditcard last 4 digits")
@@ -25,6 +34,14 @@ class Creditcard extends PaymentMethod
      * @Assert\NotBlank
      */
     protected $last4Digits;
+    
+    /**
+     * @Store\Property(description="creditcard holer name")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("holderName")
+     * @Assert\NotBlank
+     */
+    protected $holderName;
 
     /**
      * @Store\Property(description="creditcard expiration month")
@@ -43,6 +60,15 @@ class Creditcard extends PaymentMethod
      * @Assert\NotBlank
      */
     protected $expirationYear;
+    
+    /**
+     * @Store\Property(description="creditcard validity status")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("statusString")
+     * @Assert\Choice({"valid", "invalid", "unknown"})
+     * @Assert\NotBlank
+     */
+    protected $status;
 
     /**
      * return expiration date as string YYYY-MM-DD

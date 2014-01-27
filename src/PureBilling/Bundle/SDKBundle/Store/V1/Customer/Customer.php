@@ -4,6 +4,7 @@ namespace PureBilling\Bundle\SDKBundle\Store\V1\Customer;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
+use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
 class Customer extends NewCustomer
 {
@@ -11,8 +12,8 @@ class Customer extends NewCustomer
      * //Operation Id are string with two letter prefix xxx_key
      *
      * @Store\Property(description="customer Id.")
-     * @Assert\Type("string")
-     * @Assert\Regex(pattern="/^customer_/", message="customer id should start with 'customer_' prefix")
+     * @PBAssert\Type(type="id", idPrefixes={"customer"})
+     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $id;
@@ -21,6 +22,7 @@ class Customer extends NewCustomer
      * @Store\Property(description="customer email")
      * @Assert\Type("string")
      * @Assert\Email()
+     * @Store\EntityMapping("email")
      */
     protected $email;
 
@@ -28,6 +30,7 @@ class Customer extends NewCustomer
      * @Store\Property(description="your user internal Id. if null at creation, pureBilling id is used")
      * @Assert\Type("string")
      * @Assert\NotBlank()
+     * @Store\EntityMapping("externalId")
      */
     protected $externalId;
 
@@ -36,14 +39,15 @@ class Customer extends NewCustomer
      * @Assert\Type("string")
      * @Assert\Ip()
      * @Assert\NotBlank()
+     * @Store\EntityMapping("originIp")
      */
     protected $ip;
 
     /**
      * @Store\Property(description="customer owner public key.")
-     * @Assert\Type("string")
-     * @Assert\Regex(pattern="/^owner_/", message="owner id should start with 'owner_' prefix")
+     * @PBAssert\Type(type="id", idPrefixes={"owner"})
      * @Assert\NotBlank()
+     * @Store\EntityMapping("owner.publicKey")
      */
     protected $owner;
 }

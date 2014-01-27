@@ -15,7 +15,7 @@ class NewCreditcard extends PaymentMethod
      * @Assert\Luhn
      * @Assert\NotBlank
      */
-    protected $number;
+    protected $pan;
 
     /**
      * @Store\Property(description="creditcard expiration month")
@@ -40,10 +40,10 @@ class NewCreditcard extends PaymentMethod
     protected $cvv;
 
     /**
-     * @Store\Property(description="creditcard owner")
+     * @Store\Property(description="creditcard holer name")
      * @Assert\Type("string")
      */
-    protected $cardOwner;
+    protected $holderName;
 
     /**
      * return expiration date as string YYYY-MM-DD
