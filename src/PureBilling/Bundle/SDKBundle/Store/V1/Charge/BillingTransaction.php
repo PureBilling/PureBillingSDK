@@ -153,8 +153,10 @@ class BillingTransaction extends Element
             case 'refused':
             case 'exception':
             case 'cancelled':
-            case 'running':
                 $this->status = 'unpaid';
+                break;
+            case 'running':
+                $this->status = 'running';
                 break;
             default:
                 $this->status = $status;
