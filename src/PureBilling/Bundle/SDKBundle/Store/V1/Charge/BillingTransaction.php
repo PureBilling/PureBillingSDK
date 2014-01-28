@@ -21,14 +21,14 @@ class BillingTransaction extends Element
      * @Store\Property(description="used payment method name")
      * @Assert\Type("string")
      * @Store\EntityMapping("paymentServiceProviderAccount.paymentMethodType.name")
-     * @Assert\Choice({"creditcard"})
+     * @Assert\Choice({"creditcard", "internetplus", "paypal"})
      * @Assert\NotBlank()
      */
     protected $paymentMethodType;
 
     /**
      * @Store\Property(description="used payment method id")
-     * @PBAssert\Type(type="id", idPrefixes={"creditcard"})
+     * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal"})
      * @Store\EntityMapping("paymentMethod.publicKey")
      * @Assert\NotBlank()
      */
@@ -56,7 +56,7 @@ class BillingTransaction extends Element
      * @Store\Property(description="billing transaction detailled status")
      * @Assert\Type("string")
      * @Store\EntityMapping("workflowState")
-     * @Assert\Choice({"cancelled", "collected", "collecting", "recovering", "refused", "error", "refunded"})
+     * @Assert\Choice({"cancelled", "collected", "collecting", "redirected", "recovering", "refused", "error", "refunded"})
      * @Assert\NotBlank()
      */
     protected $detailledStatus;
@@ -134,6 +134,8 @@ class BillingTransaction extends Element
 
     public function setDetailledStatus($status)
     {
+        if ($status == 'WaitingCollecting') $status = 'redirected';
+        
         $this->detailledStatus = strtolower($status);
     }
 
@@ -151,6 +153,7 @@ class BillingTransaction extends Element
             case 'refused':
             case 'exception':
             case 'cancelled':
+            case 'running':
                 $this->status = 'unpaid';
                 break;
             default:
