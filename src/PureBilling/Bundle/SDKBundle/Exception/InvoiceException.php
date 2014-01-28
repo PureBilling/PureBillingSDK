@@ -12,4 +12,7 @@ class InvoiceException extends Exception
 
     const INVOICE_002 = 'INVOICE_002';
     const INVOICE_002_MESSAGE = 'invoice creation error';
+
+    const INVOICE_003 = 'INVOICE_003';
+    const INVOICE_003_MESSAGE = 'ExternalID already used';
 }

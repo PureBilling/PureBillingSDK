@@ -16,7 +16,7 @@ class Creditcard extends PaymentMethod
      * @Assert\NotBlank()
      */
     protected $id;
-    
+
     /**
      * @Store\Property(description="creditcard bin")
      * @Assert\Type("numeric")
@@ -34,7 +34,7 @@ class Creditcard extends PaymentMethod
      * @Assert\NotBlank
      */
     protected $last4Digits;
-    
+
     /**
      * @Store\Property(description="creditcard holer name")
      * @Assert\Type("string")
@@ -60,7 +60,7 @@ class Creditcard extends PaymentMethod
      * @Assert\NotBlank
      */
     protected $expirationYear;
-    
+
     /**
      * @Store\Property(description="creditcard validity status")
      * @Assert\Type("string")
@@ -78,8 +78,8 @@ class Creditcard extends PaymentMethod
      */
     public function getExpirationDateString()
     {
-        return $this->expirationYear . "-"
-               .sprintf("%02d", $this->expirationMonth)
+        return $this->getExpirationYear() . "-"
+               .sprintf("%02d", $this->getExpirationMonth())
                ."-01";
     }
 
