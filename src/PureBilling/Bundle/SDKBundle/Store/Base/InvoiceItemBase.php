@@ -14,4 +14,11 @@ class InvoiceItemBase extends Element
      * @Assert\NotBlank()
      */
     protected $vatRate = 0;
+    
+    /**
+     * @Store\Property(description="Discount if apply")
+     * @Assert\Type("object")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Invoice\PercentDiscount")
+     */
+    protected $discount;
 }
