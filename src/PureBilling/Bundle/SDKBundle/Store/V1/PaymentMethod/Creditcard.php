@@ -9,9 +9,14 @@ use PureBilling\Bundle\SDKBundle\Store\Base\PaymentMethod;
 
 class Creditcard extends PaymentMethod
 {
+
+    const STATUS_UNKNOWN = "unknown";
+    const STATUS_INVALID = "invalid";
+    const STATUS_VALID = "valid";
+
     /**
      * @Store\Property(description="creditcard id")
-     * @PBAssert\Type(type="id", idPrefixes={"string"})
+     * @PBAssert\Type(type="id", idPrefixes={"creditcard"})
      * @Store\Entity()
      * @Assert\NotBlank()
      */
