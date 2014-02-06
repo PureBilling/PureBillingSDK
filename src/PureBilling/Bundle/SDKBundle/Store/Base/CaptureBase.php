@@ -20,7 +20,10 @@ abstract class CaptureBase extends Action
      * @PBAssert\Type(type="objectOrId", idPrefixes={"creditcard"})
      * @Assert\NotNull()
      * @Store\Entity()
-     * @Store\StoreClass({"PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\NewCreditcard"})
+     * @Store\StoreClass({
+     * 		"PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\NewCreditcard",
+     * 		"PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\CreditcardForm"
+     * })
      */
     protected $paymentMethod;
 
