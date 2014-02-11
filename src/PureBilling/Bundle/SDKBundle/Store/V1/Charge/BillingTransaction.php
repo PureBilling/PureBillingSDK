@@ -135,7 +135,7 @@ class BillingTransaction extends Element
     public function setDetailledStatus($status)
     {
         if ($status == 'WaitingCollecting') $status = 'redirected';
-        
+
         $this->detailledStatus = strtolower($status);
     }
 

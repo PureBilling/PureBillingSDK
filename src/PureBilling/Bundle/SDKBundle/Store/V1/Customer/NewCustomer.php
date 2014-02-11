@@ -31,9 +31,25 @@ class NewCustomer extends Element
     protected $ip = '0.0.0.0';
 
     /**
+     * @Store\Property(description="origin public key. If null, default owner origin be used.")
+     * @PBAssert\Type(type="id", idPrefixes={"origin"})
+     * @Store\Entity()
+     */
+    protected $origin;
+
+    /**
      * @Store\Property(description="owner public key. If null, default owner will be used.")
      * @PBAssert\Type(type="id", idPrefixes={"owner"})
      * @Store\Entity()
      */
     protected $owner;
+
+    /**
+     * Convert int ExternalId to string
+     * @param $externalId
+     */
+    public function setExternalId($externalId)
+    {
+        $this->externalId = (string) $externalId;
+    }
 }

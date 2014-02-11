@@ -14,7 +14,7 @@ class InvoiceItemBase extends Element
      * @Assert\NotBlank()
      */
     protected $vatRate = 0;
-    
+
     /**
      * @Store\Property(description="Discount if apply")
      * @Assert\Type("object")
