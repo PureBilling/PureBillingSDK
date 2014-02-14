@@ -85,4 +85,12 @@ class Invoice extends NewInvoice
      * * @PBAssert\Type(type="id", idPrefixes={"creditcard"})
      */
     protected $paymentMethod = null;
+
+    /**
+     * @Store\Property(description="due date of the invoice")
+     * @Assert\Type("string")
+     * @Assert\NotNull()
+     */
+    protected $dueDate;
+
 }

@@ -119,6 +119,12 @@ class BillingTransaction extends Element
     protected $externalId;
 
     /**
+     * @Store\Property(description="Creation date time of the billing")
+     * @Assert\Type("string")
+     */
+    protected $creationDateTime;
+
+    /**
      * @Store\Property(description="last error code")
      * @Assert\Type("string")
      * @Store\EntityMapping("errorCode")
