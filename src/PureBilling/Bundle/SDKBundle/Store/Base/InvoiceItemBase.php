@@ -16,9 +16,17 @@ class InvoiceItemBase extends Element
     protected $vatRate = 0;
 
     /**
-     * @Store\Property(description="Discount if apply")
-     * @Assert\Type("object")
-     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Invoice\PercentDiscount")
+     * @Store\Property(description="VAT rate to apply. 19.00 is a taxe rate of 19%")
+     * @Assert\Type("array")
+     * @Assert\NotBlank()
      */
-    protected $discount;
+    protected $metadata = array();
+
+    /**
+     * @Store\Property(description="quantity of product sold. only 1 is supported for now")
+     * @Assert\Type("integer")
+     * @Assert\Range(min=1, max=1)
+     * @Assert\NotBlank()
+     */
+    protected $quantity = 1;
 }

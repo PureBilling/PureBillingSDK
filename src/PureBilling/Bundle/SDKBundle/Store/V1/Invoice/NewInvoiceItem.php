@@ -30,4 +30,11 @@ class NewInvoiceItem extends InvoiceItemBase
      * @Assert\NotBlank()
      */
     protected $quantity = 1;
+
+    /**
+     * @Store\Property(description="Discount if apply")
+     * @Assert\Type("object")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Invoice\PercentDiscount")
+     */
+    protected $discount;
 }
