@@ -18,7 +18,6 @@ class NewInvoice extends Element
 
     /**
      * @Store\Property(description="owner public key. If null, default owner will be used.")
-     * @Assert\Type("string")
      * @PBAssert\Type(type="id", idPrefixes={"owner"})
      * @Store\Entity()
      */

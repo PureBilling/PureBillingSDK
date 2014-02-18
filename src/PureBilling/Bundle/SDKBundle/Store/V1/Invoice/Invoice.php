@@ -19,7 +19,7 @@ class Invoice extends NewInvoice
     /**
      * @Store\Property(description="customer associated to the invoice")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
-     * @Store\Entity()
+     * @Store\EntityMapping("saleTransaction.customer.publicKey")
      * @Assert\NotBlank()
      */
     protected $customer;
@@ -27,6 +27,7 @@ class Invoice extends NewInvoice
     /**
      * @Store\Property(description="your invoice internal Id if it has been defined at creation")
      * @Assert\Type("string")
+     * @Store\EntityMapping("externalId")
      * @Assert\NotBlank()
      */
     protected $externalId;
@@ -34,6 +35,7 @@ class Invoice extends NewInvoice
     /**
      * @Store\Property(description="invoice status")
      * @Assert\Type("string")
+     * @Store\EntityMapping("pureBillingStatus")
      * @Assert\Choice({"running", "paid", "unpaid"})
      * @Assert\NotBlank()
      */
@@ -42,14 +44,32 @@ class Invoice extends NewInvoice
     /**
      * @Store\Property(description="invoice detailled status")
      * @Assert\Type("string")
+     * @Store\EntityMapping("workflowState")
      * @Assert\Choice({"cancelled", "collected", "collecting", "recovering", "recoverystuck"})
      * @Assert\NotBlank()
      */
     protected $detailledStatus;
 
     /**
+     * @Store\Property(description="owner public key. If null, default owner will be used.")
+     * @PBAssert\Type(type="id", idPrefixes={"owner"})
+     * @Store\EntityMapping("owner.publicKey")
+     * @Assert\NotBlank()
+     */
+    protected $owner;
+
+    /**
+     * @Store\Property(description="origin of the invoice. if null, default one is used")
+     * @PBAssert\Type(type="id", idPrefixes={"origin"})
+     * @Store\EntityMapping("saleTransaction.site.publicKey")
+     * @Assert\NotBlank()
+     */
+    protected $origin;
+
+    /**
      * @Store\Property(description="total invoice amount")
      * @Assert\Type("float")
+     * @Store\EntityMapping("amount")
      * @Assert\GreaterThan(0)
      * @Assert\NotNull()
      */
@@ -82,7 +102,7 @@ class Invoice extends NewInvoice
 
     /**
      * @Store\Property(description="Current payment method attached to the invoice")
-     * * @PBAssert\Type(type="id", idPrefixes={"creditcard"})
+     * @PBAssert\Type(type="id", idPrefixes={"creditcard"})
      */
     protected $paymentMethod = null;
 
@@ -93,4 +113,13 @@ class Invoice extends NewInvoice
      */
     protected $dueDate;
 
+    public function setDetailledStatus($dStatus)
+    {
+        $this->detailledStatus = strtolower($dStatus);
+    }
+
+    public function setTotalAmount($amount)
+    {
+        $this->totalAmount = (float) $amount;
+    }
 }

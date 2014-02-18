@@ -18,6 +18,7 @@ class TypeValidator extends Assert\TypeValidator
                 return $this->checkId($value, $constraint->idPrefixes, $constraint->message);
                 break;
             case 'id':
+                if (is_object($value)) return;
                 return $this->checkId($value, $constraint->idPrefixes, $constraint->message);
                 break;
             default:
