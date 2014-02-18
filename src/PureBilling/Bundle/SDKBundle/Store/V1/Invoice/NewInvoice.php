@@ -77,4 +77,9 @@ class NewInvoice extends Element
      * @Assert\NotNull()
      */
     protected $ip = '0.0.0.0';
+
+    public function setMetadata($meta)
+    {
+        $this->metadata = (array) $meta;
+    }
 }

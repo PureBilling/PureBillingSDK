@@ -32,4 +32,9 @@ abstract class CaptureBase extends Action
      * @Assert\Type("string")
      */
     protected $externalId;
+
+    public function setAmount($amount)
+    {
+        $this->amount = (float) $amount;
+    }
 }
