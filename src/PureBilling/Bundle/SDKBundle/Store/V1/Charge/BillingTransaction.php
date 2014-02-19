@@ -31,6 +31,7 @@ class BillingTransaction extends Element
      * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal"})
      * @Store\EntityMapping("paymentMethod.publicKey")
      * @Assert\NotBlank()
+     * @Store\Entity()
      */
     protected $paymentMethod;
 

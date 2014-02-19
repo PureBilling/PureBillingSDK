@@ -9,10 +9,9 @@ use PureBilling\Bundle\SDKBundle\Store\Base\PaymentMethod;
 
 class Creditcard extends PaymentMethod
 {
-
-    const STATUS_UNKNOWN = "unknown";
-    const STATUS_INVALID = "invalid";
-    const STATUS_VALID = "valid";
+    //Special dates used for tests
+    const CARD_EXPIRED = "2000-01-01";
+    const INSUFFICIENT_FUNDS = "2089-01-01";
 
     /**
      * @Store\Property(description="creditcard id")
