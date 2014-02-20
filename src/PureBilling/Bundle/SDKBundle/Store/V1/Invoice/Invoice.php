@@ -61,7 +61,7 @@ class Invoice extends NewInvoice
     /**
      * @Store\Property(description="origin of the invoice. if null, default one is used")
      * @PBAssert\Type(type="id", idPrefixes={"origin"})
-     * @Store\EntityMapping("saleTransaction.site.publicKey")
+     * @Store\EntityMapping("saleTransaction.origin.publicKey")
      * @Assert\NotBlank()
      */
     protected $origin;

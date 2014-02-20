@@ -20,7 +20,7 @@ class BillingTransaction extends Element
     /**
      * @Store\Property(description="used payment method name")
      * @Assert\Type("string")
-     * @Store\EntityMapping("paymentServiceProviderAccount.paymentMethodType.name")
+     * @Store\EntityMapping("PSPAccount.paymentMethodType.name")
      * @Assert\Choice({"creditcard", "internetplus", "paypal"})
      * @Assert\NotBlank()
      */

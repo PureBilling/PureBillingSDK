@@ -46,7 +46,7 @@ class Customer extends NewCustomer
     /**
      * @Store\Property(description="origin public key. If null, default owner origin be used.")
      * @PBAssert\Type(type="id", idPrefixes={"origin"})
-     * @Store\EntityMapping("site.publicKey")
+     * @Store\EntityMapping("origin.publicKey")
      * @Store\Entity()
      */
     protected $origin;
