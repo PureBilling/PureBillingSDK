@@ -32,4 +32,12 @@ class Origin extends Element
      * @Assert\NotBlank()
      */
     protected $url;
+
+    /**
+     * @Store\Property(description="id of the origin")
+     * @PBAssert\Type(type="id", idPrefixes={"owner"})
+     * @Store\EntityMapping("owner.publicKey")
+     * @Assert\NotBlank()
+     */
+    protected $owner;
 }
