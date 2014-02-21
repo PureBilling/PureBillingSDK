@@ -139,6 +139,14 @@ class BillingTransaction extends Element
      */
     protected $message;
 
+    /**
+     * @Store\Property(description="PSP transaction Info", private=true)
+     * @Assert\Type("object")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\PSPTransactionInfo")
+     * @Assert\NotBlank()
+     */
+    protected $PSPTransactionInfo;
+
     public function setDetailledStatus($status)
     {
         if ($status == 'WaitingCollecting') $status = 'redirected';
