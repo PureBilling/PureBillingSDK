@@ -12,7 +12,7 @@ abstract class Element extends SymfonyBaseStore
         parent::__construct($data);
         //Set Short type of class
         // PureMachine\Bundle\SDKBundle\Store\Billing\CC become Billing\CC
-        $this->type = str_replace('PureBilling\Bundle\SDKBundle\Store\\', '',
+        $this->_type = str_replace('PureBilling\Bundle\SDKBundle\Store\\', '',
                                   get_class($this));
     }
 
@@ -21,7 +21,7 @@ abstract class Element extends SymfonyBaseStore
      * @Assert\Type("string")
      * @Assert\NotBlank
      */
-    protected $type;
+    protected $_type;
 
-    public function setType($type) {}
+    public function set_type($type) {}
 }
