@@ -113,6 +113,12 @@ class Invoice extends NewInvoice
      */
     protected $dueDate;
 
+    /**
+     * @Store\Property(description="support information associated to the invoice")
+     * @PBAssert\Type(type="id", idPrefixes={"support"})
+     */
+    protected $supportInfo;
+
     public function setDetailledStatus($dStatus)
     {
         $this->detailledStatus = strtolower($dStatus);
