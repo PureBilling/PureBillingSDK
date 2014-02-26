@@ -78,6 +78,12 @@ class NewInvoice extends Element
      */
     protected $ip = '0.0.0.0';
 
+    /**
+     * @Store\Property(description="If defined, every invoice change will be notified to this callback")
+     * @Assert\Type("string")
+     */
+    protected $notificationCallback;
+
     public function setMetadata($meta)
     {
         $this->metadata = (array) $meta;

@@ -119,6 +119,13 @@ class Invoice extends NewInvoice
      */
     protected $supportInfo;
 
+    /**
+     * @Store\Property(description="If defined, every invoice change will be notified to this callback")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("notificationCallback")
+     */
+    protected $notificationCallback;
+
     public function setDetailledStatus($dStatus)
     {
         $this->detailledStatus = strtolower($dStatus);

@@ -140,6 +140,13 @@ class BillingTransaction extends Element
     protected $message;
 
     /**
+     * @Store\Property(description="merchant change notification callback")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("notificationCallback")
+     */
+    protected $notificationCallback;
+
+    /**
      * @Store\Property(description="PSP transaction Info", private=true)
      * @Assert\Type("object")
      * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\PSPTransactionInfo")

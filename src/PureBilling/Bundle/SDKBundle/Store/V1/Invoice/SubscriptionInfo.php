@@ -31,4 +31,12 @@ class SubscriptionInfo extends Element
      * @Assert\NotBlank()
      */
     protected $invoices;
+
+    /**
+     * @Store\Property(description="If defined, every invoice change will be notified to this callback")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("notificationCallback")
+     */
+    protected $notificationCallback;
+
 }
