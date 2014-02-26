@@ -12,6 +12,10 @@ class Creditcard extends PaymentMethod
     //Special dates used for tests
     const CARD_EXPIRED = "2000-01-01";
     const INSUFFICIENT_FUNDS = "2089-01-01";
+    const VOID_ADAPTER_MASTERCARD_YEAR = 2097;
+    const VOID_ADAPTER_MASTERCARD_MONTH = 11;
+    const INSUFFICIENT_FUNDS_YEAR = 2089;
+    const INSUFFICIENT_FUNDS_MONTH = 01;
 
     /**
      * @Store\Property(description="creditcard id")
