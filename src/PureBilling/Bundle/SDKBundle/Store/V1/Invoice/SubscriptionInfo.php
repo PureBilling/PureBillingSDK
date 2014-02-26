@@ -33,9 +33,16 @@ class SubscriptionInfo extends Element
     protected $invoices;
 
     /**
-     * @Store\Property(description="If defined, every invoice change will be notified to this callback")
+     * @Store\Property(description="If defined, every invoice change will be notified to this callback URL")
      * @Assert\Type("string")
-     * @Store\EntityMapping("notificationCallback")
+     * @Store\EntityMapping("notificationCallbackUrl")
+     */
+    protected $notificationCallbackUrl;
+
+    /**
+     * @Store\Property(description="merchant change notification callback")
+     * @PBAssert\Type(type="id", idPrefixes={"callback"})
+     * @Store\EntityMapping("notificationCallback.publicKey")
      */
     protected $notificationCallback;
 

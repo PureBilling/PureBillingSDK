@@ -39,7 +39,7 @@ abstract class CaptureBase extends Action
      * @Store\Property(description="If defined, every transaction change will be notified to this callback")
      * @Assert\Type("string")
      */
-    protected $notificationCallback;
+    protected $notificationCallbackUrl;
 
     public function setAmount($amount)
     {

@@ -129,7 +129,8 @@ class BillingTransaction extends Element
 
     /**
      * @Store\Property(description="Creation date time of the billing")
-     * @Assert\Type("string")
+     * @Assert\Type("datetime")
+     * @Store\EntityMapping("creationDateTime")
      */
     protected $creationDateTime;
 
@@ -148,9 +149,16 @@ class BillingTransaction extends Element
     protected $message;
 
     /**
-     * @Store\Property(description="merchant change notification callback")
+     * @Store\Property(description="merchant change notification callback Url")
      * @Assert\Type("string")
-     * @Store\EntityMapping("notificationCallback")
+     * @Store\EntityMapping("notificationCallbackUrl")
+     */
+    protected $notificationCallbackUrl;
+
+    /**
+     * @Store\Property(description="merchant change notification callback")
+     * @PBAssert\Type(type="id", idPrefixes={"callback"})
+     * @Store\EntityMapping("notificationCallback.publicKey")
      */
     protected $notificationCallback;
 

@@ -82,7 +82,7 @@ class NewInvoice extends Element
      * @Store\Property(description="If defined, every invoice change will be notified to this callback")
      * @Assert\Type("string")
      */
-    protected $notificationCallback;
+    protected $notificationCallbackUrl;
 
     public function setMetadata($meta)
     {

@@ -120,9 +120,16 @@ class Invoice extends NewInvoice
     protected $supportInfo;
 
     /**
-     * @Store\Property(description="If defined, every invoice change will be notified to this callback")
+     * @Store\Property(description="If defined, every invoice change will be notified to this callback Url")
      * @Assert\Type("string")
-     * @Store\EntityMapping("notificationCallback")
+     * @Store\EntityMapping("notificationCallbackUrl")
+     */
+    protected $notificationCallbackUrl;
+
+    /**
+     * @Store\Property(description="merchant change notification callback")
+     * @PBAssert\Type(type="id", idPrefixes={"callback"})
+     * @Store\EntityMapping("notificationCallback.publicKey")
      */
     protected $notificationCallback;
 
