@@ -18,6 +18,14 @@ class BillingTransaction extends Element
     protected $id;
 
     /**
+     * @Store\Property(description="Payment method subtype associated to the billing")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("paymentMethodSubType.name")
+     * @Assert\NotBlank()
+     */
+    protected $paymentMethodSubType;
+
+    /**
      * @Store\Property(description="used payment method name")
      * @Assert\Type("string")
      * @Store\EntityMapping("PSPAccount.paymentMethodType.name")
