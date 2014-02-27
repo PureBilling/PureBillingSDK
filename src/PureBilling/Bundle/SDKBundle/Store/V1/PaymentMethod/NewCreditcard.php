@@ -66,4 +66,17 @@ class NewCreditcard extends PaymentMethod
     {
         return new \DateTime($this->getExpirationDateString());
     }
+
+    /**
+     * return Expiration date as DateTime Object
+     * @return DateTime
+     */
+    public function setExpirationDateTime($expiration)
+    {
+        if (is_string($expiration)) {
+            $expiration = new \DateTime($expiration);
+        }
+        $this->setExpirationYear($expiration->format('Y'));
+        $this->setExpirationMonth($expiration->format('m'));
+    }
 }
