@@ -57,6 +57,12 @@ class SubscriptionInfo extends Element
      */
     protected $detailledStatus;
 
+    /**
+     * @Store\Property(description="merchant change notification callback")
+     * @Assert\Type("array")
+     */
+    protected $notificationCallbacks;
+
     public function setDetailledStatus($dStatus)
     {
         $this->detailledStatus = strtolower($dStatus);
