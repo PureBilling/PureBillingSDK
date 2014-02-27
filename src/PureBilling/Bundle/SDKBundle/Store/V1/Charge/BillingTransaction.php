@@ -129,7 +129,7 @@ class BillingTransaction extends Element
 
     /**
      * @Store\Property(description="Creation date time of the billing")
-     * @Store\EntityMapping("creationDateTimeString")
+     * @Store\EntityMapping("creationDateTime")
      * @PBAssert\Type(type="datetime")
      */
     protected $creationDateTime;
