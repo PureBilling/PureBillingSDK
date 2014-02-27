@@ -40,10 +40,26 @@ class SubscriptionInfo extends Element
     protected $notificationCallbackUrl;
 
     /**
-     * @Store\Property(description="merchant change notification callback")
-     * @PBAssert\Type(type="id", idPrefixes={"callback"})
-     * @Store\EntityMapping("notificationCallback.publicKey")
+     * @Store\Property(description="invoice status")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("pureBillingStatus")
+     * @Assert\Choice({"running", "cancelled"})
+     * @Assert\NotBlank()
      */
-    protected $notificationCallback;
+    protected $status;
+
+    /**
+     * @Store\Property(description="invoice detailled status")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("workflowState")
+     * @Assert\Choice({"cancelled", "autocancelled", "collected", "collecting"})
+     * @Assert\NotBlank()
+     */
+    protected $detailledStatus;
+
+    public function setDetailledStatus($dStatus)
+    {
+        $this->detailledStatus = strtolower($dStatus);
+    }
 
 }

@@ -157,10 +157,9 @@ class BillingTransaction extends Element
 
     /**
      * @Store\Property(description="merchant change notification callback")
-     * @PBAssert\Type(type="id", idPrefixes={"callback"})
-     * @Store\EntityMapping("notificationCallback.publicKey")
+     * @Assert\Type("array")
      */
-    protected $notificationCallback;
+    protected $notificationCallbacks;
 
     /**
      * @Store\Property(description="PSP transaction Info", private=true)

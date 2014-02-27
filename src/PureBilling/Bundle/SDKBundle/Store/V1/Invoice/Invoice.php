@@ -45,7 +45,7 @@ class Invoice extends NewInvoice
      * @Store\Property(description="invoice detailled status")
      * @Assert\Type("string")
      * @Store\EntityMapping("workflowState")
-     * @Assert\Choice({"cancelled", "collected", "collecting", "recovering", "recoverystuck"})
+     * @Assert\Choice({"autocancelled", "cancelled", "collected", "collecting", "recovering", "recoverystuck"})
      * @Assert\NotBlank()
      */
     protected $detailledStatus;
@@ -128,10 +128,9 @@ class Invoice extends NewInvoice
 
     /**
      * @Store\Property(description="merchant change notification callback")
-     * @PBAssert\Type(type="id", idPrefixes={"callback"})
-     * @Store\EntityMapping("notificationCallback.publicKey")
+     * @Assert\Type("array")
      */
-    protected $notificationCallback;
+    protected $notificationCallbacks;
 
     public function setDetailledStatus($dStatus)
     {
