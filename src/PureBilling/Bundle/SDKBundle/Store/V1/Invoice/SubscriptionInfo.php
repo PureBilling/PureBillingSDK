@@ -52,7 +52,7 @@ class SubscriptionInfo extends Element
      * @Store\Property(description="invoice detailled status")
      * @Assert\Type("string")
      * @Store\EntityMapping("workflowState")
-     * @Assert\Choice({"cancelled", "autocancelled", "collected", "collecting"})
+     * @Assert\Choice({"unsubscribed","cancelled", "autocancelled", "collected", "collecting"})
      * @Assert\NotBlank()
      */
     protected $detailledStatus;
