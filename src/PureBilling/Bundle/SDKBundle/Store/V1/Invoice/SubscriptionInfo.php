@@ -19,7 +19,7 @@ class SubscriptionInfo extends Element
 
     /**
      * @Store\Property(description="when the next invoice will be created")
-     * @Assert\Type("datetime")
+     * @PBAssert\Type(type="datetime")
      * @Assert\NotBlank()
      * @Store\EntityMapping("nextBillingDate")
      */

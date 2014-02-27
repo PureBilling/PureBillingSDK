@@ -6,7 +6,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class TypeValidator extends Assert\TypeValidator
 {
-    private $supportedTypes = array('objectOrId', 'id');
+    private $supportedTypes = array('objectOrId', 'id', 'datetime');
 
     public function validate($value, Constraint $constraint)
     {
@@ -21,11 +21,24 @@ class TypeValidator extends Assert\TypeValidator
                 if (is_object($value)) return;
                 return $this->checkId($value, $constraint->idPrefixes, $constraint->message);
                 break;
+            case 'datetime':
+                return $this->checkDateTime($value, $constraint->message);
+                break;
             default:
                 break;
         }
 
         return parent::validate($value, $constraint);
+    }
+
+    protected function checkDateTime($value, $type)
+    {
+        if (!is_numeric($value)) {
+            $this->context->addViolation($type, array(
+                '{{ value }}' => $value,
+                '{{ type }}'  => 'integer',
+            ));
+        }
     }
 
     protected function checkId($id, $prefixes, $type)
@@ -34,9 +47,9 @@ class TypeValidator extends Assert\TypeValidator
 
         if (!is_string($id)) {
             $this->context->addViolation($type, array(
-            '{{ value }}' => $this->getValue($id),
-            '{{ type }}'  => 'object or string',
-        ));
+                '{{ value }}' => $this->getValue($id),
+                '{{ type }}'  => 'object or string',
+            ));
         }
 
         foreach ($prefixes as $prefix) {
@@ -46,7 +59,7 @@ class TypeValidator extends Assert\TypeValidator
         $this->context->addViolation($type, array(
             '{{ value }}' => $this->getValue($id),
             '{{ type }}'  => 'object or string and start with '
-                             .json_encode($prefixes),
+                             . json_encode($prefixes),
         ));
     }
 
