@@ -26,7 +26,7 @@ class UpdateNotification extends Element
 
     /**
      * @Store\Property(description="datetime of the change")
-     * @Assert\Type("datetime")
+     * @PBAssert\Type(type="datetime")
      * @Assert\NotBlank()
      */
     protected $changeDate;

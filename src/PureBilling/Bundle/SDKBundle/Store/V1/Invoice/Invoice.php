@@ -108,7 +108,7 @@ class Invoice extends NewInvoice
 
     /**
      * @Store\Property(description="due date of the invoice")
-     * @Assert\Type("string")
+     * @PBAssert\Type(type="datetime")
      * @Assert\NotNull()
      */
     protected $dueDate;
