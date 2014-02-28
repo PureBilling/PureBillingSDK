@@ -162,7 +162,7 @@ class BillingTransaction extends Element
     protected $notificationCallbacks;
 
     /**
-     * @Store\Property(description="PSP transaction Info", private=true)
+     * @Store\Property(description="PSP transaction Info")
      * @Assert\Type("object")
      * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\PSPTransactionInfo")
      * @Assert\NotBlank()

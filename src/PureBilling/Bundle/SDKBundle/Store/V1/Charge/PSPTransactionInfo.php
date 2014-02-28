@@ -27,28 +27,28 @@ class PSPTransactionInfo extends Element
      protected $PSPAccount;
 
     /**
-     * @Store\Property(description="PSP Name", private=true)
+     * @Store\Property(description="PSP Name")
      * @Assert\Type("string")
      * @Store\EntityMapping("PSPAccount.PSP.name")
      */
     protected $name;
 
     /**
-     * @Store\Property(description="transactionId sent to the PSP", private=true)
+     * @Store\Property(description="transactionId sent to the PSP")
      * @Assert\Type("string")
      * @Store\EntityMapping("sentTransactionId")
      */
     protected $SentTransactionId;
 
     /**
-     * @Store\Property(description="transactionId sent by the PSP", private=true)
+     * @Store\Property(description="transactionId sent by the PSP")
      * @Assert\Type("string")
      * @Store\EntityMapping("pspTransactionId")
      */
     protected $RecievedTransactionId;
 
     /**
-     * @Store\Property(description="PSP answer after parsing", private=true)
+     * @Store\Property(description="PSP answer after parsing")
      * @Assert\Type("array")
      * @Store\EntityMapping("PSPResponseParameters")
      */
