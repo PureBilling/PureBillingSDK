@@ -19,7 +19,7 @@ class UpdateNotification extends Element
     /**
      * @Store\Property(description="type of change applied on the store")
      * @Assert\Type("string")
-     * @Assert\Choice({"created", "unsubscribed"})
+     * @Assert\Choice({"unsubscribed", "collected"})
      * @Assert\NotBlank()
      */
     protected $changeType;
