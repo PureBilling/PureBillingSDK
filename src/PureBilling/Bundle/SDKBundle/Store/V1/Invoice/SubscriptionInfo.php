@@ -61,7 +61,7 @@ class SubscriptionInfo extends Element
      * @Store\Property(description="merchant change notification callback")
      * @Assert\Type("array")
      */
-    protected $notificationCallbacks;
+    protected $updateNotifications;
 
     public function setDetailledStatus($dStatus)
     {

@@ -159,7 +159,7 @@ class BillingTransaction extends Element
      * @Store\Property(description="merchant change notification callback")
      * @Assert\Type("array")
      */
-    protected $notificationCallbacks;
+    protected $updateNotifications;
 
     /**
      * @Store\Property(description="PSP transaction Info")
