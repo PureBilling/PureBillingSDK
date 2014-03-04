@@ -114,23 +114,11 @@ class Invoice extends NewInvoice
     protected $dueDate;
 
     /**
-     * @Store\Property(description="support information associated to the invoice")
-     * @PBAssert\Type(type="id", idPrefixes={"support"})
-     */
-    protected $supportInfo;
-
-    /**
      * @Store\Property(description="If defined, every invoice change will be notified to this callback Url")
      * @Assert\Type("string")
      * @Store\EntityMapping("notificationCallbackUrl")
      */
     protected $notificationCallbackUrl;
-
-    /**
-     * @Store\Property(description="merchant change notification callback")
-     * @Assert\Type("array")
-     */
-    protected $updateNotifications;
 
     public function setDetailledStatus($dStatus)
     {

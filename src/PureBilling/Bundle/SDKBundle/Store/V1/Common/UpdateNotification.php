@@ -19,31 +19,17 @@ class UpdateNotification extends Element
     /**
      * @Store\Property(description="type of change applied on the store")
      * @Assert\Type("string")
+     * @Store\EntityMapping("changeType")
      * @Assert\Choice({"unsubscribed", "collected"})
      * @Assert\NotBlank()
      */
     protected $changeType;
 
     /**
-     * @Store\Property(description="datetime of the change")
-     * @PBAssert\Type(type="datetime")
-     * @Assert\NotBlank()
-     */
-    protected $changeDate;
-
-    /**
-     * @Store\Property(description="calls done for this notification")
-     * @Assert\Type("integer")
-     * @Assert\NotBlank()
-     */
-    protected $tries;
-
-    /**
      * @Store\Property(description="related store")
-     * @Assert\Type("object")
+     * @Assert\Type("id")
+     * @Store\EntityMapping("storeId")
      * @Assert\NotBlank()
-     * @Store\StoreClass({"PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransaction",
-     *                    "PureBilling\Bundle\SDKBundle\Store\V1\Invoice\Invoice"})
      */
     protected $store;
 }

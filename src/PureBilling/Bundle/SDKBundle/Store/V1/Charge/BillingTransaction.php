@@ -156,12 +156,6 @@ class BillingTransaction extends Element
     protected $notificationCallbackUrl;
 
     /**
-     * @Store\Property(description="merchant change notification callback")
-     * @Assert\Type("array")
-     */
-    protected $updateNotifications;
-
-    /**
      * @Store\Property(description="PSP transaction Info")
      * @Assert\Type("object")
      * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\PSPTransactionInfo")

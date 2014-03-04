@@ -27,8 +27,8 @@ class DetailledCustomer extends Customer
      * @Store\Property(description="Invoices")
      * @Assert\Type(type="array")
      * @Store\StoreClass({
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\Invoice\RecurringInvoice",
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\Invoice\Invoice"})
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\Invoice\DetailledRecurringInvoice",
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\Invoice\DetailledInvoice"})
      */
     protected $invoices;
 }
