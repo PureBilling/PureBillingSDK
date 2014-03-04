@@ -41,6 +41,12 @@ abstract class CaptureBase extends Action
      */
     protected $notificationCallbackUrl;
 
+    /**
+     * @Store\Property(description="Short description of billed item")
+     * @Assert\Type("string")
+     */
+    protected $shortDescription;
+
     public function setAmount($amount)
     {
         $this->amount = (float) $amount;
