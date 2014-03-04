@@ -163,6 +163,13 @@ class BillingTransaction extends Element
      */
     protected $PSPTransactionInfo;
 
+    /**
+     * @Store\Property(description="Short description of billed item")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("shortDescription")
+     */
+    protected $shortDescription;
+
     public function setDetailledStatus($status)
     {
         if ($status == 'WaitingCollecting') $status = 'redirected';
