@@ -7,7 +7,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use Symfony\Component\Validator\Constraints as Assert;
 
-class Refund extends Rebill
+class Recover extends Rebill
 {
 
 }

@@ -23,23 +23,4 @@ class Capture extends CaptureBase
      * @Assert\NotNull()
      */
     protected $automaticRecovery = false;
-
-    public function validate($validator=null)
-    {
-        //Parent validation
-        if (!parent::validate($validator)) return false;
-
-        /**
-         * Some paymentMethod can't use automatic recovery
-         */
-        if ($this->paymentMethod instanceof NewCreditcard
-            && $this->automaticRecovery) {
-            $this->addViolation('automaticRecovering',
-                    "automatic recovering not possible with new CreditCard");
-
-            return false;
-        }
-
-        return true;
-    }
 }
