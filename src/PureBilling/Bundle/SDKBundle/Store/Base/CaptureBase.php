@@ -30,6 +30,13 @@ abstract class CaptureBase extends Action
     protected $paymentMethod;
 
     /**
+     * @Store\Property(description="Payment Service Provider Account to use. if NULL, use the backoffice configuration")
+     * @PBAssert\Type(type="id", idPrefixes={"pspa"})
+     * @Store\Entity()
+     */
+    protected $PSPAccount = null;
+
+    /**
      * @Store\Property(description="External id")
      * @Assert\Type("string")
      */

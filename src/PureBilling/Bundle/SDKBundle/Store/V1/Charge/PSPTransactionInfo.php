@@ -48,6 +48,13 @@ class PSPTransactionInfo extends Element
     protected $RecievedTransactionId;
 
     /**
+     * @Store\Property(description="transactionId sent by the PSP")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("PSPAlias")
+     */
+    protected $PSPAlias;
+
+    /**
      * @Store\Property(description="PSP answer after parsing")
      * @Assert\Type("array")
      * @Store\EntityMapping("PSPResponseParameters")
