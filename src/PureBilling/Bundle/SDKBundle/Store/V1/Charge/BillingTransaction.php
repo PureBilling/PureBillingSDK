@@ -170,6 +170,13 @@ class BillingTransaction extends Element
      */
     protected $shortDescription;
 
+    /**
+     * @Store\Property(description="Short description of billed item")
+     * @Assert\Type("boolean")
+     * @Store\EntityMapping("owner.isTest")
+     */
+    protected $isTest;
+
     public function setDetailledStatus($status)
     {
         if ($status == 'WaitingCollecting') $status = 'redirected';
