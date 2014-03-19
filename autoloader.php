@@ -134,18 +134,23 @@ class SplClassLoader_PureBillingRawPHP
     }
 }
 
-require_once(__DIR__.'/vendor/autoload.php');
+if (file_exists(__DIR__.'/vendor/autoload.php')) {
+    require_once(__DIR__.'/vendor/autoload.php');
+    registerAnnotations(__DIR__.'/vendor');
+}
 
-//Register annotations
-Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
-        'Symfony',
-        __DIR__.'/vendor/symfony/symfony/src'
-        );
-Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
-        'PureBilling\Bundle\SDKBundle',
-        __DIR__.'/src'
-        );
-Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
-        'PureMachine\Bundle\SDKBundle',
-        __DIR__.'/vendor/puremachine/sdk/src'
-        );
+function registerAnnotations($composerPath) {
+    //Register annotations
+    Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
+            'Symfony',
+            $composerPath.'/symfony/symfony/src'
+            );
+    Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
+            'PureBilling\Bundle\SDKBundle',
+            __DIR__.'/src'
+            );
+    Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
+            'PureMachine\Bundle\SDKBundle',
+            $composerPath.'/puremachine/sdk/src'
+            );
+}
