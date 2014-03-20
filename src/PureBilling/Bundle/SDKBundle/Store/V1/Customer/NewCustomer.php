@@ -13,6 +13,7 @@ class NewCustomer extends Element
      * @Store\Property(description="customer email")
      * @Assert\Type("string")
      * @Assert\Email()
+     * @Assert\NotBlank()
      */
     protected $email;
 
