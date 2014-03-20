@@ -45,7 +45,7 @@ class Invoice extends NewInvoice
      * @Store\Property(description="invoice detailled status")
      * @Assert\Type("string")
      * @Store\EntityMapping("workflowState")
-     * @Assert\Choice({"autocancelled", "cancelled", "collected", "collecting", "recovering", "recoverystuck"})
+     * @Assert\Choice({"autocancelled", "cancelled", "collected", "collecting", "recovering", "manualrecovery"})
      * @Assert\NotBlank()
      */
     protected $detailledStatus;
