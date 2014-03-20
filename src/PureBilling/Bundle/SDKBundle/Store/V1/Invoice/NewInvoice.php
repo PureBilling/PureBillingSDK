@@ -13,6 +13,7 @@ class NewInvoice extends Element
      * @Store\Property(description="customer id. If null, a new customer will be created")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
      * @Store\Entity()
+     * @Assert\NotBlank()
      */
     protected $customer;
 
