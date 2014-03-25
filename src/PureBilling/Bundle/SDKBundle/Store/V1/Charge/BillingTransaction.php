@@ -91,7 +91,7 @@ class BillingTransaction extends Element
      * @Store\Property(description="transaction country")
      * @Assert\Type("string")
      * @Store\EntityMapping("country.id")
-     * @Assert\Country()
+     * @PBAssert\Country()
      * @Assert\NotBlank()
      */
     protected $country;

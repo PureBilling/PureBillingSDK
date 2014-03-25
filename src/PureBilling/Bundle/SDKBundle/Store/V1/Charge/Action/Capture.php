@@ -10,21 +10,19 @@ use PureBilling\Bundle\SDKBundle\Store\Base\CaptureBase;
 class Capture extends CaptureBase
 {
     /**
-     * @Store\Property(description="country where the purchase is done")
+     * @Store\Property(description="Purchase country. If null, we try to find it using card registration information", recommended=true)
      * @Assert\Type("string")
-     * @Assert\Country()
+     * @PBAssert\Country()
      * @Store\Entity()
-     * @Assert\NotBlank()
      */
-    protected $country;
+    protected $country = '??';
 
     /**
-     * @Store\Property(description="Transaction source IP (used for fraud detection)")
+     * @Store\Property(description="Transaction source IP (used for fraud detection)", recommended=true)
      * @Assert\Type("string")
      * @Assert\Ip()
-     * @Assert\NotNull()
      */
-    protected $ip = '0.0.0.0';
+    protected $ip;
 
     /**
      * @Store\Property(description="transaction currency")
@@ -43,10 +41,9 @@ class Capture extends CaptureBase
     protected $origin;
 
     /**
-     * @Store\Property(description="customer associated to the transaction")
+     * @Store\Property(description="customer associated to the transaction. If not, we create a new one, or we use the one associated with the paymentMethod", recommended=true)
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
      * @Store\Entity()
-     * @Assert\NotBlank()
      */
     protected $customer;
 

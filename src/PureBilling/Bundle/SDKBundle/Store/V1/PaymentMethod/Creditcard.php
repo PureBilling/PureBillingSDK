@@ -77,6 +77,23 @@ class Creditcard extends PaymentMethod
     protected $status;
 
     /**
+     * @Store\Property(description="customer associated to the paymentMethod")
+     * @PBAssert\Type(type="id", idPrefixes={"customer"})
+     * @Store\EntityMapping("customer.publicKey")
+     * @Assert\NotBlank
+     */
+    protected $customer;
+
+    /**
+     * @Store\Property(description="Creditcard registration ip.")
+     * @Assert\Type("string")
+     * @Assert\Ip()
+     * @Assert\NotBlank
+     * @Store\EntityMapping("originIp")
+     */
+    protected $registrationIp;
+
+    /**
      * return expiration date as string YYYY-MM-DD
      * where DD is always 01
      *

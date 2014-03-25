@@ -38,7 +38,6 @@ class Customer extends NewCustomer
      * @Store\Property(description="signup ip. used for fraud detection")
      * @Assert\Type("string")
      * @Assert\Ip()
-     * @Assert\NotBlank()
      * @Store\EntityMapping("originIp")
      */
     protected $ip;

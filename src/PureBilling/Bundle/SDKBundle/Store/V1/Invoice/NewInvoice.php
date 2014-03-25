@@ -40,11 +40,10 @@ class NewInvoice extends Element
     /**
      * @Store\Property(description="country where the purchase is done")
      * @Assert\Type("string")
-     * @Assert\Country()
+     * @PBAssert\Country()
      * @Store\Entity()
-     * @Assert\NotBlank()
      */
-    protected $country;
+    protected $country = '??';
 
     /**
      * @Store\Property(description="invoice currency")

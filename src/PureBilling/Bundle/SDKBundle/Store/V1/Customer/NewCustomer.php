@@ -27,9 +27,8 @@ class NewCustomer extends Element
      * @Store\Property(description="customer signup ip. if not defined, 0.0.0.0 is used. Define to improve fraud detection.")
      * @Assert\Type("string")
      * @Assert\Ip()
-     * @Assert\NotBlank()
      */
-    protected $ip = '0.0.0.0';
+    protected $ip;
 
     /**
      * @Store\Property(description="origin public key. If null, default owner origin be used.")

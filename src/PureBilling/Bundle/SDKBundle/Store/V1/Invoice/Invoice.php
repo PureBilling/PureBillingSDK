@@ -17,6 +17,15 @@ class Invoice extends NewInvoice
     protected $id;
 
     /**
+     * @Store\Property(description="country where the purchase is done")
+     * @Assert\Type("string")
+     * @PBAssert\Country()
+     * @Assert\NotBlank()
+     * @Store\Entity()
+     */
+    protected $country;
+
+    /**
      * @Store\Property(description="customer associated to the invoice")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
      * @Store\EntityMapping("saleTransaction.customer.publicKey")

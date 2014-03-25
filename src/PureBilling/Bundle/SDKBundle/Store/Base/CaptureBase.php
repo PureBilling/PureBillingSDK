@@ -8,17 +8,17 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 abstract class CaptureBase extends Action
 {
     /**
-     * @Store\Property(description="amount to bill. 5.00 in USD will bill 5.00 USD.")
+     * @Store\Property(description="amount to bill. 5.00 for euro will bill 5.00 EUR.")
      * @Assert\Type("float")
      * @Assert\GreaterThan(0)
-     * @Assert\NotNull()
+     * @Assert\NotBlank()
      */
     protected $amount;
 
     /**
      * @Store\Property(description="billing method to use to bill the invoice. Should be a ID or a newCreditcard store.")
      * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal"})
-     * @Assert\NotNull()
+     * @Assert\NotBlank()
      * @Store\Entity()
      * @Store\StoreClass({
      *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\Creditcard",
@@ -37,7 +37,7 @@ abstract class CaptureBase extends Action
     protected $PSPAccount = null;
 
     /**
-     * @Store\Property(description="External id")
+     * @Store\Property(description="External id", recommended=true)
      * @Assert\Type("string")
      */
     protected $externalId;
