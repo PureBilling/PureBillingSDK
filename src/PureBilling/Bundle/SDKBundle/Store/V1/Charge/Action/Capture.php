@@ -34,6 +34,12 @@ class Capture extends CaptureBase
     protected $currency;
 
     /**
+     * @Store\Property(description="Stats token. If not defined, use cookies")
+     * @Assert\Type("string")
+     */
+    protected $statsToken;
+
+    /**
      * @Store\Property(description="Transaction origin. if null, owner default origin is used")
      * @PBAssert\Type(type="id", idPrefixes={"origin"})
      * @Store\Entity()

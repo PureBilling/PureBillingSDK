@@ -49,7 +49,7 @@ abstract class CaptureBase extends Action
     protected $notificationCallbackUrl;
 
     /**
-     * @Store\Property(description="Short description of billed item")
+     * @Store\Property(description="Short description of billed item", recommended=true)
      * @Assert\Type("string")
      */
     protected $shortDescription;
