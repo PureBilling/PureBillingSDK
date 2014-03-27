@@ -74,9 +74,8 @@ class NewInvoice extends Element
      * @Store\Property(description="customer ip during the purchase")
      * @Assert\Type("string")
      * @Assert\Ip()
-     * @Assert\NotNull()
      */
-    protected $ip = '0.0.0.0';
+    protected $ip;
 
     /**
      * @Store\Property(description="If defined, every invoice change will be notified to this callback")
