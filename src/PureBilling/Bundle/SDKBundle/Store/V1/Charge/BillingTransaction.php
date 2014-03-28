@@ -74,7 +74,7 @@ class BillingTransaction extends Element
      * @Store\Property(description="amount (billed or to bill)")
      * @Assert\Type("float")
      * @Store\EntityMapping("amount")
-     * @Assert\NotNull()
+     * @Assert\NotBlank()
      */
     protected $amount;
 
