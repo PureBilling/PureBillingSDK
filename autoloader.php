@@ -142,8 +142,8 @@ if (file_exists(__DIR__.'/vendor/autoload.php')) {
 function registerAnnotations($composerPath) {
     //Register annotations
     Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
-            'Symfony',
-            $composerPath.'/symfony/symfony/src'
+            'Symfony\Component\Validator',
+            $composerPath.'/symfony/validator'
             );
     Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
             'PureBilling\Bundle\SDKBundle',
