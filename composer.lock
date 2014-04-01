@@ -209,12 +209,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PureBilling/PureMachineSDK.git",
-                "reference": "4faca51b844a8f6ce9dde3af0b8b2b23d49e93d7"
+                "reference": "3d2296266cea0807550cb436e65eb70dddcd940a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PureBilling/PureMachineSDK/zipball/4faca51b844a8f6ce9dde3af0b8b2b23d49e93d7",
-                "reference": "4faca51b844a8f6ce9dde3af0b8b2b23d49e93d7",
+                "url": "https://api.github.com/repos/PureBilling/PureMachineSDK/zipball/3d2296266cea0807550cb436e65eb70dddcd940a",
+                "reference": "3d2296266cea0807550cb436e65eb70dddcd940a",
                 "shasum": ""
             },
             "require": {
@@ -234,7 +234,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2014-03-28 17:09:33"
+            "time": "2014-03-31 15:21:07"
         },
         {
             "name": "symfony/event-dispatcher",
