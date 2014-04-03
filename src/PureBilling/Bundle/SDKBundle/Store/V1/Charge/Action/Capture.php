@@ -40,6 +40,12 @@ class Capture extends CaptureBase
     protected $statsToken;
 
     /**
+     * @Store\Property(description="Key of the used payment form")
+     * @Assert\Type("string")
+     */
+    protected $formToken;
+
+    /**
      * @Store\Property(description="Transaction origin. if null, owner default origin is used")
      * @PBAssert\Type(type="id", idPrefixes={"origin"})
      * @Store\Entity()

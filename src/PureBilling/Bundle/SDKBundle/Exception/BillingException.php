@@ -15,4 +15,7 @@ class BillingException extends Exception
 
     const BILLING_003 = 'BILLING_003';
     const BILLING_003_MESSAGE = 'ExternalId already used';
+
+    const BILLING_004 = 'BILLING_004';
+    const BILLING_004_MESSAGE = 'Form already billed';
 }
