@@ -6,7 +6,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Store\Base\PaymentMethod;
 
-class PaymentForm extends PaymentMethod
+class NewPaymentForm extends PaymentMethod
 {
     /**
      * @Store\Property(description="callback we will call after creditcard from")
