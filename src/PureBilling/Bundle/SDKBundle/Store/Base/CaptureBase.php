@@ -22,9 +22,7 @@ abstract class CaptureBase extends Action
      * @Store\Entity()
      * @Store\StoreClass({
      *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\Creditcard",
-     * 		"PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\CreditcardForm",
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\Paypal",
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\InternetPlus"
+     * 		"PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\NewPaymentForm"
      * })
      */
     protected $paymentMethod;

@@ -52,6 +52,10 @@ class TypeValidator extends Assert\TypeValidator
             ));
         }
 
+        if (count($prefixes) == 0 ) {
+            return;
+        }
+
         foreach ($prefixes as $prefix) {
             if ($this->startsWith($id, $prefix ."_")) return;
         }
