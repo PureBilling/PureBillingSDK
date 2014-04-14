@@ -83,6 +83,7 @@ class BillingTransaction extends Element
      * @Assert\Type("string")
      * @Store\EntityMapping("currency.id")
      * @Assert\Currency()
+     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $currency;

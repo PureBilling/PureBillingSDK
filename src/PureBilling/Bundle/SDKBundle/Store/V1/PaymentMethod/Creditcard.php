@@ -12,7 +12,7 @@ class Creditcard extends PaymentMethod
     //Special dates used for tests
     const CARD_EXPIRED = "2000-01-01";
     const INSUFFICIENT_FUNDS = "2089-01-01";
-    const FORCE_VISA_DEBIT = "2097-11-01";
+    const FORCE_VISA = "2097-11-01";
     const VALID_DATE = "2020-11-14";
 
     /**

@@ -38,14 +38,14 @@ class PSPTransactionInfo extends Element
      * @Assert\Type("string")
      * @Store\EntityMapping("sentTransactionId")
      */
-    protected $SentTransactionId;
+    protected $sentTransactionId;
 
     /**
      * @Store\Property(description="transactionId sent by the PSP")
      * @Assert\Type("string")
      * @Store\EntityMapping("pspTransactionId")
      */
-    protected $RecievedTransactionId;
+    protected $recievedTransactionId;
 
     /**
      * @Store\Property(description="transactionId sent by the PSP")
