@@ -34,6 +34,13 @@ class PSPTransactionInfo extends Element
     protected $name;
 
     /**
+     * @Store\Property(description="PSP Name")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("PSPAccount.name")
+     */
+    protected $accountName;
+
+    /**
      * @Store\Property(description="transactionId sent to the PSP")
      * @Assert\Type("string")
      * @Store\EntityMapping("sentTransactionId")
