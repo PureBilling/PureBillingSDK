@@ -66,5 +66,12 @@ class PSPTransactionInfo extends Element
      * @Assert\Type("array")
      * @Store\EntityMapping("PSPResponseParameters")
      */
-    protected $ResponseParameters = array();
+    protected $ResponseParameters;
+
+    /**
+     * @Store\Property(description="origin PSP error message")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("PSPErrorMessage")
+     */
+    protected $ErrorMessage;
 }
