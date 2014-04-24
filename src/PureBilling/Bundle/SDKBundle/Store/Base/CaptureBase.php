@@ -59,6 +59,18 @@ abstract class CaptureBase extends Action
      */
     protected $shortDescription;
 
+    /**
+     * @Store\Property(description="Stats token. If not defined, use cookies")
+     * @Assert\Type("string")
+     */
+    protected $statsToken;
+
+    /**
+     * @Store\Property(description="Key of the used payment form")
+     * @Assert\Type("string")
+     */
+    protected $formToken;
+
     public function setAmount($amount)
     {
         $this->amount = (float) $amount;
