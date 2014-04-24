@@ -57,4 +57,11 @@ class Customer extends NewCustomer
      * @Store\EntityMapping("owner.publicKey")
      */
     protected $owner;
+
+    /**
+     * @Store\Property(description="Creation date time of the billing")
+     * @Store\EntityMapping("creationDateTime")
+     * @PBAssert\Type(type="datetime")
+     */
+    protected $creationDateTime;
 }
