@@ -178,6 +178,16 @@ class BillingTransaction extends Element
      */
     protected $isTest;
 
+    /**
+     * @Store\Property(description="Payment Method Info")
+     * @Assert\Type("object")
+     * @Store\StoreClass({
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\Creditcard",
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\RemotePaymentMethod"
+     * })
+     */
+    protected $paymentMethodInfo;
+
     public function setDetailledStatus($status)
     {
         if ($status == 'WaitingCollecting') $status = 'redirected';
