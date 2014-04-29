@@ -10,6 +10,14 @@ use PureBilling\Bundle\SDKBundle\Store\Base\Element;
 class RedirectRequest extends Element
 {
     /**
+     * @Store\Property(description="billing transaction id")
+     * @Store\Entity()
+     * @PBAssert\Type(type="id", idPrefixes={"redirect", "billing"})
+     * @Assert\NotBlank()
+     */
+    protected $id;
+
+    /**
      * @Store\Property(description="URL you should redirect your user to")
      * @Assert\Type("string")
      * @Assert\NotBlank
@@ -22,4 +30,13 @@ class RedirectRequest extends Element
      * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransaction")
      */
     protected $billingTransaction;
+
+    public function setBillingTransaction($bt)
+    {
+        $this->billingTransaction = $bt;
+
+        if (!$this->id) {
+            return $this->id = $bt;
+        }
+    }
 }
