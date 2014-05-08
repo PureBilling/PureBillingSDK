@@ -17,7 +17,7 @@ abstract class CaptureBase extends Action
 
     /**
      * @Store\Property(description="billing method to use to bill the invoice. Should be a ID or a newCreditcard store.")
-     * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal"})
+     * @PBAssert\Type(type="id", idPrefixes={"temp-creditcard", "creditcard", "internetplus", "paypal"})
      * @Assert\NotBlank()
      * @Store\Entity()
      * @Store\StoreClass({
