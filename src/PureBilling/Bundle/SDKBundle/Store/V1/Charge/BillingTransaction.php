@@ -188,6 +188,13 @@ class BillingTransaction extends Element
      */
     protected $paymentMethodInfo;
 
+    /**
+     * @Store\Property(description="Allowed actions")
+     * @Assert\Type("array")
+     * @Assert\Choice(choices={"refund"}, multiple=true)
+     */
+    protected $allowedActions = array();
+
     public function setDetailledStatus($status)
     {
         if ($status == 'WaitingCollecting') $status = 'redirected';
