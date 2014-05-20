@@ -45,6 +45,12 @@ class NewCustomer extends Element
     protected $owner;
 
     /**
+     * @Store\Property(description="metadata you want to associate to the customer")
+     * @Assert\Type("array")
+     */
+    protected $metadata = array();
+
+    /**
      * Convert int ExternalId to string
      * @param $externalId
      */
@@ -52,4 +58,10 @@ class NewCustomer extends Element
     {
         $this->externalId = (string) $externalId;
     }
+
+    public function setMetadata($meta)
+    {
+        $this->metadata = (array) $meta;
+    }
+
 }
