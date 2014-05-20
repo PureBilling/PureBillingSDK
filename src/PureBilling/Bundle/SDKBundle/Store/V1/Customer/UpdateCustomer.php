@@ -11,6 +11,7 @@ class UpdateCustomer extends BaseStore
     /**
      * @Store\Property(description="customer Id. (read only)")
      * @Assert\NotBlank()
+     * @Assert\Type("string")
      */
     protected $id;
 
