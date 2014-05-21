@@ -195,6 +195,13 @@ class BillingTransaction extends Element
      */
     protected $allowedActions = array();
 
+    /**
+     * @Store\Property(description="Metadata")
+     * @Assert\Type("array")
+     * @Store\EntityMapping("metadatas")
+     */
+    protected $metadata =  array();
+
     public function setDetailledStatus($status)
     {
         if ($status == 'WaitingCollecting') $status = 'redirected';
