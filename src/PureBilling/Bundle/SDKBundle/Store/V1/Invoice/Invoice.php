@@ -105,7 +105,10 @@ class Invoice extends NewInvoice
      * @Store\Property(description="all billing actions (succesfull or not)")
      * @Assert\Type("array")
      * @Assert\NotNull()
-     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransaction")
+     * @Store\StoreClass({
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransaction",
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\Charge\DetailledBillingTransaction"
+     * })
      */
     protected $billingTransactions;
 
