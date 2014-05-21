@@ -4,64 +4,64 @@ namespace PureBilling\Bundle\SDKBundle\Store\V1\Customer;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
+use PureBilling\Bundle\SDKBundle\Store\Base\Element;
 use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
-class Customer extends BaseNewCustomer
+class BaseNewCustomer extends Element
 {
-    /**
-     * //Operation Id are string with two letter prefix xxx_key
-     *
-     * @Store\Property(description="customer Id.")
-     * @PBAssert\Type(type="id", idPrefixes={"customer"})
-     * @Store\Entity()
-     * @Assert\NotBlank()
-     */
-    protected $id;
-
     /**
      * @Store\Property(description="customer email")
      * @Assert\Type("string")
      * @Assert\Email()
-     * @Store\EntityMapping("email")
+     * @Assert\NotBlank()
      */
     protected $email;
 
     /**
      * @Store\Property(description="your user internal Id. if null at creation, pureBilling id is used")
      * @Assert\Type("string")
-     * @Assert\NotBlank()
-     * @Store\EntityMapping("externalId")
      */
     protected $externalId;
 
     /**
-     * @Store\Property(description="signup ip. used for fraud detection")
+     * @Store\Property(description="customer signup ip. if not defined, 0.0.0.0 is used. Define to improve fraud detection.")
      * @Assert\Type("string")
      * @Assert\Ip()
-     * @Store\EntityMapping("originIp")
      */
     protected $ip;
 
     /**
      * @Store\Property(description="origin public key. If null, default owner origin be used.")
      * @PBAssert\Type(type="id", idPrefixes={"origin"})
-     * @Store\EntityMapping("origin.publicKey")
      * @Store\Entity()
      */
     protected $origin;
 
     /**
-     * @Store\Property(description="customer owner public key.")
+     * @Store\Property(description="owner public key. If null, default owner will be used.")
      * @PBAssert\Type(type="id", idPrefixes={"owner"})
-     * @Assert\NotBlank()
-     * @Store\EntityMapping("owner.publicKey")
+     * @Store\Entity()
      */
     protected $owner;
 
     /**
-     * @Store\Property(description="Creation date time of the billing")
-     * @Store\EntityMapping("creationDateTime")
-     * @PBAssert\Type(type="datetime")
+     * @Store\Property(description="metadata you want to associate to the customer")
+     * @Assert\Type("array")
      */
-    protected $creationDateTime;
+    protected $metadata = array();
+
+    /**
+     * Convert int ExternalId to string
+     * @param $externalId
+     */
+    public function setExternalId($externalId)
+    {
+        $this->externalId = (string) $externalId;
+    }
+
+    public function setMetadata($meta)
+    {
+        $this->metadata = (array) $meta;
+    }
+
 }
