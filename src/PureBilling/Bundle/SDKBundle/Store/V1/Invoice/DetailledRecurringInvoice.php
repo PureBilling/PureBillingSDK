@@ -11,6 +11,8 @@ class DetailledRecurringInvoice extends RecurringInvoice
     /**
      * @Store\Property(description="merchant change notification callback")
      * @Assert\Type("array")
+     * @Store\StoreClass({"PureBilling\Bundle\SDKBundle\Store\V1\Common\UpdateNotification",
+     *                    "PureBilling\Bundle\SDKBundle\Store\V1\Common\DetailledUpdateNotification"})
      */
     protected $updateNotifications;
 
