@@ -38,6 +38,7 @@ class Invoice extends NewInvoice
      * @Store\Property(description="customer associated to the invoice")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
      * @Store\EntityMapping("saleTransaction.customer.publicKey")
+     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $customer;
