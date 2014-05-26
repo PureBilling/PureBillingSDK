@@ -64,4 +64,11 @@ class Customer extends BaseNewCustomer
      * @PBAssert\Type(type="datetime")
      */
     protected $creationDateTime;
+
+    /**
+     * @Store\Property(description="Subscription info attached to the invoice. Returned on demand, see propertiesToExpand.")
+     * @Assert\Type("array")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Invoice\SubscriptionInfo")
+     */
+    protected $subscriptionInfo;
 }

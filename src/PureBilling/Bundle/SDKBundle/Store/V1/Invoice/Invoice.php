@@ -21,9 +21,18 @@ class Invoice extends NewInvoice
      * @Assert\Type("string")
      * @PBAssert\Country()
      * @Assert\NotBlank()
-     * @Store\Entity()
+     * @Store\EntityMapping("saletransaction.country.id")
      */
     protected $country;
+
+    /**
+     * @Store\Property(description="invoice currency")
+     * @Assert\Type("string")
+     * @Assert\Currency()
+     * @Store\EntityMapping("saletransaction.currency.id")
+     * @Assert\NotBlank()
+     */
+    protected $currency;
 
     /**
      * @Store\Property(description="customer associated to the invoice")
@@ -131,6 +140,19 @@ class Invoice extends NewInvoice
      * @Store\EntityMapping("notificationCallbackUrl")
      */
     protected $notificationCallbackUrl;
+
+    /**
+     * @Store\Property(description="merchant change notification callback. Returned on demand, see propertiesToExpand.")
+     * @Assert\Type("array")
+     * @Store\StoreClass({"PureBilling\Bundle\SDKBundle\Store\V1\Common\UpdateNotification"})
+     */
+    protected $updateNotifications;
+
+    /**
+     * @Store\Property(description="support information associated to the invoice. Returned on demand, see propertiesToExpand.")
+     * @PBAssert\Type(type="id", idPrefixes={"support"})
+     */
+    protected $supportInfo;
 
     public function setDetailledStatus($dStatus)
     {

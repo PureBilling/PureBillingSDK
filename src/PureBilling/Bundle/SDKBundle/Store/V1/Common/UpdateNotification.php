@@ -32,4 +32,43 @@ class UpdateNotification extends Element
      * @Assert\NotBlank()
      */
     protected $store;
+
+    /**
+     * @Store\Property(description="status of the current callback")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("notificationCallback.statusLabel")
+     * @Assert\Choice({"creating", "ready", "blocked", "running", "sent"})
+     * @Assert\NotBlank()
+     */
+    protected $status;
+
+    /**
+     * @Store\Property(description="datetime of the change")
+     * @PBAssert\Type(type="datetime")
+     * @Store\EntityMapping("notificationCallback.lastStatusChange")
+     * @Assert\NotBlank()
+     */
+    protected $changeDate;
+
+    /**
+     * @Store\Property(description="calls done for this notification")
+     * @Assert\Type("integer")
+     * @Store\EntityMapping("notificationCallback.tries")
+     * @Assert\NotBlank()
+     */
+    protected $tries = 0;
+
+    /**
+     * @Store\Property(description="Data sent to the callback")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("notificationCallback.sentData")
+     */
+    protected $sentData;
+
+    /**
+     * @Store\Property(description="calls done for this notification")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("notificationCallback.rawAnswer")
+     */
+    protected $rawAnswer;
 }

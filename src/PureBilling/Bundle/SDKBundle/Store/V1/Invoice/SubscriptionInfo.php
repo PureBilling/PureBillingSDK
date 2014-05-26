@@ -33,6 +33,13 @@ class SubscriptionInfo extends Element
     protected $invoices;
 
     /**
+     * @Store\Property(description="First invoice status created with the subscription")
+     * @Assert\Type("string")
+     * @Assert\NotBlank()
+     */
+    protected $firstInvoiceStatus = 'unpaid';
+
+    /**
      * @Store\Property(description="If defined, every invoice change will be notified to this callback URL")
      * @Assert\Type("string")
      * @Store\EntityMapping("notificationCallbackUrl")

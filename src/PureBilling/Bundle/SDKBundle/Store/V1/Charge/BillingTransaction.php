@@ -100,6 +100,7 @@ class BillingTransaction extends Element
     /**
      * @Store\Property(description="invoice attached to the payment if any")
      * @PBAssert\Type(type="id", idPrefixes={"invoice"})
+     * @Store\Entity()
      * @Store\EntityMapping("invoiceTransaction.publicKey")
      */
     protected $invoice;
@@ -113,7 +114,6 @@ class BillingTransaction extends Element
 
     /**
      * @Store\Property(description="customer associated to the transaction")
-     * @Assert\Type("string")
      * @Store\EntityMapping("customer.publicKey")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
      * @Store\Entity()
@@ -201,6 +201,13 @@ class BillingTransaction extends Element
      * @Store\EntityMapping("metadatas")
      */
     protected $metadata =  array();
+
+    /**
+     * @Store\Property(description="merchant change notification callback. Returned on demand, see propertiesToExpand.")
+     * @Assert\Type("array")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Common\UpdateNotification")
+     */
+    protected $updateNotifications;
 
     public function setDetailledStatus($status)
     {
