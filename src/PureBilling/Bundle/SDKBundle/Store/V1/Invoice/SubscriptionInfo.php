@@ -26,6 +26,24 @@ class SubscriptionInfo extends Element
     protected $nextBillingDate;
 
     /**
+     * @Store\Property(description="when the next invoice will be created")
+     * @Assert\Type("float")
+     * @Assert\GreaterThan(0)
+     * @Assert\NotBlank()
+     * @Store\EntityMapping("recurringAmount")
+     */
+    protected $recurringAmount;
+
+    /**
+     * @Store\Property(description="when the next invoice will be created")
+     * @PBAssert\Type(type="string")
+     * @Assert\Currency()
+     * @Assert\NotBlank()
+     * @Store\EntityMapping("currency.id")
+     */
+    protected $currency;
+
+    /**
      * @Store\Property(description="all invoices created for the subscription")
      * @Assert\Type("array")
      * @Assert\NotBlank()
