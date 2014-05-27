@@ -85,6 +85,13 @@ class Creditcard extends PaymentMethod
     protected $customer;
 
     /**
+     * @Store\Property(description="Attached PSP Account")
+     * @PBAssert\Type("array")
+     * @Store\EntityMapping("PSPAccounts")
+     */
+    protected $PSPAccounts;
+
+    /**
      * @Store\Property(description="Creditcard registration ip.")
      * @Assert\Type("string")
      * @Assert\Ip()

@@ -43,18 +43,24 @@ class SubscriptionInfo extends Element
     protected $recurringAmount;
 
     /**
+     * @Store\Property(description="Subscription External Id")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("externalId")
+     */
+    protected $externalId;
+
+    /**
      * @Store\Property(description="when the next invoice will be created")
      * @PBAssert\Type(type="string")
      * @Assert\Currency()
      * @Assert\NotBlank()
-     * @Store\EntityMapping("currency.id")
+     * @Store\EntityMapping("currency.iso2")
      */
     protected $currency;
 
     /**
      * @Store\Property(description="all invoices created for the subscription")
      * @Assert\Type("array")
-     * @Assert\NotBlank()
      */
     protected $invoices;
 
@@ -100,5 +106,4 @@ class SubscriptionInfo extends Element
     {
         $this->detailledStatus = strtolower($dStatus);
     }
-
 }

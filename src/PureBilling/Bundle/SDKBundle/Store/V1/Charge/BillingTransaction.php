@@ -122,6 +122,15 @@ class BillingTransaction extends Element
     protected $customer;
 
     /**
+     * @Store\Property(description="origin associated to the transaction")
+     * @Store\EntityMapping("origin.publicKey")
+     * @PBAssert\Type(type="id", idPrefixes={"origin"})
+     * @Store\Entity()
+     * @Assert\NotBlank()
+     */
+    protected $origin;
+
+    /**
      * @Store\Property(description="your user internal Id. if null at creation, pureBilling id is used")
      * @Assert\Type("string")
      * @Store\EntityMapping("externalId")
