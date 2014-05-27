@@ -71,4 +71,22 @@ class Customer extends BaseNewCustomer
      * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Invoice\SubscriptionInfo")
      */
     protected $subscriptionInfo;
+
+    /**
+     * @Store\Property(description="Invoices. Returned on demand, see propertiesToExpand.")
+     * @Assert\Type(type="array")
+     * @Store\StoreClass({
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\Invoice\RecurringInvoice",
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\Invoice\Invoice"})
+     */
+    protected $invoices;
+
+    /**
+     * @Store\Property(description="Billings. Returned on demand, see propertiesToExpand.")
+     * @Assert\Type(type="array")
+     * @Store\StoreClass({
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransaction"
+     * })
+     */
+    protected $billings;
 }
