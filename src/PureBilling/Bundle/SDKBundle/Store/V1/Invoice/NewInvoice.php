@@ -83,6 +83,16 @@ class NewInvoice extends Element
      */
     protected $notificationCallbackUrl;
 
+    /**
+     * @Store\Property(description="Some properties return a ID. If you want a full object, add the property path here")
+     * @Assert\Type("array")
+     * @Assert\Choice(multiple=true, choices={"updateNotifications",
+     *                                        "supportInfo",
+     *                                        "customer",
+     *                                        "origin", "billings", "subscriptionInfo"})
+     */
+    protected $propertiesToExpand = array();
+
     public function setMetadata($meta)
     {
         $this->metadata = (array) $meta;

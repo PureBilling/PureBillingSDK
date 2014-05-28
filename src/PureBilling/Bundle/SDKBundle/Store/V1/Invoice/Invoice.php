@@ -115,6 +115,7 @@ class Invoice extends NewInvoice
      * @Store\Property(description="all billing actions (succesfull or not)")
      * @Assert\Type("array")
      * @Assert\NotNull()
+     * @Store\AllowedId("billing")
      * @Store\StoreClass({
      *      "PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransaction",
      *      "PureBilling\Bundle\SDKBundle\Store\V1\Charge\DetailledBillingTransaction"
@@ -145,13 +146,14 @@ class Invoice extends NewInvoice
     /**
      * @Store\Property(description="merchant change notification callback. Returned on demand, see propertiesToExpand.")
      * @Assert\Type("array")
+     * @Store\AllowedId("update")
      * @Store\StoreClass({"PureBilling\Bundle\SDKBundle\Store\V1\Common\UpdateNotification"})
      */
     protected $updateNotifications;
 
     /**
      * @Store\Property(description="support information associated to the invoice. Returned on demand, see propertiesToExpand.")
-     * @PBAssert\Type(type="id", idPrefixes={"support"})
+     * @PBAssert\Type(type="id", idPrefixes={"support", "invoicesupport"})
      */
     protected $supportInfo;
 

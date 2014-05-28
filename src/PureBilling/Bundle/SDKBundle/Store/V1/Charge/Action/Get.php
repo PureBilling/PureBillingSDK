@@ -21,7 +21,7 @@ class Get extends ExpandableAction
      * @Assert\Type("array")
      * @Assert\Choice(multiple=true, choices={"customer",
      *                                        "invoice",
-     *                                        "updateNotifications"})
+     *                                        "updateNotifications", "origin", "paymentMethod"})
      */
     protected $propertiesToExpand = array();
 }

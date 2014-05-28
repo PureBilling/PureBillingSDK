@@ -35,15 +35,6 @@ class BillingTransaction extends Element
     protected $paymentMethodType;
 
     /**
-     * @Store\Property(description="used payment method id")
-     * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal"})
-     * @Store\EntityMapping("paymentMethod.publicKey")
-     * @Assert\NotBlank()
-     * @Store\Entity()
-     */
-    protected $paymentMethod;
-
-    /**
      * @Store\Property(description="billing transaction type")
      * @Assert\Type("string")
      * @Store\EntityMapping("billingTransactionType.name")
@@ -188,14 +179,13 @@ class BillingTransaction extends Element
     protected $isTest;
 
     /**
-     * @Store\Property(description="Payment Method Info")
-     * @Assert\Type("object")
-     * @Store\StoreClass({
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\Creditcard",
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\RemotePaymentMethod"
-     * })
+     * @Store\Property(description="used payment method id")
+     * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal"})
+     * @Store\EntityMapping("paymentMethod.publicKey")
+     * @Assert\NotBlank()
+     * @Store\Entity()
      */
-    protected $paymentMethodInfo;
+    protected $paymentMethod;
 
     /**
      * @Store\Property(description="Allowed actions")
@@ -214,6 +204,7 @@ class BillingTransaction extends Element
     /**
      * @Store\Property(description="merchant change notification callback. Returned on demand, see propertiesToExpand.")
      * @Assert\Type("array")
+     * @Store\AllowedId("update")
      * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Common\UpdateNotification")
      */
     protected $updateNotifications;

@@ -68,6 +68,7 @@ class Customer extends BaseNewCustomer
     /**
      * @Store\Property(description="Subscription info attached to the invoice. Returned on demand, see propertiesToExpand.")
      * @Assert\Type("array")
+     * @Store\AllowedId("sale")
      * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Invoice\SubscriptionInfo")
      */
     protected $subscriptionInfo;
@@ -75,6 +76,7 @@ class Customer extends BaseNewCustomer
     /**
      * @Store\Property(description="Invoices. Returned on demand, see propertiesToExpand.")
      * @Assert\Type(type="array")
+     * @Store\AllowedId({"invoice"})
      * @Store\StoreClass({
      *      "PureBilling\Bundle\SDKBundle\Store\V1\Invoice\RecurringInvoice",
      *      "PureBilling\Bundle\SDKBundle\Store\V1\Invoice\Invoice"})
@@ -84,9 +86,8 @@ class Customer extends BaseNewCustomer
     /**
      * @Store\Property(description="Billings. Returned on demand, see propertiesToExpand.")
      * @Assert\Type(type="array")
-     * @Store\StoreClass({
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransaction"
-     * })
+     * @Store\AllowedId("billing")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransaction")
      */
     protected $billings;
 }
