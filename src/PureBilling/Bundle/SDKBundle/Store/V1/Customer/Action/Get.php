@@ -24,7 +24,7 @@ class Get extends ExpandableAction
      *                                        "invoices.updateNotifications",
      *                                        "invoices.billings",
      *                                        "billings",
-     *                                        "invoices.billings.updateNotifications"})
+     *                                        "invoices.billings.updateNotifications", "origin", "owner"})
      */
     protected $propertiesToExpand = array();
 }
