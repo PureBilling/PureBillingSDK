@@ -20,7 +20,7 @@ class Get extends ExpandableAction
      * @Store\Property(description="Some properties return a ID. If you want a full object, add the property path here")
      * @Assert\Type("array")
      * @Assert\Choice(multiple=true, choices={"subscriptionInfo",
-     *                                        "invoices",
+     *                                        "invoices", "invoices.supportInfo",
      *                                        "invoices.updateNotifications",
      *                                        "invoices.billings",
      *                                        "billings",
