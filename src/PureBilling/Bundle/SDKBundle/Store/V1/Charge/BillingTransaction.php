@@ -158,7 +158,8 @@ class BillingTransaction extends Element
 
     /**
      * @Store\Property(description="PSP transaction Info")
-     * @Assert\Type("object")
+     * @PBAssert\Type(type="id", idPrefixes={"billing"})
+     * @Store\EntityMapping("publicKey")
      * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\PSPTransactionInfo")
      * @Assert\NotBlank()
      */
@@ -208,6 +209,15 @@ class BillingTransaction extends Element
      * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Common\UpdateNotification")
      */
     protected $updateNotifications;
+
+    /**
+     * @Store\Property(description="Stats token. If not defined, use cookies")
+     * @Assert\Type("string")
+     * @Assert\NotBlank
+     * @Assert\Choice({"enabled", "disabled"})
+     * @Store\EntityMapping("strongAuthenticationString")
+     */
+    protected $strongAuthentication;
 
     public function setDetailledStatus($status)
     {

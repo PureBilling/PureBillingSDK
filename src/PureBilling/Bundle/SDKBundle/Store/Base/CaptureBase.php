@@ -66,6 +66,14 @@ abstract class CaptureBase extends Action
     protected $statsToken;
 
     /**
+     * @Store\Property(description="Stats token. If not defined, use cookies")
+     * @Assert\Type("string")
+     * @Assert\Choice({"auto", "enabled", "disabled"})
+     * @Assert\NotBlank()
+     */
+    protected $strongAuthentication = 'auto';
+
+    /**
      * @Store\Property(description="Key of the used payment form")
      * @Assert\Type("string")
      */

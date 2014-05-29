@@ -101,6 +101,15 @@ class Creditcard extends PaymentMethod
     protected $registrationIp;
 
     /**
+     * @Store\Property(description="Stats token. If not defined, use cookies")
+     * @Assert\Type("string")
+     * @Assert\NotBlank
+     * @Assert\Choice({"enabled", "disabled"})
+     * @Store\EntityMapping("strongAuthenticationString")
+     */
+    protected $strongAuthentication;
+
+    /**
      * return expiration date as string YYYY-MM-DD
      * where DD is always 01
      *
