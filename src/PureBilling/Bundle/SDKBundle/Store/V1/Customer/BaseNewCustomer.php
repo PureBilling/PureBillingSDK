@@ -10,14 +10,6 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 class BaseNewCustomer extends Element
 {
     /**
-     * @Store\Property(description="customer email")
-     * @Assert\Type("string")
-     * @Assert\Email()
-     * @Assert\NotBlank()
-     */
-    protected $email;
-
-    /**
      * @Store\Property(description="your user internal Id. if null at creation, pureBilling id is used")
      * @Assert\Type("string")
      */

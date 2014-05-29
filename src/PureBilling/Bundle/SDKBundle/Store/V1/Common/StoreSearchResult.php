@@ -29,7 +29,7 @@ class StoreSearchResult extends Element
      * @Store\Property(description="customer store with detailled information")
      * @Assert\Type("object")
      * @Assert\NotBlank()
-     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Customer\DetailledCustomer")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Customer\Customer")
      */
     protected $detailledCustomer;
 }
