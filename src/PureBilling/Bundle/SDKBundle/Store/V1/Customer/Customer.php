@@ -67,7 +67,8 @@ class Customer extends BaseNewCustomer
 
     /**
      * @Store\Property(description="Signup date of the customer")
-     * @Assert\Type("integer")
+     * @Store\EntityMapping("signupDateTime")
+     * @Assert\Type("datetime")
      */
     protected $signupDateTime;
 

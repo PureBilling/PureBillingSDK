@@ -43,6 +43,12 @@ class BaseNewCustomer extends Element
     protected $metadata = array();
 
     /**
+     * @Store\Property(description="Forced signup date")
+     * @Assert\Type(type="datetime")
+     */
+    protected $signupDateTime;
+
+    /**
      * Convert int ExternalId to string
      * @param $externalId
      */

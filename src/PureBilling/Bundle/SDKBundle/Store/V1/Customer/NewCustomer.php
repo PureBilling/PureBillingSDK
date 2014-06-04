@@ -14,11 +14,4 @@ class NewCustomer extends BaseNewCustomer
      * @Assert\NotBlank()
      */
     protected $email;
-
-    /**
-     * @Store\Property(description="Forced signup date")
-     * @Assert\Type(type="integer")
-     */
-    protected $signupDateTime;
-
 }
