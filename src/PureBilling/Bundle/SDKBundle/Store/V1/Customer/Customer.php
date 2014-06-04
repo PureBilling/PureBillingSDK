@@ -66,6 +66,12 @@ class Customer extends BaseNewCustomer
     protected $creationDateTime;
 
     /**
+     * @Store\Property(description="Signup date of the customer")
+     * @Assert\Type("integer")
+     */
+    protected $signupDateTime;
+
+    /**
      * @Store\Property(description="Subscription info attached to the invoice. Returned on demand, see propertiesToExpand.")
      * @Assert\Type("array")
      * @Store\AllowedId("sale")
