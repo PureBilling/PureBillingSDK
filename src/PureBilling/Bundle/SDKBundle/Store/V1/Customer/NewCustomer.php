@@ -16,9 +16,9 @@ class NewCustomer extends BaseNewCustomer
     protected $email;
 
     /**
-     * @Store\Property(description="Creation date time of the billing - can be forced")
-     * @Assert\Type(type="string")
+     * @Store\Property(description="Forced signup date")
+     * @Assert\Type(type="integer")
      */
-    protected $creationDateTime;
+    protected $signupDateTime;
 
 }
