@@ -33,7 +33,7 @@ class TypeValidator extends Assert\TypeValidator
 
     protected function checkDateTime($value, $type)
     {
-        if (!is_numeric($value)) {
+        if ($value && !is_numeric($value)) {
             $this->context->addViolation($type, array(
                 '{{ value }}' => $value,
                 '{{ type }}'  => 'integer',

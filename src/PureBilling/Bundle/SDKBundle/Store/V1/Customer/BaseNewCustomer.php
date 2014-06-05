@@ -43,8 +43,8 @@ class BaseNewCustomer extends Element
     protected $metadata = array();
 
     /**
-     * @Store\Property(description="Forced signup date")
-     * @Assert\Type(type="datetime")
+     * @Store\Property(description="Signup date, if not today")
+     * @PBAssert\Type(type="datetime")
      */
     protected $signupDateTime;
 
@@ -61,5 +61,4 @@ class BaseNewCustomer extends Element
     {
         $this->metadata = (array) $meta;
     }
-
 }

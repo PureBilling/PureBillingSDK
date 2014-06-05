@@ -62,15 +62,24 @@ class Customer extends BaseNewCustomer
      * @Store\Property(description="Creation date time of the billing")
      * @Store\EntityMapping("creationDateTime")
      * @PBAssert\Type(type="datetime")
+     * @Assert\NotBlank()
      */
     protected $creationDateTime;
 
     /**
      * @Store\Property(description="Signup date of the customer")
      * @Store\EntityMapping("signupDateTime")
-     * @Assert\Type("datetime")
+     * @PBAssert\Type("datetime")
+     * @Assert\NotBlank()
      */
     protected $signupDateTime;
+
+    /**
+     * @Store\Property(description="metadata you want to associate to the customer")
+     * @Store\EntityMapping("metadata")
+     * @Assert\Type("array")
+     */
+    protected $metadata = array();
 
     /**
      * @Store\Property(description="Subscription info attached to the invoice. Returned on demand, see propertiesToExpand.")
