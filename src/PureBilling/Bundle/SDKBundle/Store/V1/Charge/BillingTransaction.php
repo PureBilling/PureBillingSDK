@@ -211,13 +211,20 @@ class BillingTransaction extends Element
     protected $updateNotifications;
 
     /**
-     * @Store\Property(description="Stats token. If not defined, use cookies")
+     * @Store\Property(description="Strong Authentication enabled or not during the billing Operation")
      * @Assert\Type("string")
      * @Assert\NotBlank
      * @Assert\Choice({"enabled", "disabled"})
-     * @Store\EntityMapping("strongAuthenticationString")
+     * @Store\EntityMapping("strongAuthenticationStatusString")
      */
-    protected $strongAuthentication;
+    protected $strongAuthenticationStatus;
+
+    /**
+     * @Store\Property(description="merchant callback called if there is a redirection")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("merchantCallback")
+     */
+    protected $merchantCallback;
 
     public function setDetailledStatus($status)
     {

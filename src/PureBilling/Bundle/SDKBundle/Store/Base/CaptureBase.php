@@ -71,13 +71,19 @@ abstract class CaptureBase extends Action
      * @Assert\Choice({"auto", "enabled", "disabled"})
      * @Assert\NotBlank()
      */
-    protected $strongAuthentication = 'auto';
+    protected $strongAuthenticationStatus = 'auto';
 
     /**
      * @Store\Property(description="Key of the used payment form")
      * @Assert\Type("string")
      */
     protected $formToken;
+
+    /**
+     * @Store\Property(description="callback when a redirection is needed (like for 3D-secure). Ignored if paymentMethod is a NewPaymentForm store")
+     * @Assert\Type("string")
+     */
+    protected $merchantCallback;
 
     public function setAmount($amount)
     {
