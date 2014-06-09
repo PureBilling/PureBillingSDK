@@ -105,9 +105,9 @@ class Creditcard extends PaymentMethod
      * @Assert\Type("string")
      * @Assert\NotBlank
      * @Assert\Choice({"enabled", "disabled"})
-     * @Store\EntityMapping("strongAuthenticationString")
+     * @Store\EntityMapping("strongAuthenticationStatusString")
      */
-    protected $strongAuthentication;
+    protected $strongAuthenticationStatus;
 
     /**
      * return expiration date as string YYYY-MM-DD
