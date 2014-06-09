@@ -71,7 +71,7 @@ abstract class CaptureBase extends Action
      * @Assert\Choice({"auto", "enabled", "disabled"})
      * @Assert\NotBlank()
      */
-    protected $strongAuthenticationStatus = 'disabled';
+    protected $strongAuthenticationStatus = 'auto';
 
     /**
      * @Store\Property(description="Key of the used payment form")
