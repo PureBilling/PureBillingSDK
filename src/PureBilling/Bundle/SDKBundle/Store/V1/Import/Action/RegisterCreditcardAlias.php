@@ -7,7 +7,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use Symfony\Component\Validator\Constraints as Assert;
 
-class RegisterCreditcard extends Action
+class RegisterCreditcardAlias extends Action
 {
     /**
      * @Store\Property(description="creditcard bin")

@@ -17,6 +17,13 @@ class Invoice extends NewInvoice
     protected $id;
 
     /**
+     * @Store\Property(description="Invoice description")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("description")
+     */
+    protected $description;
+
+    /**
      * @Store\Property(description="country where the purchase is done")
      * @Assert\Type("string")
      * @PBAssert\Country()
