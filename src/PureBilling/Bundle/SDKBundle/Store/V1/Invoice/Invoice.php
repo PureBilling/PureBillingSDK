@@ -12,7 +12,6 @@ class Invoice extends NewInvoice
      * @Store\Property(description="Invoice id")
      * @PBAssert\Type(type="id", idPrefixes={"invoice"})
      * @Assert\NotBlank()
-     * @Store\Entity()
      */
     protected $id;
 
@@ -28,7 +27,7 @@ class Invoice extends NewInvoice
      * @Assert\Type("string")
      * @PBAssert\Country()
      * @Assert\NotBlank()
-     * @Store\EntityMapping("saletransaction.country.id")
+     * @Store\EntityMapping("saletransaction.country.iso2")
      */
     protected $country;
 
@@ -36,7 +35,7 @@ class Invoice extends NewInvoice
      * @Store\Property(description="invoice currency")
      * @Assert\Type("string")
      * @Assert\Currency()
-     * @Store\EntityMapping("saletransaction.currency.id")
+     * @Store\EntityMapping("saletransaction.currency.iso2")
      * @Assert\NotBlank()
      */
     protected $currency;
@@ -45,7 +44,6 @@ class Invoice extends NewInvoice
      * @Store\Property(description="customer associated to the invoice")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
      * @Store\EntityMapping("saleTransaction.customer.publicKey")
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $customer;
@@ -70,7 +68,7 @@ class Invoice extends NewInvoice
     /**
      * @Store\Property(description="invoice detailled status")
      * @Assert\Type("string")
-     * @Store\EntityMapping("workflowState")
+     * @Store\EntityMapping("pureBillingWorkflowState")
      * @Assert\Choice({"autocancelled", "cancelled", "collected", "collecting", "recovering", "manualrecovery"})
      * @Assert\NotBlank()
      */
@@ -133,12 +131,14 @@ class Invoice extends NewInvoice
     /**
      * @Store\Property(description="Current payment method attached to the invoice")
      * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal"})
+     * @Store\EntityMapping("saleTransaction.paymentMethod.publicKey")
      */
     protected $paymentMethod = null;
 
     /**
      * @Store\Property(description="due date of the invoice")
      * @PBAssert\Type(type="datetime")
+     * @Store\EntityMapping("dueDate")
      * @Assert\NotNull()
      */
     protected $dueDate;
@@ -164,10 +164,20 @@ class Invoice extends NewInvoice
      */
     protected $supportInfo;
 
-    public function setDetailledStatus($dStatus)
-    {
-        $this->detailledStatus = strtolower($dStatus);
-    }
+    /**
+     * @Store\Property(description="metadata you want to associate to the invoice")
+     * @Assert\Type("array")
+     * @Store\EntityMapping("saleTransaction.metadata")
+     */
+    protected $metadata = array();
+
+    /**
+     * @Store\Property(description="customer ip during the purchase")
+     * @Assert\Type("string")
+     * @Assert\Ip()
+     * @Store\EntityMapping("saleTransaction.originIp")
+     */
+    protected $ip;
 
     public function setTotalAmount($amount)
     {

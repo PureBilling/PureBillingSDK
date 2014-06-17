@@ -12,7 +12,6 @@ class DailyExport extends Element
     /**
      * @Store\Property(description="export id")
      * @PBAssert\Type(type="id", idPrefixes={"dailyexport"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $id;

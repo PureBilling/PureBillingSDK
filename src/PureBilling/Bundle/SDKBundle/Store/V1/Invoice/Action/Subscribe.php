@@ -12,7 +12,6 @@ class Subscribe extends Action
     /**
      * @Store\Property(description="customer id")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $customer;
@@ -21,7 +20,6 @@ class Subscribe extends Action
      * @Store\Property(description="origin of the invoice. if null, default one is used")
      * @PBAssert\Type(type="id", idPrefixes={"origin"})
      * @Assert\NotBlank()
-     * @Store\Entity()
      */
     protected $origin;
 
@@ -36,7 +34,6 @@ class Subscribe extends Action
      * @Store\Property(description="country where the purchase is done")
      * @Assert\Type("string")
      * @PBAssert\Country()
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $country;
@@ -53,7 +50,6 @@ class Subscribe extends Action
      * @Store\Property(description="invoice currency")
      * @Assert\Type("string")
      * @Assert\Currency()
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $currency;
@@ -84,7 +80,6 @@ class Subscribe extends Action
     /**
      * @Store\Property(description="Recurring offer to use (only indicativo, values are overwritten.")
      * @PBAssert\Type(type="id", idPrefixes={"offer"})
-     * @Store\Entity()
      * @Assert\NotNull()
      */
     protected $offer;
@@ -93,7 +88,6 @@ class Subscribe extends Action
      * @Store\Property(description="Payment Service Provider Account to use. if NULL, use the backoffice configuration")
      * @PBAssert\Type(type="id", idPrefixes={"pspa"})
      * @Assert\NotNull()
-     * @Store\Entity()
      */
     protected $PSPAccount = null;
 
@@ -101,7 +95,6 @@ class Subscribe extends Action
      * @Store\Property(description="billing method to use to bill the invoice. Should be a ID or a newCreditcard store.")
      * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus"})
      * @Assert\NotBlank()
-     * @Store\Entity()
      */
     protected $paymentMethod;
 }

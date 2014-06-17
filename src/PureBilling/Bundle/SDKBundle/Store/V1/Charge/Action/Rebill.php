@@ -13,7 +13,6 @@ class Rebill extends Action
      * @Store\Property(description="billing Transaction to refund")
      * @PBAssert\Type(type="id", idPrefixes={"billing"})
      * @Assert\NotNull()
-     * @Store\Entity()
      */
 
     protected $billingTransaction;

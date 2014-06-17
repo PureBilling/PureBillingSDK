@@ -12,7 +12,6 @@ class CancelAuthorization extends Action
     /**
      * @Store\Property(description="Previously authorized billingTransaction to cancel")
      * @PBAssert\Type(type="id", idPrefixes={"billing"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $billingTransaction;
@@ -20,7 +19,6 @@ class CancelAuthorization extends Action
     /**
      * @Store\Property(description="cancellation message")
      * @Assert\Type("string")
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $message;

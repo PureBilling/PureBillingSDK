@@ -14,4 +14,22 @@ class InvoiceItem extends NewInvoiceItem
      * @Assert\NotBlank()
      */
     protected $id;
+
+    /**
+     * @Store\Property(description="positive integer. amount for 1 unit. 10 is 0.10 eur. taxes are included")
+     * @Assert\Type("float")
+     * @Assert\GreaterThan(0)
+     * @Assert\NotNull()
+     * @Store\EntityMapping("amount")
+     */
+    protected $amount;
+
+    /**
+     * @Store\Property(description="VAT rate to apply. 19.00 is a taxe rate of 19%")
+     * @Assert\Type("float")
+     * @Assert\Range(min=0, max=100)
+     * @Assert\NotBlank()
+     * @Store\EntityMapping("vatRate")
+     */
+    protected $vatRate = 0;
 }

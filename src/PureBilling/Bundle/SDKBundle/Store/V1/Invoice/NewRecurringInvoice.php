@@ -12,7 +12,6 @@ class NewRecurringInvoice extends Element
     /**
      * @Store\Property(description="customer id. If null, a new customer will be created")
      * @PBAssert\Type(type="id", idPrefixes={"sale"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $subscriptionInfo;

@@ -12,7 +12,6 @@ class Cancel extends Action
     /**
      * @Store\Property(description="invoice to cancel")
      * @PBAssert\Type(type="id", idPrefixes={"invoice"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $invoice;
@@ -20,7 +19,6 @@ class Cancel extends Action
     /**
      * @Store\Property(description="cancellation message")
      * @Assert\Type("string")
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $message;

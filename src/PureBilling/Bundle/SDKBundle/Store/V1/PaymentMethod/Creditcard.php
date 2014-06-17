@@ -18,7 +18,6 @@ class Creditcard extends PaymentMethod
     /**
      * @Store\Property(description="creditcard id")
      * @PBAssert\Type(type="id", idPrefixes={"creditcard"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $id;

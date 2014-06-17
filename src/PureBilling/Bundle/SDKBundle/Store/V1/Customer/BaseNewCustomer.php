@@ -2,9 +2,9 @@
 
 namespace PureBilling\Bundle\SDKBundle\Store\V1\Customer;
 
+use PureBilling\Bundle\SDKBundle\Store\Base\Element;
 use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
-use PureBilling\Bundle\SDKBundle\Store\Base\Element;
 use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
 class BaseNewCustomer extends Element
@@ -25,14 +25,12 @@ class BaseNewCustomer extends Element
     /**
      * @Store\Property(description="origin public key. If null, default owner origin be used.")
      * @PBAssert\Type(type="id", idPrefixes={"origin"})
-     * @Store\Entity()
      */
     protected $origin;
 
     /**
      * @Store\Property(description="owner public key. If null, default owner will be used.")
      * @PBAssert\Type(type="id", idPrefixes={"owner"})
-     * @Store\Entity()
      */
     protected $owner;
 

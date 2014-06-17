@@ -12,7 +12,6 @@ class Capture extends CaptureBase
     /**
      * @Store\Property(description="invoice to bill")
      * @PBAssert\Type(type="id", idPrefixes={"invoice"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $invoice;

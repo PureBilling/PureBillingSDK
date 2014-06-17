@@ -11,7 +11,6 @@ class RedirectRequest extends Element
 {
     /**
      * @Store\Property(description="billing transaction id")
-     * @Store\Entity()
      * @PBAssert\Type(type="id", idPrefixes={"redirect", "billing"})
      * @Assert\NotBlank()
      */

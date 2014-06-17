@@ -12,7 +12,6 @@ class InvoiceSupportInfo extends NewInvoiceSupportInfo
     /**
      * @Store\Property(description="id of the support info item")
      * @PBAssert\Type(type="id", idPrefixes={"invoicesupport"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $id;

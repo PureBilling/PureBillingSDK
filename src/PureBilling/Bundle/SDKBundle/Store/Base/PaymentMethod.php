@@ -10,7 +10,6 @@ class PaymentMethod extends Element
     /**
      * @Store\Property(description="payment method ID")
      * @PBAssert\Type(type="string")
-     * @Store\Entity()
      */
     protected $id;
 }

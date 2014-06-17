@@ -11,7 +11,6 @@ class BillingTransaction extends Element
 {
     /**
      * @Store\Property(description="billing transaction id")
-     * @Store\Entity()
      * @PBAssert\Type(type="id", idPrefixes={"billing"})
      * @Assert\NotBlank()
      */
@@ -46,7 +45,7 @@ class BillingTransaction extends Element
     /**
      * @Store\Property(description="billing transaction status")
      * @Assert\Type("string")
-     * @Store\EntityMapping("workflowStatus.name")
+     * @Store\EntityMapping("status")
      * @Assert\Choice({"running", "paid", "unpaid"})
      * @Assert\NotBlank()
      */
@@ -74,8 +73,6 @@ class BillingTransaction extends Element
      * @Assert\Type("string")
      * @Store\EntityMapping("currency.id")
      * @Assert\Currency()
-     * @Store\Entity()
-     * @Assert\NotBlank()
      */
     protected $currency;
 
@@ -91,7 +88,6 @@ class BillingTransaction extends Element
     /**
      * @Store\Property(description="invoice attached to the payment if any")
      * @PBAssert\Type(type="id", idPrefixes={"invoice"})
-     * @Store\Entity()
      * @Store\EntityMapping("invoiceTransaction.publicKey")
      */
     protected $invoice;
@@ -107,7 +103,6 @@ class BillingTransaction extends Element
      * @Store\Property(description="customer associated to the transaction")
      * @Store\EntityMapping("customer.publicKey")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $customer;
@@ -116,7 +111,6 @@ class BillingTransaction extends Element
      * @Store\Property(description="origin associated to the transaction")
      * @Store\EntityMapping("origin.publicKey")
      * @PBAssert\Type(type="id", idPrefixes={"origin"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $origin;
@@ -184,7 +178,6 @@ class BillingTransaction extends Element
      * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal"})
      * @Store\EntityMapping("paymentMethod.publicKey")
      * @Assert\NotBlank()
-     * @Store\Entity()
      */
     protected $paymentMethod;
 
@@ -231,31 +224,6 @@ class BillingTransaction extends Element
         if ($status == 'WaitingCollecting') $status = 'redirected';
 
         $this->detailledStatus = strtolower($status);
-    }
-
-    public function setStatus($status)
-    {
-        switch ($status) {
-            case 'success':
-                if ($this->getDetailledStatus() == 'collected' ||
-                    $this->getDetailledStatus() == 'refunded') {
-
-                    $this->status = 'paid';
-                    break;
-                }
-            case 'error':
-            case 'refused':
-            case 'exception':
-            case 'cancelled':
-                $this->status = 'unpaid';
-                break;
-            case 'running':
-                $this->status = 'running';
-                break;
-            default:
-                $this->status = $status;
-                break;
-        }
     }
 
     public function setErrorCode($code)

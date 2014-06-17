@@ -12,7 +12,6 @@ class NewInvoiceOfferItem extends InvoiceItemBase
     /**
      * @Store\Property(description="Offer Id.")
      * @PBAssert\Type(type="id", idPrefixes={"offer"})
-     * @Store\Entity()
      * @Assert\NotNull()
      */
     protected $offer;

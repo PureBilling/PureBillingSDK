@@ -12,7 +12,6 @@ class Unsubscribe extends Action
     /**
      * @Store\Property(description="subscription to stop")
      * @PBAssert\Type(type="id", idPrefixes={"sale"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $subscriptionInfo;
@@ -20,7 +19,6 @@ class Unsubscribe extends Action
     /**
      * @Store\Property(description="cancellation message")
      * @Assert\Type("string")
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $message;

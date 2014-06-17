@@ -11,7 +11,6 @@ class SubscriptionInfo extends Element
 {
     /**
      * @Store\Property(description="id of the sale")
-     * @Store\Entity()
      * @PBAssert\Type(type="id", idPrefixes={"sale"})
      * @Assert\NotBlank()
      */

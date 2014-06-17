@@ -12,7 +12,6 @@ class NewInvoice extends Element
     /**
      * @Store\Property(description="customer id. If null, a new customer will be created")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $customer;
@@ -20,14 +19,12 @@ class NewInvoice extends Element
     /**
      * @Store\Property(description="owner public key. If null, default owner will be used.")
      * @PBAssert\Type(type="id", idPrefixes={"owner"})
-     * @Store\Entity()
      */
     protected $owner;
 
     /**
      * @Store\Property(description="origin of the invoice. if null, default one is used")
      * @PBAssert\Type(type="id", idPrefixes={"origin"})
-     * @Store\Entity()
      */
     protected $origin;
 
@@ -41,7 +38,6 @@ class NewInvoice extends Element
      * @Store\Property(description="country where the purchase is done")
      * @Assert\Type("string")
      * @PBAssert\Country()
-     * @Store\Entity()
      */
     protected $country = '??';
 
@@ -49,7 +45,6 @@ class NewInvoice extends Element
      * @Store\Property(description="invoice currency")
      * @Assert\Type("string")
      * @Assert\Currency()
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $currency;

@@ -19,7 +19,6 @@ abstract class CaptureBase extends Action
      * @Store\Property(description="billing method to use to bill the invoice. Should be a ID or a newCreditcard store.")
      * @PBAssert\Type(type="id", idPrefixes={"temp-creditcard", "creditcard", "internetplus", "paypal"})
      * @Assert\NotBlank()
-     * @Store\Entity()
      * @Store\StoreClass({
      *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\Creditcard",
      * 		"PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\NewPaymentForm"
@@ -37,7 +36,6 @@ abstract class CaptureBase extends Action
     /**
      * @Store\Property(description="Payment Service Provider Account to use. if NULL, use the backoffice configuration")
      * @PBAssert\Type(type="id", idPrefixes={"pspa"})
-     * @Store\Entity()
      */
     protected $PSPAccount = null;
 

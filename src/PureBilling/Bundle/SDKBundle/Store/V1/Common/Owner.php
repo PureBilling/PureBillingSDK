@@ -12,7 +12,6 @@ class Owner extends Element
     /**
      * @Store\Property(description="owner id")
      * @PBAssert\Type(type="id", idPrefixes={"owner"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $id;

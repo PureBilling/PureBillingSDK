@@ -12,7 +12,6 @@ class Origin extends Element
     /**
      * @Store\Property(description="id of the origin")
      * @PBAssert\Type(type="id", idPrefixes={"origin"})
-     * @Store\Entity()
      * @Assert\NotBlank()
      */
     protected $id;

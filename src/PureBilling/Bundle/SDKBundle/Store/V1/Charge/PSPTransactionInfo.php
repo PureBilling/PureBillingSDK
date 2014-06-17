@@ -11,7 +11,6 @@ class PSPTransactionInfo extends Element
 {
     /**
      * @Store\Property(description="billing transaction id")
-     * @Store\Entity()
      * @PBAssert\Type(type="id", idPrefixes={"billing"})
      * @Assert\NotBlank()
      */
@@ -19,7 +18,6 @@ class PSPTransactionInfo extends Element
 
     /**
      * @Store\Property(description="billing transaction id")
-     * @Store\Entity()
      * @PBAssert\Type(type="id", idPrefixes={"pspa"})
      * @Store\EntityMapping("PSPAccount.publicKey")
      * @Assert\NotBlank()

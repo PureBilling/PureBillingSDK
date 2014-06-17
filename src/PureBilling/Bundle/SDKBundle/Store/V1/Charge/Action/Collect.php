@@ -13,7 +13,6 @@ class Collect extends Action
      * @Store\Property(description="Previously authorized billingTransaction to collect")
      * @PBAssert\Type(type="id", idPrefixes={"billing"})
      * @Assert\NotNull()
-     * @Store\Entity()
      */
 
     protected $billingTransaction;

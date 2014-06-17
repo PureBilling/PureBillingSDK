@@ -51,7 +51,6 @@ class RegisterCreditcardAlias extends Action
     /**
      * @Store\Property(description="customer associated to the creditcard.")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
-     * @Store\Entity()
      * @Assert\NotBlank
      */
     protected $customer;
@@ -73,7 +72,6 @@ class RegisterCreditcardAlias extends Action
 
     /**
      * @Store\Property(description="PSP where the creditcard is registred")
-     * @Store\Entity()
      * @PBAssert\Type(type="id", idPrefixes={"pspa"})
      * @Assert\NotBlank()
      */
