@@ -106,6 +106,13 @@ class SubscriptionInfo extends Element
     protected $detailledStatus;
 
     /**
+     * @Store\Property(description="Allowed actions")
+     * @Assert\Type("array")
+     * @Assert\Choice(choices={"unsubscribe"}, multiple=true)
+     */
+    protected $allowedActions = array();
+
+    /**
      * @Store\Property(description="merchant change notification callback")
      * @Assert\Type("array")
      */
