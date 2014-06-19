@@ -64,6 +64,15 @@ class SubscriptionInfo extends Element
     protected $invoices;
 
     /**
+     * @Store\Property(description="tasks of the subscription")
+     * @Assert\Type("array")
+     * @Store\StoreClass({
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\Common\Task"
+     * })
+     */
+    protected $tasks;
+
+    /**
      * @Store\Property(description="First invoice status created with the subscription")
      * @Assert\Type("string")
      * @Assert\NotBlank()
