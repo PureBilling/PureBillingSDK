@@ -2,12 +2,12 @@
 
 namespace PureBilling\Bundle\SDKBundle\Store\V1\Common;
 
+use PureBilling\Bundle\SDKBundle\Store\Base\Element;
 use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
-use PureMachine\Bundle\SDKBundle\Store\Base\BaseStore;
 use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
-class Task extends BaseStore
+class Task extends Element
 {
 
     /**

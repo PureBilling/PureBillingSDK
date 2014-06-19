@@ -66,6 +66,7 @@ class SubscriptionInfo extends Element
     /**
      * @Store\Property(description="tasks of the subscription")
      * @Assert\Type("array")
+     * @Store\AllowedId("task")
      * @Store\StoreClass({
      *      "PureBilling\Bundle\SDKBundle\Store\V1\Common\Task"
      * })

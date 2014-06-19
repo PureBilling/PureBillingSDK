@@ -90,7 +90,8 @@ class NewInvoice extends Element
      * @Assert\Choice(multiple=true, choices={"updateNotifications",
      *                                        "supportInfo",
      *                                        "customer",
-     *                                        "origin", "billings", "subscriptionInfo"})
+     *                                        "origin", "billings",
+     *                                        "subscriptionInfo", "subscriptionInfo.tasks"})
      */
     protected $propertiesToExpand = array();
 
