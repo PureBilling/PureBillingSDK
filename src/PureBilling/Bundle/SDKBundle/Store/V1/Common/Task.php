@@ -35,7 +35,6 @@ class Task extends BaseStore
     /**
      * @Store\Property(description="last execution date time")
      * @PBAssert\Type(type="datetime")
-     * @Assert\NotNull()
      */
     protected $lastExecutionDateTime;
 
