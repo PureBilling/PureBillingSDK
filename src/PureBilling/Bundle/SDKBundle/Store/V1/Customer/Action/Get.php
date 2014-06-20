@@ -23,6 +23,7 @@ class Get extends ExpandableAction
      *                                        "invoices", "invoices.supportInfo",
      *                                        "invoices.updateNotifications",
      *                                        "invoices.billings",
+     *                                        "paymentMethods",
      *                                        "billings", "invoices.billings.PSPTransactionInfo", "billings.PSPTransactionInfo",
      *                                        "invoices.billings.updateNotifications", "origin", "owner"})
      */

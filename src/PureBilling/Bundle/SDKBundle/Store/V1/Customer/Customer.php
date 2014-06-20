@@ -104,4 +104,16 @@ class Customer extends BaseNewCustomer
      * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransaction")
      */
     protected $billings;
+
+    /**
+     * @Store\Property(description="Billings. Returned on demand, see propertiesToExpand.")
+     * @Assert\Type(type="array")
+     * @Store\AllowedId({"creditcard","internetplus","paypal"})
+     * @Store\StoreClass({
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\Creditcard",
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\NewPaymentForm",
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\RemotePaymentMethod"
+     * })
+     */
+    protected $paymentMethods;
 }
