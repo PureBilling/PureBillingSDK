@@ -144,6 +144,28 @@ class Invoice extends NewInvoice
     protected $dueDate;
 
     /**
+     * @Store\Property(description="creation date of the invoice")
+     * @PBAssert\Type(type="datetime")
+     * @Store\EntityMapping("creationDateTime")
+     * @Assert\NotNull()
+     */
+    protected $creationDateTime;
+
+    /**
+     * @Store\Property(description="last error code")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("errorCode")
+     */
+    protected $errorCode;
+
+    /**
+     * @Store\Property(description="Message associated to the last operation (usually a error message)")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("errorMessage")
+     */
+    protected $message;
+
+    /**
      * @Store\Property(description="If defined, every invoice change will be notified to this callback Url")
      * @Assert\Type("string")
      * @Store\EntityMapping("notificationCallbackUrl")
