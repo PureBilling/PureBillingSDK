@@ -118,6 +118,20 @@ class SubscriptionInfo extends Element
      */
     protected $updateNotifications;
 
+    /**
+     * @Store\Property(description="start time of the subscription")
+     * @PBAssert\Type(type="datetime")
+     * @Store\EntityMapping("startDatetime")
+     */
+    protected $startDate;
+
+    /**
+     * @Store\Property(description="end time of the subscription")
+     * @PBAssert\Type(type="datetime")
+     * @Store\EntityMapping("endDatetime")
+     */
+    protected $endDate;
+
     public function setDetailledStatus($dStatus)
     {
         $this->detailledStatus = strtolower($dStatus);
