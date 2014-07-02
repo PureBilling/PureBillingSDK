@@ -18,4 +18,10 @@ class InvoiceException extends Exception
 
     const INVOICE_004 = 'INVOICE_004';
     const INVOICE_004_MESSAGE = 'invoice cancellation error';
+
+    const INVOICE_005 = 'INVOICE_005';
+    const INVOICE_005_MESSAGE = 'invoice is closed';
+
+    const INVOICE_006 = 'INVOICE_006';
+    const INVOICE_006_MESSAGE = 'sale is closed';
 }
