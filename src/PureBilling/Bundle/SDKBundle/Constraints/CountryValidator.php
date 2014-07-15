@@ -12,6 +12,10 @@ class CountryValidator extends Assert\CountryValidator
             return;
         }
 
+        if ($value == 'EU') {
+            return;
+        }
+
         return parent::validate($value, $constraint);
     }
 }
