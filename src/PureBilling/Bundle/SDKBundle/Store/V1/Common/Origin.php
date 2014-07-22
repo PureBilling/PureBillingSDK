@@ -34,7 +34,7 @@ class Origin extends Element
 
     /**
      * @Store\Property(description="id of the origin")
-     * @PBAssert\Type(type="id", idPrefixes={"owner"})
+     * @PBAssert\Type(type="id", idPrefixes={"publickey"})
      * @Store\EntityMapping("owner.publicKey")
      * @Assert\NotBlank()
      */
