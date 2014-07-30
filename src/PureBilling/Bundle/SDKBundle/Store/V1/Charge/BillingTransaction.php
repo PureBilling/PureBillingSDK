@@ -123,6 +123,13 @@ class BillingTransaction extends Element
     protected $externalId;
 
     /**
+     * @Store\Property(description="ip of the charge")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("originIp")
+     */
+    protected $ip;
+
+    /**
      * @Store\Property(description="Creation date time of the billing")
      * @Store\EntityMapping("creationDateTime")
      * @PBAssert\Type(type="datetime")
