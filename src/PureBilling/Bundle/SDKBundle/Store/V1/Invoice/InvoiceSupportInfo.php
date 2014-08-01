@@ -24,6 +24,13 @@ class InvoiceSupportInfo extends NewInvoiceSupportInfo
     protected $deliveryUrl;
 
     /**
+     * @Store\Property(description="invoice URL if any")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("invoiceUrl")
+     */
+    protected $invoiceUrl;
+
+    /**
      * @Store\Property(description="Invoice public key")
      * @Assert\Type("string")
      * @Store\EntityMapping("invoiceTransaction.publicKey")
