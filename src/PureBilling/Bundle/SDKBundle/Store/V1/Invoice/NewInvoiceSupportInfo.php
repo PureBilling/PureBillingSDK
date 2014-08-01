@@ -16,6 +16,12 @@ class NewInvoiceSupportInfo extends SupportInfoBase
     protected $deliveryUrl;
 
     /**
+     * @Store\Property(description="invoice URL if any")
+     * @Assert\Type("string")
+     */
+    protected $invoiceUrl;
+
+    /**
      * @Store\Property(description="Invoice public key")
      * @Assert\Type("string")
      * @Assert\NotBlank()
