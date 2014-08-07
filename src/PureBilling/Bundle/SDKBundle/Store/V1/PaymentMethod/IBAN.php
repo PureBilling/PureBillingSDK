@@ -35,6 +35,14 @@ class IBAN extends PaymentMethod
     protected $length;
 
     /**
+     * @Store\Property(description="Partial IBAN")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("partialIBAN")
+     * @Assert\NotBlank
+     */
+    protected $partialIban;
+
+    /**
      * @Store\Property(description="creditcard validity status")
      * @Assert\Type("string")
      * @Store\EntityMapping("statusString")
