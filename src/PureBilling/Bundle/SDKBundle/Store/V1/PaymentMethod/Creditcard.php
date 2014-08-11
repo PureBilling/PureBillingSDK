@@ -100,6 +100,31 @@ class Creditcard extends PaymentMethod
     protected $registrationIp;
 
     /**
+     * @Store\Property(description="Owner pan hash linked to the card")
+     * @Assert\Type("string")
+     * @Assert\NotBlank
+     * @Store\EntityMapping("ownerPanHash")
+     */
+    protected $ownerPanHash;
+
+    /**
+     * @Store\Property(description="Pan credit card hash")
+     * @Assert\Type("string")
+     * @Assert\NotBlank
+     * @Store\EntityMapping("panHash")
+     */
+    protected $panHash;
+
+    /**
+     * @Store\Property(description="Card length (pan)")
+     * @Assert\Type("integer")
+     * @Assert\Range(min=1, max=100)
+     * @Assert\NotBlank
+     * @Store\EntityMapping("cardLength")
+     */
+    protected $cardLength;
+
+    /**
      * @Store\Property(description="Stats token. If not defined, use cookies")
      * @Assert\Type("string")
      * @Assert\NotBlank
