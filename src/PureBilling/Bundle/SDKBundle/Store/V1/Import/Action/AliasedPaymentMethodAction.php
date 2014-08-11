@@ -18,11 +18,11 @@ class AliasedPaymentMethodAction extends Action
     protected $customer;
 
     /**
-     * @Store\Property(description="creditcard alias on PSP side (if not created by purebilling)")
+     * @Store\Property(description="payment alias on PSP side (if not created by purebilling)")
      * @PBAssert\Type(type="string")
      * @Assert\NotBlank()
      */
-    protected $PSPCreditcardAlias;
+    protected $PSPAlias;
 
     /**
      * @Store\Property(description="PSP where the creditcard is registred")
