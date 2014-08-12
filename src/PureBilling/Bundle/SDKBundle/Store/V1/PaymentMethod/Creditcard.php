@@ -32,6 +32,21 @@ class Creditcard extends PaymentMethod
     protected $bin;
 
     /**
+     * @Store\Property(description="pan length")
+     * @Assert\Type("numeric")
+     * @Assert\Length(min=1)
+     * @Store\EntityMapping("cardLength")
+     */
+    protected $cardLength;
+
+    /**
+     * @Store\Property(description="Pan has (for the owner)")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("ownerPanHash")
+     */
+    protected $ownerPanHash;
+
+    /**
      * @Store\Property(description="creditcard last 4 digits")
      * @Assert\Type("numeric")
      * @Assert\Length(min=4, max=4)
