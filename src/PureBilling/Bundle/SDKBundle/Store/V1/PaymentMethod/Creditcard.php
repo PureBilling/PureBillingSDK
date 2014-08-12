@@ -40,11 +40,11 @@ class Creditcard extends PaymentMethod
     protected $cardLength;
 
     /**
-     * @Store\Property(description="Pan has (for the owner)")
+     * @Store\Property(description="Pan hash")
      * @Assert\Type("string")
      * @Store\EntityMapping("ownerPanHash")
      */
-    protected $ownerPanHash;
+    protected $panHash;
 
     /**
      * @Store\Property(description="creditcard last 4 digits")
