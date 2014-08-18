@@ -18,6 +18,14 @@ class IBAN extends PaymentMethod
     protected $id;
 
     /**
+     * @Store\Property(description="iban hash")
+     * @Assert\Type("string")
+     * @Assert\NotBlank()
+     * @Store\EntityMapping("ownerIBANHash")
+     */
+    protected $ibanHash;
+
+    /**
      * @Store\Property(description="IBAN bic")
      * @Assert\Type("string")
      * @Assert\Length(min=1)
@@ -25,14 +33,6 @@ class IBAN extends PaymentMethod
      * @Assert\NotBlank
      */
     protected $bic;
-
-    /**
-     * @Store\Property(description="IBAN length")
-     * @Assert\Type("integer")
-     * @Store\EntityMapping("length")
-     * @Assert\NotBlank
-     */
-    protected $length;
 
     /**
      * @Store\Property(description="Partial IBAN")
