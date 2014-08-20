@@ -35,6 +35,14 @@ class IBAN extends PaymentMethod
     protected $bic;
 
     /**
+     * @Store\Property(description="Email linked to the IBAN payment")
+     * @Assert\Type("string")
+     * @Assert\Email()
+     * @Assert\NotBlank
+     */
+    protected $email;
+
+    /**
      * @Store\Property(description="Partial IBAN")
      * @Assert\Type("string")
      * @Store\EntityMapping("partialIBAN")
