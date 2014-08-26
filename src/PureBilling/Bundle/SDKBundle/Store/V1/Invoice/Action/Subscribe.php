@@ -93,7 +93,7 @@ class Subscribe extends Action
 
     /**
      * @Store\Property(description="billing method to use to bill the invoice. Should be a ID or a newCreditcard store.")
-     * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus"})
+     * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal", "iban"})
      * @Assert\NotBlank()
      */
     protected $paymentMethod;

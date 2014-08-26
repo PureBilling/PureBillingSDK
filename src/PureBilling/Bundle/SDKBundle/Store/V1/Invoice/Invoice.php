@@ -130,7 +130,7 @@ class Invoice extends NewInvoice
 
     /**
      * @Store\Property(description="Current payment method attached to the invoice")
-     * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal"})
+     * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal", "iban"})
      * @Store\EntityMapping("saleTransaction.paymentMethod.publicKey")
      */
     protected $paymentMethod = null;
