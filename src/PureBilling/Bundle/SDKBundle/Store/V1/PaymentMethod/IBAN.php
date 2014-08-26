@@ -35,6 +35,22 @@ class IBAN extends PaymentMethod
     protected $bic;
 
     /**
+     * @Store\Property(description="Firstname of the customer")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("firstname")
+     * @Assert\NotBlank
+     */
+    protected $firstname;
+
+    /**
+     * @Store\Property(description="Lastname of the customer")
+     * @Assert\Type("string")
+     * @Store\EntityMapping("lastname")
+     * @Assert\NotBlank
+     */
+    protected $lastname;
+
+    /**
      * @Store\Property(description="Email linked to the IBAN payment")
      * @Assert\Type("string")
      * @Assert\Email()
