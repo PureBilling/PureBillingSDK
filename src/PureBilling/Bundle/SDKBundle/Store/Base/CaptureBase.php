@@ -16,13 +16,13 @@ abstract class CaptureBase extends Action
     protected $amount;
 
     /**
-     * @Store\Property(description="billing method to use to bill the invoice. Should be a ID or a newCreditcard store.")
+     * @Store\Property(description="Payment method to use to bill the invoice. If null, generate a new PaymentForm")
      * @PBAssert\Type(type="id", idPrefixes={"temp-creditcard", "creditcard", "internetplus", "paypal", "temp-iban", "iban"})
-     * @Assert\NotBlank()
      * @Store\StoreClass({
      *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\Creditcard",
      *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\IBAN",
-     * 		"PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\NewPaymentForm"
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\NewPaymentForm"
+
      * })
      */
     protected $paymentMethod;
