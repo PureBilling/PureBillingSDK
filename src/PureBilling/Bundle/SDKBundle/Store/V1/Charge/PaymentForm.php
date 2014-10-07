@@ -10,9 +10,8 @@ use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 class PaymentForm extends Element
 {
     /**
-     * @Store\Property(description="Charge token (to send to pb.js)")
+     * @Store\Property(description="Charge token (to send to pb.js). Null if merchant callback is defined.")
      * @PBAssert\Type(type="id", idPrefixes={"chargetoken"})
-     * @Assert\NotBlank()
      */
     protected $chargeToken;
 
