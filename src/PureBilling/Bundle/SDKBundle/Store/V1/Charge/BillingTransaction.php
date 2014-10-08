@@ -120,7 +120,6 @@ class BillingTransaction extends Element
      * @Store\Property(description="origin associated to the transaction")
      * @Store\EntityMapping("formToken")
      * @PBAssert\Type(type="id", idPrefixes={"chargetoken"})
-     * @Assert\NotBlank()
      */
     protected $chargeToken;
 
