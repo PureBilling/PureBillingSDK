@@ -7,6 +7,14 @@ use Symfony\Component\Validator\Constraints as Assert;
 use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 use PureBilling\Bundle\SDKBundle\Store\Base\CaptureBase;
 
+/**
+ * Class Capture
+ *
+ * @method setCountry(string $country)
+ * @method setIp(string $ip)
+ * @method setOrigin(string $origin)
+ * @method setCustomer(string $customer)
+ */
 class Capture extends CaptureBase
 {
     /**

@@ -5,6 +5,18 @@ use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
+/**
+ * Class CaptureBase
+ * @package PureBilling\Bundle\SDKBundle\Store\Base
+ *
+ * @method setCurrency(string $currency)
+ * @method setPaymentMethod(string $paymentMethod)
+ * @method setPaymentMethodType(string $paymentMethodType)
+ * @method setPSPAccount(string $PSPAccount)
+ * @method setExternalId(string $ExternalId)
+ * @method setNotificationCallbackUrl(string $notificationCallbackUrl)
+ * @method setMerchantCallback(string $merchantCallback)
+ */
 abstract class CaptureBase extends Action
 {
     /**
@@ -84,8 +96,12 @@ abstract class CaptureBase extends Action
      */
     protected $merchantCallback;
 
+    /**
+     * @param $amount float
+     */
     public function setAmount($amount)
     {
         $this->amount = (float) $amount;
     }
 }
+

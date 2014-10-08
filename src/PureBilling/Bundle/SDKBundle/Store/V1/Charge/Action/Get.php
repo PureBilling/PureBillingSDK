@@ -7,6 +7,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
+/**
+ * Class Get
+ *
+ * @method setId(string $billing_transaction_id)
+ * @method setPropertyToExpand(array $propertiesToExpand)
+ */
 class Get extends ExpandableAction
 {
     /**
