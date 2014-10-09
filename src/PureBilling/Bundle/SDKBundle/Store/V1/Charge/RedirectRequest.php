@@ -24,6 +24,12 @@ class RedirectRequest extends Element
     protected $redirectUrl;
 
     /**
+     * @Store\Property(description="template to use for redirection")
+     * @Assert\Type("string")
+     */
+    protected $template;
+
+    /**
      * @Store\Property(description="all billing actions (succesfull or not)")
      * @PBAssert\Type(type="id", idPrefixes={"billing"})
      * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransaction")

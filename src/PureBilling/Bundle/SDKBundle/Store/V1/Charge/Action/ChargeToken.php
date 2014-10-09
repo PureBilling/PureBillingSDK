@@ -21,4 +21,10 @@ class ChargeToken extends Element
      * @PBAssert\Type(type="id", idPrefixes={"temp-creditcard", "temp-iban"})
      */
     protected $temporaryPaymentMethodToken;
+
+    /**
+     * @Store\Property(description="default callback to use if there is no merchant callback previously defined (internal)")
+     * @PBAssert\Type(type="string")
+     */
+    protected $defaultMerchantCallback;
 }
