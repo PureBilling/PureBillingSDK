@@ -16,6 +16,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
  * @method setExternalId(string $ExternalId)
  * @method setNotificationCallbackUrl(string $notificationCallbackUrl)
  * @method setMerchantCallback(string $merchantCallback)
+ * @method setStrongAuthenticationStatus(string $mode)
  */
 abstract class CaptureBase extends Action
 {

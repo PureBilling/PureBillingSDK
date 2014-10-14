@@ -11,7 +11,6 @@ class NewPaymentForm extends Element
     /**
      * @Store\Property(description="callback we will call after creditcard from")
      * @Assert\Type("string")
-     * @Assert\NotBlank
      */
     protected $callback;
 }
