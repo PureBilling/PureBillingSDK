@@ -104,5 +104,15 @@ abstract class CaptureBase extends Action
     {
         $this->amount = (float) $amount;
     }
+
+    public function setChargeToken($token)
+    {
+        $this->formToken = $token;
+    }
+
+    public function getChargeToken()
+    {
+        return $this->formToken;
+    }
 }
 
