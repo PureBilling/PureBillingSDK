@@ -17,6 +17,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
  * @method setNotificationCallbackUrl(string $notificationCallbackUrl)
  * @method setMerchantCallback(string $merchantCallback)
  * @method setStrongAuthenticationStatus(string $mode)
+ * @method setChargeToken(string $chargeToken)
  */
 abstract class CaptureBase extends Action
 {
@@ -89,7 +90,7 @@ abstract class CaptureBase extends Action
      * @Store\Property(description="Key of the used payment form")
      * @Assert\Type("string")
      */
-    protected $formToken;
+    protected $chargeToken;
 
     /**
      * @Store\Property(description="callback when a redirection is needed (like for 3D-secure). Ignored if paymentMethod is a NewPaymentForm store")
@@ -103,16 +104,6 @@ abstract class CaptureBase extends Action
     public function setAmount($amount)
     {
         $this->amount = (float) $amount;
-    }
-
-    public function setChargeToken($token)
-    {
-        $this->formToken = $token;
-    }
-
-    public function getChargeToken()
-    {
-        return $this->formToken;
     }
 }
 
