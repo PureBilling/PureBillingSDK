@@ -7,6 +7,14 @@ use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
+/**
+ * Class ChargeToken
+ * @package PureBilling\Bundle\SDKBundle\Store\V1\Charge\Action
+ *
+ * @method setChargeToken(string $token)
+ * @method setTemporaryPaymentMethodToken(string $temporaryPaymentMethodToken)
+ * @method setDefaultMerchantCallbackn(string $defaultMerchantCallback)
+ */
 class ChargeToken extends Element
 {
     /**
