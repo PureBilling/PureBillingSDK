@@ -7,6 +7,42 @@ use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Store\Base\Element;
 use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
+/**
+ * Class BillingTransaction
+ * @package PureBilling\Bundle\SDKBundle\Store\V1\Charge
+ *
+ * @method getId()
+ * @method getPaymentMethodSubType()
+ * @method getPaymentMethodType()
+ * @method getBillingTransactionType()
+ * @method getStatus()
+ * @method getDetailledStatus()
+ * @method getAmount()
+ * @method getCurrency()
+ * @method getCountry()
+ * @method getInvoice()
+ * @method getParentBillingTransaction()
+ * @method getCustomer()
+ * @method getOrigin()
+ * @method getChargeToken()
+ * @method getExternalId()
+ * @method getIp()
+ * @method getCreationDateTime()
+ * @method getErrorCode()
+ * @method getMessage()
+ * @method getNotificationCallbackUrl()
+ * @method getPSPTransactionInfo()
+ * @method getShortDescription()
+ * @method getIsTest()
+ * @method getPaymentMethod()
+ * @method getAdditionalAuthenticationMethod()
+ * @method getPaymentMethodSource()
+ * @method getAllowedActions()
+ * @method getMetadata()
+ * @method getUpdateNotifications()
+ * @method getStrongAuthenticationStatus()
+ * @method getMerchantCallback()
+ */
 class BillingTransaction extends Element
 {
     /**
@@ -195,6 +231,23 @@ class BillingTransaction extends Element
      * @Assert\NotBlank()
      */
     protected $paymentMethod;
+
+    /**
+     * @Store\Property(description="if the payment method has been validated with one more stuff")
+     * @Assert\Type("string")
+     * @Assert\Choice(choices={"cvv"})
+     * @Store\EntityMapping("additionalAuthenticationMethodString")
+     */
+    protected $additionalAuthenticationMethod;
+
+    /**
+     * @Store\Property(description="payment method source. Can be PSP alias, PureBilling vault...")
+     * @Assert\Type("string")
+     * @Assert\Choice(choices={"pspalias", "vault", "unknown"})
+     * @Store\EntityMapping("paymentMethodSourceString")
+     * @Assert\NotBlank()
+     */
+    protected $paymentMethodSource;
 
     /**
      * @Store\Property(description="Allowed actions")
