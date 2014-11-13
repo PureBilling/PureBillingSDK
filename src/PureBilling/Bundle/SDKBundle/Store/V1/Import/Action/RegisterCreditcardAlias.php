@@ -11,7 +11,6 @@ class RegisterCreditcardAlias extends AliasedPaymentMethodAction
      * @Store\Property(description="creditcard bin")
      * @Assert\Type("numeric")
      * @Assert\Length(min=6, max=6)
-     * @Assert\NotBlank
      */
     protected $bin;
 
@@ -26,7 +25,6 @@ class RegisterCreditcardAlias extends AliasedPaymentMethodAction
     /**
      * @Store\Property(description="creditcard holer name")
      * @Assert\Type("string")
-     * @Assert\NotBlank
      */
     protected $holderName;
 

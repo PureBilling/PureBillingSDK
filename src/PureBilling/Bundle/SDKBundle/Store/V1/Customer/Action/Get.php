@@ -10,8 +10,8 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 class Get extends ExpandableAction
 {
     /**
-     * @Store\Property(description="customer id to retrieve")
-     * @PBAssert\Type(type="id", idPrefixes={"customer"})
+     * @Store\Property(description="Id or ExternalId of the customer to retrieve")
+     * @Assert\Type("string")
      * @Assert\NotBlank()
      */
     protected $id;

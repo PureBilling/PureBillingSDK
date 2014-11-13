@@ -7,6 +7,16 @@ use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
+/**
+ * Class BaseNewCustomer
+ * @package PureBilling\Bundle\SDKBundle\Store\V1\Customer
+ *
+ * @method setEmail(string $email);
+ * @method setIp(string $Ip);
+ * @method setOrigin(string $origin);
+ * @method setOwner(string $owner);
+ * @method setSignupDateTime(string $signupDateTime);
+ */
 class BaseNewCustomer extends Element
 {
     /**
