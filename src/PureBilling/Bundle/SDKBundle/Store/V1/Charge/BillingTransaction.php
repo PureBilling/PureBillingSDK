@@ -55,7 +55,7 @@ class BillingTransaction extends Element
     /**
      * @Store\Property(description="Payment method subtype associated to the billing")
      * @Assert\Type("string")
-     * @Store\EntityMapping("paymentMethodSubType.name")
+     * @Store\EntityMapping("paymentMethodSubTypeName")
      * @Assert\NotBlank()
      */
     protected $paymentMethodSubType;
@@ -63,7 +63,7 @@ class BillingTransaction extends Element
     /**
      * @Store\Property(description="used payment method name")
      * @Assert\Type("string")
-     * @Store\EntityMapping("PSPAccount.paymentMethodType.name")
+     * @Store\EntityMapping("PSPAccount.paymentMethodTypeName")
      * @Assert\Choice({"creditcard", "internetplus", "paypal", "iban"})
      * @Assert\NotBlank()
      */
@@ -218,9 +218,9 @@ class BillingTransaction extends Element
     protected $shortDescription;
 
     /**
-     * @Store\Property(description="Short description of billed item")
+     * @Store\Property(description="True if it's a test transaction")
      * @Assert\Type("boolean")
-     * @Store\EntityMapping("owner.isTest")
+     * @Store\EntityMapping("PSPAccount.isTestingAccount")
      */
     protected $isTest;
 

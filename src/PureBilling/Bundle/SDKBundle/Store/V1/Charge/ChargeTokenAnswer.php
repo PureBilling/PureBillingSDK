@@ -58,4 +58,3 @@ class ChargeTokenAnswer extends Element
      */
     protected $chargeToken;
 }
-

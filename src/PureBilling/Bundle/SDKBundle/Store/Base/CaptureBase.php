@@ -106,4 +106,3 @@ abstract class CaptureBase extends Action
         $this->amount = (float) $amount;
     }
 }
-

@@ -50,7 +50,7 @@ class Customer extends BaseNewCustomer
 
     /**
      * @Store\Property(description="customer owner public key.")
-     * @PBAssert\Type(type="id", idPrefixes={"publickey"})
+     * @PBAssert\Type(type="id", idPrefixes={"publickey","testpublickey"})
      * @Assert\NotBlank()
      * @Store\EntityMapping("owner.publicKey")
      */

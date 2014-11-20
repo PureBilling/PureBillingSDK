@@ -40,7 +40,7 @@ class BaseNewCustomer extends Element
 
     /**
      * @Store\Property(description="owner public key. If null, default owner will be used.")
-     * @PBAssert\Type(type="id", idPrefixes={"publickey"})
+     * @PBAssert\Type(type="id", idPrefixes={"publickey","testpublickey"})
      */
     protected $owner;
 
