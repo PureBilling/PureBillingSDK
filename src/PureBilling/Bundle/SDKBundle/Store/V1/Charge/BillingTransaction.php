@@ -259,7 +259,7 @@ class BillingTransaction extends Element
     /**
      * @Store\Property(description="Metadata")
      * @Assert\Type("array")
-     * @Store\EntityMapping("metadatas")
+     * @Store\EntityMapping("merchantMetadata")
      */
     protected $metadata =  array();
 

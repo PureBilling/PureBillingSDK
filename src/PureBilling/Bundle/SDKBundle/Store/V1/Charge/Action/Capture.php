@@ -14,6 +14,7 @@ use PureBilling\Bundle\SDKBundle\Store\Base\CaptureBase;
  * @method setIp(string $ip)
  * @method setOrigin(string $origin)
  * @method setCustomer(string $customer)
+ * @method setMetadata(array $metadata)
  */
 class Capture extends CaptureBase
 {
@@ -57,4 +58,9 @@ class Capture extends CaptureBase
      */
     protected $invoice;
 
+    /**
+     * @Store\Property(description="Metadata")
+     * @Assert\Type("array")
+     */
+    protected $metadata =  array();
 }
