@@ -7,17 +7,27 @@ use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 
 abstract class Element extends BaseStore
 {
+    const SDK_VERSION = "1.99.1";
+
     public function __construct($data=null)
     {
         $this->get_type();
         parent::__construct($data);
     }
+
     /**
      * @Store\Property(description="type of the current store")
      * @Assert\Type("string")
      * @Assert\NotBlank
      */
     protected $_type;
+
+    /**
+     * @Store\Property(description="Sdk Version")
+     * @Assert\Type("string")
+     * @Assert\NotBlank
+     */
+    protected $_sdkVersion = Element::SDK_VERSION;
 
     public function set_type($type) {}
     public function get_type()
