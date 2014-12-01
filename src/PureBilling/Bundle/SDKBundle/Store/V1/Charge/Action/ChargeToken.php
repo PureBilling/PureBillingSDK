@@ -35,4 +35,11 @@ class ChargeToken extends Element
      * @PBAssert\Type(type="string")
      */
     protected $defaultMerchantCallback;
+
+    /**
+     * @Store\Property(description="merchant public key")
+     * @PBAssert\Type(type="id", idPrefixes={"publickey", "testpublickey"})
+     * @Assert\NotBlank
+     */
+    protected $publicKey;
 }
