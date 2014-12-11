@@ -59,7 +59,6 @@ class Creditcard extends PaymentMethod
      * @Store\Property(description="creditcard holer name")
      * @Assert\Type("string")
      * @Store\EntityMapping("holderName")
-     * @Assert\NotBlank
      */
     protected $holderName;
 
