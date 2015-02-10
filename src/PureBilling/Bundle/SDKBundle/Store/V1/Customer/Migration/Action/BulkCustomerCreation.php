@@ -17,6 +17,13 @@ class BulkCustomerCreation extends BaseStore
     protected $migrationToken;
 
     /**
+     * @Store\Property(description="Platform origin identifier")
+     * @Assert\Type("string")
+     * @Assert\NotBlank()
+     */
+    protected $platformOrigin;
+
+    /**
      * @Store\Property(description="customers to create")
      * @Assert\Type("array")
      * @Assert\Count(min=1)
