@@ -37,7 +37,7 @@ class Creditcard extends PaymentMethod
      * @Assert\Length(min=1)
      * @Store\EntityMapping("cardLength")
      */
-    protected $cardLength;
+    protected $panLength;
 
     /**
      * @Store\Property(description="Pan hash")

@@ -15,6 +15,13 @@ class RegisterCreditcardAlias extends AliasedPaymentMethodAction
     protected $bin;
 
     /**
+     * @Store\Property(description="creditcard pan length")
+     * @Assert\Type("numeric")
+     * @Assert\NotBlank
+     */
+    protected $panLength;
+
+    /**
      * @Store\Property(description="creditcard last 4 digits")
      * @Assert\Type("numeric")
      * @Assert\Length(min=4, max=4)
