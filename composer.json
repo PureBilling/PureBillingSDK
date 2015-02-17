@@ -9,9 +9,9 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/validator": "2.3.*",
-        "symfony/intl": "~2.3",
-	    "symfony/event-dispatcher": "2.3.*",
+        "symfony/validator": ">=2.3",
+        "symfony/intl": ">=2.3",
+	    "symfony/event-dispatcher": ">=2.3",
         "doctrine/annotations": "~1.0",
         "doctrine/cache": "~1.0",
         "puremachine/sdk": "dev-master"
