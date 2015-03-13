@@ -1,4 +1,16 @@
-PureMachine SDK
-===============
+PureBilling SDK
+================
 
-work in progress.
+PureBilling SDK for PHP
+
+## ChangeLog
+
+### Master
+
+- Adding Paypal stores (using Braintree)
+- Adding cancelBillingTransaction store (to cancel running transaction)
+
+### V2.0.0
+
+
+- Initial release
