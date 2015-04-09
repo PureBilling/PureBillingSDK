@@ -7,6 +7,10 @@ PureBilling SDK for PHP
 
 ### Master
 
+- ...
+
+### V2.0.1
+
 - Adding Paypal stores (using Braintree)
 - Adding cancelBillingTransaction store (to cancel running transaction)
 
