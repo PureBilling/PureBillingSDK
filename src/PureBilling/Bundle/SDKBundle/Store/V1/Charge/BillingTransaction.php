@@ -137,6 +137,12 @@ class BillingTransaction extends Element
     protected $parentBillingTransaction;
 
     /**
+     * @Store\Property(description="children if any. Returned on demand, see propertiesToExpand.")
+     * @Assert\Type("array")
+     */
+    protected $childrenBillingTransactions;
+
+    /**
      * @Store\Property(description="customer associated to the transaction")
      * @Store\EntityMapping("customer.publicKey")
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
@@ -286,6 +292,13 @@ class BillingTransaction extends Element
      * @Store\EntityMapping("merchantCallback")
      */
     protected $merchantCallback;
+
+    /**
+     * @Store\Property(description="Option used to create the transaction")
+     * @Assert\Type("string")
+     * @Assert\Choice({"cascadeOnNewCard", "CascadeOnCardAlias", "MultiPSPCardRegistration"})
+     */
+    protected $option;
 
     public function setDetailledStatus($status)
     {

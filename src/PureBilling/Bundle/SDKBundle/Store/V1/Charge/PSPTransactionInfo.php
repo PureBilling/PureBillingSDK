@@ -72,4 +72,13 @@ class PSPTransactionInfo extends Element
      * @Store\EntityMapping("PSPErrorMessage")
      */
     protected $ErrorMessage;
+
+    /**
+     * @Store\Property(description="Options available for this PSP")
+     * @Assert\Type("array")
+     * @Assert\Choice({"cascadeOnNewCard", "CascadeOnCardAlias", "MultiPSPCardRegistration"})
+     */
+    protected $activeOptions;
+
+
 }
