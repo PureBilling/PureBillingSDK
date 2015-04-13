@@ -10,6 +10,7 @@ PureBilling SDK for PHP
 - Adding childrenBillingTransactions and option in BillingTransaction store
 - Adding activeOptions in PSPTransactionInfo store
 - Adding option childrenBillingTransactions in propertiesToExpand in charge/Get webService
+- Adding options store
 
 ### V2.0.1
 
