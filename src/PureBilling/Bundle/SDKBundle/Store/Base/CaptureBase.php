@@ -44,7 +44,7 @@ abstract class CaptureBase extends Action
     /**
      * @Store\Property(description="Payment method type to use, if null, bill with creditcard or the more accurate payment method regarding the paymentMethod")
      * @Assert\Type("string")
-     * @Assert\Choice({"creditcard", "internetplus", "paypal", "iban"})
+     * @Assert\Choice({"creditcard", "internetplus", "paypalBraintree", "iban"})
      */
     protected $paymentMethodType;
 
