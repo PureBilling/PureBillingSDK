@@ -295,8 +295,12 @@ class BillingTransaction extends Element
 
     /**
      * @Store\Property(description="Option used to create the transaction")
-     * @Assert\Type("string")
-     * @Assert\Choice({"cascadeOnNewCard", "CascadeOnCardAlias", "MultiPSPCardRegistration"})
+     * @PBAssert\Type(type="id", idPrefixes={"option"})
+     * @Store\StoreClass({
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\Option\CascadeNewCard",
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\Option\CascadeCardAlias",
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\Option\MultiPSPCardRegistration"
+     * })
      */
     protected $option;
 
