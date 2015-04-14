@@ -6,12 +6,19 @@ use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
-class CascadeNewCard extends NewCascadeNewCard
+class CascadeNewCard extends OptionBase
 {
     /**
-     * @Store\Property(description="option id")
-     * @PBAssert\Type(type="id", idPrefixes={"option"})
+     * @Store\Property(description="url to post")
+     * @Assert\Type("array")
      * @Assert\NotBlank()
      */
-    protected $id;
+    protected $PSPList = [];
+
+    /**
+     * @Store\Property(description="PSP Account public key to apply the rule")
+     * @PBAssert\Type(type="id", idPrefixes={"pspa"})
+     * @Assert\NotBlank()
+     */
+    protected $PSPAccount;
 }
