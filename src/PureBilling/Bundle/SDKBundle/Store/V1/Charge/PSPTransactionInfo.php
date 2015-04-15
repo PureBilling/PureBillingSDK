@@ -76,7 +76,6 @@ class PSPTransactionInfo extends Element
     /**
      * @Store\Property(description="Options available for this PSP")
      * @Assert\Type("array")
-     * @Assert\Choice({"CascadeOnNewCard", "CascadeOnCardAlias", "MultiPSPCardRegistration"})
      */
     protected $activeOptions;
 
