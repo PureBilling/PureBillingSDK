@@ -42,4 +42,11 @@ class ChargeToken extends Element
      * @Assert\NotBlank
      */
     protected $publicKey;
+
+    /**
+     * @Store\Property(description="language")
+     * @Assert\Language()
+     */
+    protected $language;
+
 }
