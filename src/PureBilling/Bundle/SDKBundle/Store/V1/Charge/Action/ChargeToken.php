@@ -26,7 +26,7 @@ class ChargeToken extends Element
 
     /**
      * @Store\Property(description="callback we will call after creditcard from")
-     * @PBAssert\Type(type="id", idPrefixes={"temp-creditcard", "temp-iban"})
+     * @PBAssert\Type(type="id", idPrefixes={"temp-creditcard", "temp-iban", "paypal-braintree-nonce"})
      */
     protected $temporaryPaymentMethodToken;
 
