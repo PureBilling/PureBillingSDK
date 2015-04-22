@@ -92,7 +92,7 @@ class BillingTransaction extends Element
      * @Assert\Type("string")
      * @Store\EntityMapping("workflowState")
      * @Assert\Choice({"cancelled", "collected", "collecting", "redirected", "authorized", "authorizedcancelled",
-     *                 "recovering", "refused", "error", "refunded"})
+     *                 "recovering", "refused", "error", "refunded", "transmitted"})
      * @Assert\NotBlank()
      */
     protected $detailledStatus;
