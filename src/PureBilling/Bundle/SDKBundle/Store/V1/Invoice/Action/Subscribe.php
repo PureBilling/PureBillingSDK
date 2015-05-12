@@ -57,7 +57,7 @@ class Subscribe extends Action
     /**
      * @Store\Property(description="Periodicity.")
      * @Assert\Type("string")
-     * @Assert\Choice({"monthly"})
+     * @Assert\Choice({"monthly","daily"})
      * @Assert\NotBlank()
      */
     protected $periodicity;
