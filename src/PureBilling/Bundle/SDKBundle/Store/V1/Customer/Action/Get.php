@@ -24,6 +24,7 @@ class Get extends ExpandableAction
      *                                        "invoices.billings",
      *                                        "paymentMethods",
      *                                        "billings", "invoices.billings.PSPTransactionInfo", "billings.PSPTransactionInfo",
+     *                                        "billings.paymentMethod", "billings.customer",
      *                                        "invoices.billings.updateNotifications", "origin", "owner"})
      */
     protected $propertiesToExpand = array();
