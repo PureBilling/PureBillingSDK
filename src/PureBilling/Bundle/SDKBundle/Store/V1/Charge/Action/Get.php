@@ -25,9 +25,13 @@ class Get extends ExpandableAction
     /**
      * @Store\Property(description="Some properties return a ID. If you want a full object, add the property path here")
      * @Assert\Type("array")
-     * @Assert\Choice(multiple=true, choices={"customer", "PSPTransactionInfo",
+     * @Assert\Choice(multiple=true, choices={"customer", "PSPTransactionInfo", "option",
      *                                        "invoice", "invoice.subscriptionInfo", "invoice.supportInfo",
-     *                                        "updateNotifications", "origin", "paymentMethod", "childrenBillingTransactions"})
+     *                                        "updateNotifications", "origin", "paymentMethod", "childrenBillingTransactions",
+     *                                        "childrenBillingTransactions.PSPTransactionInfo", "childrenBillingTransactions.PSPTransactionInfo",
+     *                                        "childrenBillingTransactions.customer", "childrenBillingTransactions.origin",
+     *                                        "childrenBillingTransactions.option"
+     *                                      })
      */
     protected $propertiesToExpand = array();
 }
