@@ -83,7 +83,7 @@ class Customer extends BaseNewCustomer
      * @Store\Property(description="Subscription info attached to the invoice. Returned on demand, see propertiesToExpand.")
      * @Assert\Type("array")
      * @Store\AllowedId("sale")
-     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Invoice\SubscriptionInfo")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Subscription\SubscriptionInfo")
      */
     protected $subscriptionInfo;
 

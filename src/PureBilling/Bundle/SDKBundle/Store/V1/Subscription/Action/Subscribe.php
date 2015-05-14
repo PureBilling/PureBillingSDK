@@ -1,6 +1,6 @@
 <?php
 
-namespace PureBilling\Bundle\SDKBundle\Store\V1\Invoice\Action;
+namespace PureBilling\Bundle\SDKBundle\Store\V1\Subscription\Action;
 
 use PureBilling\Bundle\SDKBundle\Store\Base\Action;
 use Symfony\Component\Validator\Constraints as Assert;
