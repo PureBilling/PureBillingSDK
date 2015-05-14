@@ -7,6 +7,11 @@ PureBilling SDK for PHP
 
 ### Master
 
+- ...
+
+### V2.0.2
+
+- Adding subscription namespace and moving subscription related store
 - Adding childrenBillingTransactions and option in BillingTransaction store
 - Adding activeOptions in PSPTransactionInfo store
 - Adding option childrenBillingTransactions in propertiesToExpand in charge/Get webService
