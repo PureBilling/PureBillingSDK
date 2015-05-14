@@ -19,16 +19,22 @@ class Subscribe extends Action
     /**
      * @Store\Property(description="origin of the invoice. if null, default one is used")
      * @PBAssert\Type(type="id", idPrefixes={"origin"})
-     * @Assert\NotBlank()
      */
     protected $origin;
 
     /**
-     * @Store\Property(description="your subscription externam Id")
+     * @Store\Property(description="your subscription external Id")
      * @Assert\Type("string")
      * @Assert\NotBlank()
      */
     protected $externalId;
+
+    /**
+     * @Store\Property(description="Short offer description")
+     * @Assert\Type("string")
+     * @Assert\NotBlank()
+     */
+    protected $shortOfferDescription;
 
     /**
      * @Store\Property(description="country where the purchase is done")
@@ -36,15 +42,22 @@ class Subscribe extends Action
      * @PBAssert\Country()
      * @Assert\NotBlank()
      */
-    protected $country;
+    protected $country = '??';
 
     /**
-     * @Store\Property(description="when the next invoice will be created")
+     * @Store\Property(description="Amount to bill each period")
      * @Assert\Type("float")
      * @Assert\GreaterThan(0)
      * @Assert\NotBlank()
      */
     protected $recurringAmount;
+
+    /**
+     * @Store\Property(description="First amount to bill, use recurringAmount in not defined")
+     * @Assert\Type("float")
+     * @Assert\GreaterThan(0)
+     */
+    protected $setupAmount;
 
     /**
      * @Store\Property(description="invoice currency")
@@ -55,12 +68,19 @@ class Subscribe extends Action
     protected $currency;
 
     /**
-     * @Store\Property(description="Periodicity.")
+     * @Store\Property(description="Periodicity Unit.")
      * @Assert\Type("string")
      * @Assert\Choice({"monthly","daily"})
      * @Assert\NotBlank()
      */
-    protected $periodicity;
+    protected $recurringPeriodUnit;
+
+    /**
+     * @Store\Property(description="Periodicity.")
+     * @Assert\Type("integer")
+     * @Assert\NotBlank()
+     */
+    protected $recurringPeriod = 1;
 
     /**
      * @Store\Property(description="when the next invoice will be created")
@@ -73,28 +93,18 @@ class Subscribe extends Action
      * @Store\Property(description="customer ip during the purchase")
      * @Assert\Type("string")
      * @Assert\Ip()
-     * @Assert\NotBlank()
      */
     protected $ip;
 
     /**
-     * @Store\Property(description="Recurring offer to use (only indicativo, values are overwritten.")
-     * @PBAssert\Type(type="id", idPrefixes={"offer"})
-     * @Assert\NotNull()
-     */
-    protected $offer;
-
-    /**
      * @Store\Property(description="Payment Service Provider Account to use. if NULL, use the backoffice configuration")
      * @PBAssert\Type(type="id", idPrefixes={"pspa"})
-     * @Assert\NotNull()
      */
-    protected $PSPAccount = null;
+    protected $PSPAccount;
 
     /**
-     * @Store\Property(description="billing method to use to bill the invoice. Should be a ID or a newCreditcard store.")
+     * @Store\Property(description="billing method to use to bill the invoice.")
      * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal", "iban"})
-     * @Assert\NotBlank()
      */
     protected $paymentMethod;
 }

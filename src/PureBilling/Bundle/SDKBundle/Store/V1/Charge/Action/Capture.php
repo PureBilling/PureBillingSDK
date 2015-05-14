@@ -19,6 +19,14 @@ use PureBilling\Bundle\SDKBundle\Store\Base\CaptureBase;
 class Capture extends CaptureBase
 {
     /**
+     * @Store\Property(description="amount to bill. 5.00 for euro will bill 5.00 EUR.")
+     * @Assert\Type("float")
+     * @Assert\GreaterThan(0)
+     * @Assert\NotBlank()
+     */
+    protected $amount;
+
+    /**
      * @Store\Property(description="Purchase country. If null, we try to find it using card registration information", recommended=true)
      * @Assert\Type("string")
      * @PBAssert\Country()
@@ -63,4 +71,12 @@ class Capture extends CaptureBase
      * @Assert\Type("array")
      */
     protected $metadata =  array();
+
+    /**
+     * @param $amount float
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = (float) $amount;
+    }
 }

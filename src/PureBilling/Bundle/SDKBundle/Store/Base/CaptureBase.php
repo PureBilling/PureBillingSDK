@@ -22,14 +22,6 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 abstract class CaptureBase extends Action
 {
     /**
-     * @Store\Property(description="amount to bill. 5.00 for euro will bill 5.00 EUR.")
-     * @Assert\Type("float")
-     * @Assert\GreaterThan(0)
-     * @Assert\NotBlank()
-     */
-    protected $amount;
-
-    /**
      * @Store\Property(description="Payment method to use to bill the invoice. If null, generate a new PaymentForm")
      * @PBAssert\Type(type="id", idPrefixes={"temp-creditcard", "creditcard", "internetplus", "paypal", "temp-iban", "iban"})
      * @Store\StoreClass({
@@ -97,12 +89,4 @@ abstract class CaptureBase extends Action
      * @Assert\Type("string")
      */
     protected $merchantCallback;
-
-    /**
-     * @param $amount float
-     */
-    public function setAmount($amount)
-    {
-        $this->amount = (float) $amount;
-    }
 }

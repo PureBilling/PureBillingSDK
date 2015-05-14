@@ -10,6 +10,14 @@ use PureBilling\Bundle\SDKBundle\Store\Base\CaptureBase;
 class Capture extends CaptureBase
 {
     /**
+     * @Store\Property(description="amount to bill. 5.00 for euro will bill 5.00 EUR.")
+     * @Assert\Type("float")
+     * @Assert\GreaterThan(0)
+     * @Assert\NotBlank()
+     */
+    protected $amount;
+
+    /**
      * @Store\Property(description="invoice to bill")
      * @PBAssert\Type(type="id", idPrefixes={"invoice"})
      * @Assert\NotBlank()
@@ -22,4 +30,12 @@ class Capture extends CaptureBase
      * @Assert\NotNull()
      */
     protected $automaticRecovery = false;
+
+    /**
+     * @param $amount float
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = (float) $amount;
+    }
 }
