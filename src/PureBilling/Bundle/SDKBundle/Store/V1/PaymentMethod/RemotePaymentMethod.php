@@ -20,7 +20,6 @@ class RemotePaymentMethod extends PaymentMethod
      * @Store\Property(description="callback we will call after creditcard from")
      * @Assert\Type("string")
      * @Store\EntityMapping("callback")
-     * @Assert\NotBlank
      */
     protected $callback;
 
