@@ -52,6 +52,7 @@ class IBAN extends PaymentMethod
 
     /**
      * @Store\Property(description="Email linked to the IBAN payment")
+     * @Store\EntityMapping("email")
      * @Assert\Type("string")
      * @Assert\Email()
      * @Assert\NotBlank
