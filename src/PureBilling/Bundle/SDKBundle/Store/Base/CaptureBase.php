@@ -89,4 +89,16 @@ abstract class CaptureBase extends Action
      * @Assert\Type("string")
      */
     protected $merchantCallback;
+
+    /**
+     * @Store\Property(description="session token")
+     * @Assert\Type(type="string")
+     */
+    protected $sessionToken;
+
+    /**
+     * @Store\Property(description="browser token")
+     * @Assert\Type(type="string")
+     */
+    protected $browserToken;
 }
