@@ -50,4 +50,16 @@ class ChargeToken extends Element
      */
     protected $language;
 
+    /**
+     * @Store\Property(description="session token")
+     * @Assert\Type(type="string")
+     */
+    protected $sessionToken;
+
+    /**
+     * @Store\Property(description="browser token")
+     * @Assert\Type(type="string")
+     */
+    protected $browserToken;
+
 }
