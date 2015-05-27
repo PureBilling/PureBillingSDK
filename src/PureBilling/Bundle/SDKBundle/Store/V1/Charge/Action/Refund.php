@@ -35,4 +35,30 @@ class Refund extends Action
      * @Assert\GreaterThan(0)
      */
     protected $amount;
+
+    /**
+     * @Store\Property(description="Callback url")
+     * @Assert\Type("string")
+     */
+    protected $notificationCallbackUrl;
+
+    /**
+     * @Store\Property(description="refund country")
+     * @Assert\Type("string")
+     * @PBAssert\Country()
+     */
+    protected $country;
+
+    /**
+     * @Store\Property(description="ip address")
+     * @Assert\Type("string")
+     */
+    protected $ip;
+
+    /**
+     * @Store\Property(description="metadata you want to associate to the refund")
+     * @Assert\Type("array")
+     */
+    protected $metadata = array();
+
 }
