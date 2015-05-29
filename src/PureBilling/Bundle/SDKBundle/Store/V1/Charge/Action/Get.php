@@ -30,8 +30,7 @@ class Get extends ExpandableAction
      *                                        "updateNotifications", "origin", "paymentMethod", "childrenBillingTransactions",
      *                                        "childrenBillingTransactions.PSPTransactionInfo", "childrenBillingTransactions.PSPTransactionInfo",
      *                                        "childrenBillingTransactions.customer", "childrenBillingTransactions.origin",
-     *                                        "childrenBillingTransactions.option"
-     *                                      })
+     *                                        "childrenBillingTransactions.option", "additionalInfo"})
      */
     protected $propertiesToExpand = array();
 }

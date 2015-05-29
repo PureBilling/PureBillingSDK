@@ -278,6 +278,13 @@ class BillingTransaction extends Element
     protected $updateNotifications;
 
     /**
+     * @Store\Property(description="extra information associated to the billing transaction")
+     * @Assert\Type("object")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransactionAdditionalInfo")
+     */
+    protected $additionalInfo;
+
+    /**
      * @Store\Property(description="Strong Authentication enabled or not during the billing Operation")
      * @Assert\Type("string")
      * @Assert\NotBlank
