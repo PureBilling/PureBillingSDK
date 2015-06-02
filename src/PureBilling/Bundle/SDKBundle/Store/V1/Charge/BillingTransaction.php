@@ -64,10 +64,18 @@ class BillingTransaction extends Element
      * @Store\Property(description="used payment method name")
      * @Assert\Type("string")
      * @Store\EntityMapping("PSPAccount.paymentMethodTypeName")
-     * @Assert\Choice({"creditcard", "internetplus", "paypal", "iban"})
+     * @Assert\Choice({"creditcard", "internetplus", "paypal", "iban", "paysafecard"})
      * @Assert\NotBlank()
      */
     protected $paymentMethodType;
+
+    /**
+     * @Store\Property(description="used payment method id")
+     * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal", "iban", "paysafecard"})
+     * @Store\EntityMapping("paymentMethod.publicKey")
+     * @Assert\NotBlank()
+     */
+    protected $paymentMethod;
 
     /**
      * @Store\Property(description="billing transaction type")
@@ -229,14 +237,6 @@ class BillingTransaction extends Element
      * @Store\EntityMapping("PSPAccount.isTestingAccount")
      */
     protected $isTest;
-
-    /**
-     * @Store\Property(description="used payment method id")
-     * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal", "iban"})
-     * @Store\EntityMapping("paymentMethod.publicKey")
-     * @Assert\NotBlank()
-     */
-    protected $paymentMethod;
 
     /**
      * @Store\Property(description="if the payment method has been validated with one more stuff")

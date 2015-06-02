@@ -9,6 +9,14 @@ PureBilling SDK for PHP
 
 - ...
 
+### V2.0.3
+
+- Adding laravel annotation loader
+- Adding ip, country and metadata to refund action
+- Adding sessionToken and sessionBrowser token to BillingTransaction
+- Adding Email into iban payment method
+- Adding cancelSubscriptionDate in Subscribe to allow to unsubscribe in the future
+
 ### V2.0.2
 
 - Adding subscription namespace and moving subscription related store
