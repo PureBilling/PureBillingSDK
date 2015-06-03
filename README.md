@@ -7,7 +7,9 @@ PureBilling SDK for PHP
 
 ### Master
 
-- ...
+### V2.0.4
+
+- fix deps issue
 
 ### V2.0.3
 
