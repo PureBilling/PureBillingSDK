@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a842e7042b8eb63f918c44bbfb95bff2",
+    "hash": "6d693eff9f27359b5a9caabe08bb6cd2",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -200,7 +200,7 @@
         },
         {
             "name": "puremachine/sdk",
-            "version": "dev-master",
+            "version": "V2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PureBilling/PureMachineSDK.git",
@@ -499,9 +499,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "puremachine/sdk": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
