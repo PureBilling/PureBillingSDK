@@ -113,4 +113,10 @@ class Subscribe extends Action
      * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal", "iban"})
      */
     protected $paymentMethod;
+
+    /**
+     * @Store\Property(description="Metadata copied to the first invoice")
+     * @Assert\Type("array")
+     */
+    protected $metadata =  array();
 }

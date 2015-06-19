@@ -126,6 +126,13 @@ class SubscriptionInfo extends Element
     protected $startDate;
 
     /**
+     * @Store\Property(description="Metadata")
+     * @Assert\Type("array")
+     * @Store\EntityMapping("metadataAsArray")
+     */
+    protected $metadata =  array();
+
+    /**
      * @Store\Property(description="end time of the subscription")
      * @PBAssert\Type(type="datetime")
      * @Store\EntityMapping("endDatetime")
