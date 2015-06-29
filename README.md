@@ -5,7 +5,10 @@ PureBilling SDK for PHP
 
 ## ChangeLog
 
-### Master
+### v2.0.5
+
+- Adding metadata to subscription
+- Adding notificationCallbackUrl to subscribe store
 
 ### V2.0.4
 
