@@ -119,4 +119,10 @@ class Subscribe extends Action
      * @Assert\Type("array")
      */
     protected $metadata =  array();
+
+    /**
+     * @Store\Property(description="If defined, every transaction change will be notified to this callback")
+     * @Assert\Type("string")
+     */
+    protected $notificationCallbackUrl;
 }
