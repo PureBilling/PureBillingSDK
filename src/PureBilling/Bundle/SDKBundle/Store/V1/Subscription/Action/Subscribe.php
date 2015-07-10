@@ -90,10 +90,10 @@ class Subscribe extends Action
     protected $firstBillingDate;
 
     /**
-     * @Store\Property(description="optional date of subscription end")
-     * @PBAssert\Type(type="datetime")
+     * @Store\Property(description="Number of cycles to bill")
+     * @Assert\Type("integer")
      */
-    protected $cancelSubscriptionDate;
+    protected $billingCycles;
 
         /**
      * @Store\Property(description="customer ip during the purchase")
