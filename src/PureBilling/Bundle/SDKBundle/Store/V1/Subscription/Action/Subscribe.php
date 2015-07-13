@@ -70,7 +70,7 @@ class Subscribe extends Action
     /**
      * @Store\Property(description="Periodicity Unit.")
      * @Assert\Type("string")
-     * @Assert\Choice({"monthly","daily","yearly","quarterly"})
+     * @Assert\Choice({"monthly","daily","yearly","quarterly", "manual"})
      * @Assert\NotBlank()
      */
     protected $recurringPeriodUnit;
