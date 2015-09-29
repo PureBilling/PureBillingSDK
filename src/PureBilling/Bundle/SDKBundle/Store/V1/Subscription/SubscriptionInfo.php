@@ -49,6 +49,12 @@ class SubscriptionInfo extends Element
     protected $externalId;
 
     /**
+     * @Store\Property(description="offerID defined by the merchant")
+     * @Assert\Type("string")
+     */
+    protected $offerId;
+
+    /**
      * @Store\Property(description="when the next invoice will be created")
      * @PBAssert\Type(type="string")
      * @Assert\Currency()

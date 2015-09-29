@@ -30,6 +30,12 @@ class Subscribe extends Action
     protected $externalId;
 
     /**
+     * @Store\Property(description="offerID (open string)")
+     * @Assert\Type("string")
+     */
+    protected $offerId;
+
+    /**
      * @Store\Property(description="Short offer description")
      * @Assert\Type("string")
      * @Assert\NotBlank()
