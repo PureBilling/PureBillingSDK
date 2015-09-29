@@ -51,6 +51,7 @@ class SubscriptionInfo extends Element
     /**
      * @Store\Property(description="offerID defined by the merchant")
      * @Assert\Type("string")
+     * @Store\EntityMapping("merchantOfferId")
      */
     protected $offerId;
 
