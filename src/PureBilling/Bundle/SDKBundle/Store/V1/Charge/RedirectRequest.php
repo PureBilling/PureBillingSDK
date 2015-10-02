@@ -24,6 +24,18 @@ class RedirectRequest extends Element
     protected $redirectUrl;
 
     /**
+     * @Store\Property(description="template witdh")
+     * @Assert\Type("integer")
+     */
+    protected $width;
+
+    /**
+     * @Store\Property(description="template height")
+     * @Assert\Type("integer")
+     */
+    protected $height;
+
+    /**
      * @Store\Property(description="template to use for redirection")
      * @Assert\Type("string")
      */
