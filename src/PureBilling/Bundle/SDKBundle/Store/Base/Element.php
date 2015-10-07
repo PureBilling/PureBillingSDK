@@ -7,7 +7,7 @@ use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 
 abstract class Element extends BaseStore
 {
-    const SDK_VERSION = "2.0.2";
+    const SDK_VERSION = "2.0.7";
 
     public function __construct($data=null)
     {

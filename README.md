@@ -5,6 +5,15 @@ PureBilling SDK for PHP
 
 ## ChangeLog
 
+### v2.0.7
+
+- Added width and height in RedirectRequest store
+- Added iDeal paymentMethodType
+- Added offerId in Subscribe action store
+- Added allowedAction in expended properties in various stores
+- New NotificationCallbackUpdate action store
+- New UpdateSubscription action store
+
 ### v2.0.6
 
 - Add yearly, manual and quaterly subscribe recurring period
