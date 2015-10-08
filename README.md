@@ -5,7 +5,7 @@ PureBilling SDK for PHP
 
 ## ChangeLog
 
-### master
+### v2.0.8
 
 - Add Subscription/Get action store
 - Add customer into SubscriptionInfo store
