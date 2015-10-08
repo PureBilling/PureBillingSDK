@@ -5,6 +5,11 @@ PureBilling SDK for PHP
 
 ## ChangeLog
 
+### master
+
+- Add Subscription/Get action store
+- Add customer into SubscriptionInfo store
+
 ### v2.0.7
 
 - Added width and height in RedirectRequest store

@@ -146,6 +146,14 @@ class SubscriptionInfo extends Element
      */
     protected $endDate;
 
+    /**
+     * @Store\Property(description="customer associated to the transaction")
+     * @Store\EntityMapping("customer.publicKey")
+     * @PBAssert\Type(type="id", idPrefixes={"customer"})
+     * @Assert\NotBlank()
+     */
+    protected $customer;
+
     public function setDetailledStatus($dStatus)
     {
         $this->detailledStatus = strtolower($dStatus);
