@@ -147,6 +147,8 @@ if (file_exists(__DIR__.'/vendor/autoload.php')) {
 
 function registerAnnotations($composerPath) {
     //Register annotations
+    Doctrine\Common\Annotations\AnnotationRegistry::registerLoader('class_exists');
+    
     Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
             'Symfony\Component\Validator',
             $composerPath.'/symfony/validator'
