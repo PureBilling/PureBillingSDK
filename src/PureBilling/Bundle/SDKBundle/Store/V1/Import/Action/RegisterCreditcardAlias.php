@@ -54,7 +54,7 @@ class RegisterCreditcardAlias extends AliasedPaymentMethodAction
     /**
      * @Store\Property(description="Creditcard registration ip.")
      * @Assert\Type("string")
-     * @Assert\Ip()
+     * @Assert\Ip(version="all")
      * @Assert\NotBlank
      */
     protected $registrationIp;

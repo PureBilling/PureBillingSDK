@@ -5,6 +5,10 @@ PureBilling SDK for PHP
 
 ## ChangeLog
 
+### master
+
+- Add Ip V6 support
+
 ### v2.0.8
 
 - Add Subscription/Get action store

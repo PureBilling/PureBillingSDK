@@ -104,7 +104,7 @@ class Subscribe extends Action
         /**
      * @Store\Property(description="customer ip during the purchase")
      * @Assert\Type("string")
-     * @Assert\Ip()
+     * @Assert\Ip(version="all")
      */
     protected $ip;
 

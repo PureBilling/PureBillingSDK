@@ -196,7 +196,7 @@ class Invoice extends NewInvoice
     /**
      * @Store\Property(description="customer ip during the purchase")
      * @Assert\Type("string")
-     * @Assert\Ip()
+     * @Assert\Ip(version="all")
      * @Store\EntityMapping("saleTransaction.originIp")
      */
     protected $ip;

@@ -36,7 +36,7 @@ class Capture extends CaptureBase
     /**
      * @Store\Property(description="Transaction source IP (used for fraud detection)", recommended=true)
      * @Assert\Type("string")
-     * @Assert\Ip()
+     * @Assert\Ip(version="all")
      */
     protected $ip;
 
