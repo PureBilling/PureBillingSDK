@@ -5,9 +5,11 @@ PureBilling SDK for PHP
 
 ## ChangeLog
 
-### master
+### v2.0.9
 
 - Add Ip V6 support
+- Update to PureMachine/SDK v2.0.6 to increase default timeout to 65s
+- Update dependencies to last versions
 
 ### v2.0.8
 
