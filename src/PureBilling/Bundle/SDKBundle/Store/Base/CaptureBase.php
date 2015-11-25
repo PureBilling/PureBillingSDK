@@ -24,7 +24,7 @@ abstract class CaptureBase extends Action
     /**
      * @Store\Property(description="Payment method to use to bill the invoice. If null, generate a new PaymentForm")
      * @PBAssert\Type(type="id", idPrefixes={"temp-creditcard", "creditcard", "internetplus", "paypal", "temp-iban",
-     *                                       "iban", "ideal"})
+     *                                       "iban", "ideal", "giropay", "sofort", "bankcontact"})
      * @Store\StoreClass({
      *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\Creditcard",
      *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\IBAN",
@@ -37,7 +37,7 @@ abstract class CaptureBase extends Action
     /**
      * @Store\Property(description="Payment method type to use, if null, bill with creditcard or the more accurate payment method regarding the paymentMethod")
      * @Assert\Type("string")
-     * @Assert\Choice({"creditcard", "internetplus", "paypalBraintree", "iban", "paysafecard", "ideal"})
+     * @Assert\Choice({"creditcard", "internetplus", "paypalBraintree", "iban", "paysafecard", "ideal", "giropay", "sofort", "bankcontact"})
      */
     protected $paymentMethodType;
 
