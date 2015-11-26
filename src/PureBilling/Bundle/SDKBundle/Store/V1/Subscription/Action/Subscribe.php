@@ -89,9 +89,8 @@ class Subscribe extends Action
     protected $recurringPeriod = 1;
 
     /**
-     * @Store\Property(description="when the next invoice will be created")
+     * @Store\Property(description="Should be defined if there is a trial period")
      * @PBAssert\Type(type="datetime")
-     * @Assert\NotBlank()
      */
     protected $firstBillingDate;
 
