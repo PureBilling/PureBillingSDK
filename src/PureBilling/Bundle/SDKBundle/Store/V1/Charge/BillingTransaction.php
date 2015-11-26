@@ -304,14 +304,11 @@ class BillingTransaction extends Element
 
     /**
      * @Store\Property(description="Option used to create the transaction")
-     * @PBAssert\Type(type="id", idPrefixes={"option"})
-     * @Store\StoreClass({
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\Option\CascadeNewCard",
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\Option\CascadeCardAlias",
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\Option\MultiPSPCardRegistration"
-     * })
+     * @Assert\Type("array")
+     * @Assert\Choice(choices={"newCardCascading", "cardAliasCascading", null}, multiple=true)
+     * @Store\EntityMapping("options")
      */
-    protected $option;
+    protected $options;
 
     public function setDetailledStatus($status)
     {
