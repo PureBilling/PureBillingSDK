@@ -5,6 +5,13 @@ PureBilling SDK for PHP
 
 ## ChangeLog
 
+### v2.0.10
+
+- Removed BillingTransaction->option field
+- Added BillingTransction->options fields
+- Ne payment method added: paysafecard, ideal, giropay, bankcontact, sofort
+- Subscribe->firstBillingDate is not mandatory anymore
+
 ### v2.0.9
 
 - Add Ip V6 support
