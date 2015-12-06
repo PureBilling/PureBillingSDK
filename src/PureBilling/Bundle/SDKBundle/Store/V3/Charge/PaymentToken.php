@@ -12,7 +12,7 @@ class PaymentToken extends BaseStoreV3
     /**
      * @Store\Property(description="Payment token")
      * @Assert\Type("string")
-     * @PBAssert\Type(type="id", idPrefixes={"payment"})
+     * @PBAssert\Type(type="id", idPrefixes={"paymenttoken"})
      * @Assert\NotBlank
      */
     protected $paymentToken;
