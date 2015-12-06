@@ -11,7 +11,8 @@ class RemotePaymentMethod extends PaymentMethod
 {
     /**
      * @Store\Property(description="Remote payment method ID")
-     * @PBAssert\Type(type="id", idPrefixes={"paypal", "internetplus"})
+     * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal", "iban", "paysafecard",
+     *                                       "ideal", "giropay", "sofort", "bcmc"})
      * @Assert\NotBlank
      */
     protected $id;
