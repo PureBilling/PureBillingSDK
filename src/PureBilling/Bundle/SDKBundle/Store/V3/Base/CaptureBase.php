@@ -39,7 +39,7 @@ abstract class CaptureBase extends BaseStoreV3
      * @Assert\Type("string")
      * @Assert\Choice({"creditcard", "internetplus", "paypalBraintree", "iban", "paysafecard", "ideal", "giropay", "sofort", "bcmc"})
      */
-    protected $paymentMethodType;
+    protected $paymentMethodType = "creditcard";
 
     /**
      * @Store\Property(description="Payment Service Provider Account to use. if NULL, use the backoffice configuration")

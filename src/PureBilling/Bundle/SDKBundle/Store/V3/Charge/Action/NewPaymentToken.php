@@ -25,4 +25,11 @@ class NewPaymentToken extends BaseStoreV3
      */
     protected $paymentMethodType;
 
+    /**
+     * @Store\Property(description="merchant public key")
+     * @PBAssert\Type(type="id", idPrefixes={"publickey", "testpublickey"})
+     * @Assert\NotBlank
+     */
+    protected $publicKey;
+
 }
