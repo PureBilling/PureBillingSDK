@@ -102,4 +102,10 @@ abstract class CaptureBase extends Action
      * @Assert\Type(type="string")
      */
     protected $browserToken;
+
+    /**
+     * @Store\Property(description="origin version (internal)")
+     * @Assert\Type(type="string")
+     */
+    protected $originVersion = "V1";
 }
