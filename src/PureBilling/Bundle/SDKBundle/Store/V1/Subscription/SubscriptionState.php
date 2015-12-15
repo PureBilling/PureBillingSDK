@@ -27,7 +27,7 @@ class SubscriptionState extends Element
     /**
      * @Store\Property(description="operation result")
      * @Assert\Type("string")
-     * @Assert\Choice({"cancelled"})
+     * @Assert\Choice({"cancelled", "already-cancelled"})
      * @Assert\NotBlank()
      */
     protected $result;
