@@ -5,6 +5,14 @@ PureBilling SDK for PHP
 
 ## ChangeLog
 
+### v2.0.11
+
+- Fix Ogone Collect missing paymentMethods
+- More v3 stores
+- Adding stores for CancelFromPSPId web service
+- Adding stores for CreatePaymentToken v3 web service
+- update dependencies
+
 ### v2.0.10
 
 - Removed BillingTransaction->option field
