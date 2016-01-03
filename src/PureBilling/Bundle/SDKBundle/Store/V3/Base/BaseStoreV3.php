@@ -19,9 +19,11 @@ class BaseStoreV3 extends BaseStore
 
     public function __construct($data=null)
     {
-        $this->_type = $this->_getStoreTypeV3();
         parent::__construct($data);
+        $this->_type = $this->_getStoreTypeV3();
     }
+
+    public function set_type($type) {}
 
     public function serialize($includePrivate=false, $includeInternal=true, $removeNullValues=true,
                               $dateAsISO8601=true)
@@ -34,7 +36,7 @@ class BaseStoreV3 extends BaseStore
         }
         unset($store->_className);
 
-
+        $store->_type = $this->_getStoreTypeV3();
         return $store;
     }
 
