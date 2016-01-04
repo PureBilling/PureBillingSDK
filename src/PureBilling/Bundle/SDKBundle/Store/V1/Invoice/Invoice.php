@@ -20,7 +20,7 @@ class Invoice extends NewInvoice
      * @Assert\Type("string")
      * @Store\EntityMapping("description")
      */
-    protected $description;
+    protected $description = "";
 
     /**
      * @Store\Property(description="country where the purchase is done")

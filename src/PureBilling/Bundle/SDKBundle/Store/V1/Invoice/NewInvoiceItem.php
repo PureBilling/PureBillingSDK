@@ -11,7 +11,6 @@ class NewInvoiceItem extends InvoiceItemBase
     /**
      * @Store\Property(description="Invoice item description")
      * @Assert\Type("string")
-     * @Assert\NotBlank()
      */
     protected $description;
 
@@ -26,7 +25,7 @@ class NewInvoiceItem extends InvoiceItemBase
     /**
      * @Store\Property(description="quantity of product sold. if amount is 100 and quantity is 2, invoice total will be 200. only 1 is supported for now")
      * @Assert\Type("integer")
-     * @Assert\Range(min=1, max=1)
+     * @Assert\Range(min=1)
      * @Assert\NotBlank()
      */
     protected $quantity = 1;

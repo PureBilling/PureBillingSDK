@@ -11,7 +11,7 @@ class UpdateNotification extends Element
 {
     /**
      * @Store\Property(description="id of the callback notification event")
-     * @PBAssert\Type(type="id", idPrefixes={"callback"})
+     * @PBAssert\Type(type="id", idPrefixes={"update"})
      * @Assert\NotBlank()
      */
     protected $id;
@@ -27,7 +27,7 @@ class UpdateNotification extends Element
 
     /**
      * @Store\Property(description="related store")
-     * @Assert\Type("id")
+     * @Assert\Type("string")
      * @Store\EntityMapping("storeId")
      * @Assert\NotBlank()
      */

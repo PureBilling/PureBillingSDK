@@ -13,19 +13,18 @@ class InvoiceItemBase extends Element
      * @Assert\Range(min=0, max=100)
      * @Assert\NotBlank()
      */
-    protected $vatRate = 0;
+    protected $vatRate = 0.00;
 
     /**
      * @Store\Property(description="VAT rate to apply. 19.00 is a taxe rate of 19%")
      * @Assert\Type("array")
-     * @Assert\NotBlank()
      */
     protected $metadata = array();
 
     /**
      * @Store\Property(description="quantity of product sold. only 1 is supported for now")
      * @Assert\Type("integer")
-     * @Assert\Range(min=1, max=1)
+     * @Assert\Range(min=1)
      * @Assert\NotBlank()
      */
     protected $quantity = 1;
