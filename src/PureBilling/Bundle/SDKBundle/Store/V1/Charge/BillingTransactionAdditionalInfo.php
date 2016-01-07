@@ -20,5 +20,4 @@ class BillingTransactionAdditionalInfo extends Element
      * @Assert\Type(type="string")
      */
     protected $browserToken;
-
 }

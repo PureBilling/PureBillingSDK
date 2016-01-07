@@ -43,6 +43,11 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
  * @method getUpdateNotifications()
  * @method getStrongAuthenticationStatus()
  * @method getMerchantCallback()
+ *
+ * ChangeLog from V1
+ *
+ * paymentMethodSubType removed. Can be found inside paymentMethod store
+ * allowedActions has been moved to BillingTransactionAdditionalInfo
  */
 class BillingTransaction extends BaseStoreV3
 {
@@ -52,14 +57,6 @@ class BillingTransaction extends BaseStoreV3
      * @Assert\NotBlank()
      */
     protected $id;
-
-    /**
-     * @Store\Property(description="Payment method subtype associated to the billing")
-     * @Assert\Type("string")
-     * @Store\EntityMapping("paymentMethodSubTypeName")
-     * @Assert\NotBlank()
-     */
-    protected $paymentMethodSubType;
 
     /**
      * @Store\Property(description="used payment method name")
@@ -259,13 +256,6 @@ class BillingTransaction extends BaseStoreV3
     protected $paymentMethodSource;
 
     /**
-     * @Store\Property(description="Allowed actions")
-     * @Assert\Type("array")
-     * @Assert\Choice(choices={"refund"}, multiple=true)
-     */
-    protected $allowedActions = array();
-
-    /**
      * @Store\Property(description="Metadata")
      * @Assert\Type("array")
      * @Store\EntityMapping("merchantMetadata")
@@ -283,7 +273,7 @@ class BillingTransaction extends BaseStoreV3
     /**
      * @Store\Property(description="extra information associated to the billing transaction")
      * @Assert\Type("object")
-     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransactionAdditionalInfo")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V3\Charge\BillingTransactionAdditionalInfo")
      */
     protected $additionalInfo;
 
