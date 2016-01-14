@@ -18,6 +18,13 @@ class PureBilling
     private static $endPoint;
 
     /**
+     * Version
+     *
+     * @var string
+     */
+    private static $version = 'V1';
+
+    /**
      * Sets privatekey
      *
      * @param string $privateKey
@@ -38,6 +45,16 @@ class PureBilling
     }
 
     /**
+     * Sets endPoint
+     *
+     * @param string $endPoint
+     */
+    public static function setVersion($version)
+    {
+        self::$version = $version;
+    }
+
+    /**
      * Return privateKey
      *
      * @return string
@@ -55,6 +72,16 @@ class PureBilling
     public static function getEndPoint()
     {
         return self::$endPoint;
+    }
+
+    /**
+     * Return Version
+     *
+     * @return string
+     */
+    public static function getVersion()
+    {
+        return self::$version;
     }
 
 }
