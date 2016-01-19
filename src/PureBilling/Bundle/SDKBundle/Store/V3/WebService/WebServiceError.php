@@ -32,7 +32,7 @@ class WebServiceError extends BaseStoreV3
     protected $code;
 
     /**
-     * @Store\Property(description="Support ticket ID")
+     * @Store\Property(description="Support ticket ID", keepIfNull=true)
      * @Assert\Type("string")
      */
     protected $ticket;
