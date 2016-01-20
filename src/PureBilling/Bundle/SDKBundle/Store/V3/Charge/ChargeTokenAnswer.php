@@ -33,6 +33,14 @@ class ChargeTokenAnswer extends BaseStoreV3
     /**
      * @Store\Property(description="billing transaction status")
      * @Assert\Type("string")
+     * @Assert\Choice({"running", "paid", "unpaid"})
+     * @Assert\NotBlank()
+     */
+    protected $status;
+
+    /**
+     * @Store\Property(description="billing transaction status")
+     * @Assert\Type("string")
      */
     protected $sha;
 
