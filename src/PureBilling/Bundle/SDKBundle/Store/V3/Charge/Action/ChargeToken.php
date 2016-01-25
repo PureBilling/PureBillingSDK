@@ -10,7 +10,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
 /**
  * Class ChargeToken
- * @package PureBilling\Bundle\SDKBundle\Store\V1\Charge\Action
+ * @package PureBilling\Bundle\SDKBundle\Store\V3\Charge\Action
  *
  * @method setChargeToken(string $token)
  * @method setTemporaryPaymentMethodToken(string $temporaryPaymentMethodToken)

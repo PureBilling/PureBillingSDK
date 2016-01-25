@@ -45,7 +45,7 @@ class RedirectRequest extends BaseStoreV3
     /**
      * @Store\Property(description="all billing actions (succesfull or not)")
      * @PBAssert\Type(type="id", idPrefixes={"billing"})
-     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransaction")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V3\Charge\BillingTransaction")
      */
     protected $billingTransaction;
 

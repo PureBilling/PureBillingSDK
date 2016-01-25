@@ -26,9 +26,8 @@ abstract class CaptureBase extends BaseStoreV3
      * @PBAssert\Type(type="id", idPrefixes={"tempcreditcard", "creditcard", "internetplus", "paypal", "tempiban",
      *                                       "iban", "ideal", "giropay", "sofort", "bcmc"})
      * @Store\StoreClass({
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\Creditcard",
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\IBAN",
-     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\NewPaymentForm"
+     *      "PureBilling\Bundle\SDKBundle\Store\V3\PaymentMethod\Creditcard",
+     *      "PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod\IBAN"
 
      * })
      */

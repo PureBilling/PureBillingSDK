@@ -1,6 +1,6 @@
 <?php
 
-namespace PureBilling\Bundle\SDKBundle\Store\V1\PaymentMethod;
+namespace PureBilling\Bundle\SDKBundle\Store\V3\PaymentMethod;
 
 use PureBilling\Bundle\SDKBundle\Store\V3\Base\PaymentMethod;
 use Symfony\Component\Validator\Constraints as Assert;

@@ -10,7 +10,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
 /**
  * Class BillingTransaction
- * @package PureBilling\Bundle\SDKBundle\Store\V1\Charge
+ * @package PureBilling\Bundle\SDKBundle\Store\V3\Charge
  *
  * @method getId()
  * @method getPaymentMethodSubType()
