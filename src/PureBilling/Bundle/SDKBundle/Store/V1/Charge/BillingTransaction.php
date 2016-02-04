@@ -310,6 +310,13 @@ class BillingTransaction extends Element
      */
     protected $options;
 
+    /**
+     * @Store\Property(description="True if the source is Kyrpton-Client")
+     * @Assert\Type("boolean")
+     * @Store\EntityMapping("fromJsClient")
+     */
+    protected $fromJsClient;
+
     public function setDetailledStatus($status)
     {
         if ($status == 'WaitingCollecting') $status = 'redirected';

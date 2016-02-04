@@ -73,6 +73,12 @@ class Capture extends CaptureBase
     protected $metadata =  array();
 
     /**
+     * @Store\Property(description="Boolean flag set to true if the source is krypton-client")
+     * @Assert\Type("boolean")
+     */
+    protected $fromJsClient;
+
+    /**
      * @param $amount float
      */
     public function setAmount($amount)
