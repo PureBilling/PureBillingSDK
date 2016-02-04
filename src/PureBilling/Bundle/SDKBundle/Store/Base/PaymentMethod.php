@@ -12,4 +12,10 @@ class PaymentMethod extends Element
      * @PBAssert\Type(type="string")
      */
     protected $id;
+
+    /**
+     * @Store\Property(description="iframe allowed flag")
+     * @Assert\Type("boolean")
+     */
+    protected $allowIframe = true;
 }
