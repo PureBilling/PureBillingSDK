@@ -82,3 +82,20 @@ PureBilling SDK for PHP
 
 
 - Initial release
+
+## Testing
+
+### Requirements:
+
+* docker
+* docker-compose
+
+### Steps
+
+To run the unit tests. Build and run the *runner* container:
+
+```bash
+docker-compose build
+docker-compose up -d
+docker exec -ti purebilling-sdk-runner sh run_tests.sh
+```

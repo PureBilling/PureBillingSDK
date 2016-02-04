@@ -1,0 +1,5 @@
+runner:
+  build: ./docker/.
+  container_name: purebilling-sdk-runner
+  volumes:
+    - ".:/code"
