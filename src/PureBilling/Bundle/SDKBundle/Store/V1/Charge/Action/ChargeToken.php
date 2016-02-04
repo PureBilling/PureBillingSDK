@@ -62,4 +62,11 @@ class ChargeToken extends Element
      */
     protected $browserToken;
 
+    /**
+     * @Store\Property(description="Boolean flag set to true if the source is krypton-client")
+     * @Assert\Type("boolean")
+     * @Assert\NotNull()
+     */
+    protected $fromJsClient=false;
+
 }
