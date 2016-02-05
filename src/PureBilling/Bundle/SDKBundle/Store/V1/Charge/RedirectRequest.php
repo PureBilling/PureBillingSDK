@@ -48,6 +48,13 @@ class RedirectRequest extends Element
      */
     protected $billingTransaction;
 
+    /**
+     * @Store\Property(description="Boolean flag set to true if the redirect can be contained on a iframe")
+     * @Assert\Type("boolean")
+     * @Assert\NotNull()
+     */
+    protected $allowIframe=true;
+
     public function setBillingTransaction($bt)
     {
         $this->billingTransaction = $bt;
