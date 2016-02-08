@@ -195,14 +195,14 @@ class BillingTransaction extends BaseStoreV3
     protected $creationDateTime;
 
     /**
-     * @Store\Property(description="last error code")
+     * @Store\Property(description="last error code", keepIfNull=True)
      * @Assert\Type("string")
      * @Store\EntityMapping("errorCode")
      */
     protected $errorCode;
 
     /**
-     * @Store\Property(description="Message associated to the last operation (usually a error message)")
+     * @Store\Property(description="Message associated to the last operation (usually a error message)", keepIfNull=True)
      * @Assert\Type("string")
      * @Store\EntityMapping("errorMessage")
      */
@@ -310,7 +310,11 @@ class BillingTransaction extends BaseStoreV3
 
     public function setErrorCode($code)
     {
-        $this->errorCode =(string) $code;
+        if (is_null($code)) {
+            $this->errorCode = null;
+        } else {
+            $this->errorCode = (string)$code;
+        }
     }
 
     public function setCurrency($currency)
