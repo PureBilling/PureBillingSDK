@@ -53,7 +53,7 @@ class RedirectRequest extends Element
      * @Assert\Type("boolean")
      * @Assert\NotNull()
      */
-    protected $allowIframe=true;
+    protected $allowIFrame=true;
 
     public function setBillingTransaction($bt)
     {
