@@ -70,4 +70,10 @@ class ChargeToken extends BaseStoreV3
      */
     protected $fromJsClient=false;
 
+    /**
+     * @Store\Property(description="calback to use if not already defined on the token creation")
+     * @Assert\Type(type="string")
+     */
+    protected $merchantCallback;
+
 }
