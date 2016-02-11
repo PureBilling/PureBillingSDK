@@ -209,6 +209,12 @@ class BillingTransaction extends BaseStoreV3
     protected $message;
 
     /**
+     * @Store\Property(description="detailed message associated to the message", keepIfNull=True)
+     * @Assert\Type("string")
+     */
+    protected $detailedMessage;
+
+    /**
      * @Store\Property(description="merchant change notification callback Url")
      * @Assert\Type("string")
      * @Store\EntityMapping("notificationCallbackUrl")

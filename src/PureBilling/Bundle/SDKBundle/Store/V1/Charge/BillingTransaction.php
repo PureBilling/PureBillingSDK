@@ -319,7 +319,9 @@ class BillingTransaction extends Element
 
     public function setErrorCode($code)
     {
-        $this->errorCode =(string) $code;
+        if (is_scalar($code)) {
+            $this->errorCode = (string)$code;
+        }
     }
 
     public function setCurrency($currency)
