@@ -211,6 +211,7 @@ class BillingTransaction extends BaseStoreV3
     /**
      * @Store\Property(description="detailed message associated to the message", keepIfNull=True)
      * @Assert\Type("string")
+     * @Store\EntityMapping("merchantErrorMessage")
      */
     protected $detailedMessage;
 
