@@ -39,7 +39,8 @@ class ChargeToken extends BaseStoreV3
 
     /**
      * @Store\Property(description="merchant public key")
-     * @PBAssert\Type(type="id", idPrefixes={"publickey", "testpublickey"})
+     * @PBAssert\Type(type="string")
+     * @Assert\Regex("/\w+:(testpublickey|publickey)_\w+/")
      * @Assert\NotBlank
      */
     protected $publicKey;
