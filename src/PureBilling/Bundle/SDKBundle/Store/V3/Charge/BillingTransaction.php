@@ -122,11 +122,10 @@ class BillingTransaction extends BaseStoreV3
     protected $currency;
 
     /**
-     * @Store\Property(description="transaction country")
+     * @Store\Property(description="transaction country", keepIfNull=True)
      * @Assert\Type("string")
      * @Store\EntityMapping("country.id")
      * @PBAssert\Country()
-     * @Assert\NotBlank()
      */
     protected $country;
 
@@ -331,6 +330,10 @@ class BillingTransaction extends BaseStoreV3
 
     public function setCountry($country)
     {
-        $this->country = strtoupper($country);
+        if (is_null($country)) {
+            $this->country = null;
+        } else {
+            $this->country = strtoupper($country);
+        }
     }
 }
