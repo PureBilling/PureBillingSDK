@@ -25,7 +25,7 @@ class Collect extends BaseStoreV3
 
     /**
      * @Store\Property(description="amount to bill if different from the authorization amount")
-     * @Assert\Type("float")
+     * @Assert\Type("numeric")
      * @Assert\GreaterThan(0)
      * @Assert\NotNull()
      */

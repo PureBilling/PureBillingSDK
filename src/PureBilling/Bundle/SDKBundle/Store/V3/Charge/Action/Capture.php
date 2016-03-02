@@ -20,7 +20,7 @@ class Capture extends CaptureBase
 {
     /**
      * @Store\Property(description="amount to bill. 5.00 for euro will bill 5.00 EUR.")
-     * @Assert\Type("float")
+     * @Assert\Type("numeric")
      * @Assert\GreaterThan(0)
      * @Assert\NotBlank()
      */
@@ -71,12 +71,4 @@ class Capture extends CaptureBase
      * @Assert\Type("array")
      */
     protected $metadata =  array();
-
-    /**
-     * @param $amount float
-     */
-    public function setAmount($amount)
-    {
-        $this->amount = (float) $amount;
-    }
 }
