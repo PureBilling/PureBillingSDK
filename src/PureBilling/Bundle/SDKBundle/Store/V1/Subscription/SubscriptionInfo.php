@@ -81,6 +81,12 @@ class SubscriptionInfo extends Element
     protected $tasks;
 
     /**
+     * @Store\Property(description="first invoice of the subscription")
+     * @PBAssert\Type(type="id", idPrefixes={"invoice"})
+     */
+    protected $firstInvoice;
+
+    /**
      * @Store\Property(description="First invoice status created with the subscription")
      * @Assert\Type("string")
      * @Assert\NotBlank()
