@@ -13,11 +13,11 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
  * @method setPaymentMethod(string $paymentMethod)
  * @method setPaymentMethodType(string $paymentMethodType)
  * @method setPSPAccount(string $PSPAccount)
- * @method setExternalId(string $ExternalId)
+ * @method setMerchantReference(string $merchantReference)
  * @method setNotificationCallbackUrl(string $notificationCallbackUrl)
  * @method setMerchantCallback(string $merchantCallback)
  * @method setStrongAuthenticationStatus(string $mode)
- * @method setChargeToken(string $chargeToken)
+ * @method setFormToken(string $formToken)
  */
 abstract class CaptureBase extends BaseStoreV3
 {
@@ -47,10 +47,10 @@ abstract class CaptureBase extends BaseStoreV3
     protected $PSPAccount = null;
 
     /**
-     * @Store\Property(description="External id", recommended=true)
+     * @Store\Property(description="merchant reference", recommended=true)
      * @Assert\Type("string")
      */
-    protected $externalId;
+    protected $merchantReference;
 
     /**
      * @Store\Property(description="If defined, every transaction change will be notified to this callback")
@@ -82,7 +82,7 @@ abstract class CaptureBase extends BaseStoreV3
      * @Store\Property(description="Key of the used payment form")
      * @Assert\Type("string")
      */
-    protected $chargeToken;
+    protected $formToken;
 
     /**
      * @Store\Property(description="callback when a redirection is needed (like for 3D-secure). Ignored if paymentMethod is a NewPaymentForm store")

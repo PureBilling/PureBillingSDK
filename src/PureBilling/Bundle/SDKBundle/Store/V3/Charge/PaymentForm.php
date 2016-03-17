@@ -11,10 +11,10 @@ use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 class PaymentForm extends BaseStoreV3
 {
     /**
-     * @Store\Property(description="Charge token (to send to pb.js). Null if merchant callback is defined.")
-     * @PBAssert\Type(type="id", idPrefixes={"chargetoken"})
+     * @Store\Property(description="form token (to send to pb.js). Null if merchant callback is defined.")
+     * @PBAssert\Type(type="id", idPrefixes={"formtoken"})
      */
-    protected $chargeToken;
+    protected $formToken;
 
     /**
      * @Store\Property(description="Offsite payment form URL. Defined only if merchantCallback is set")

@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
-class ChargeTokenAnswer extends BaseStoreV3
+class CreatePaymentAnswer extends BaseStoreV3
 {
     /**
      * @Store\Property(description="billing transaction id")
@@ -22,7 +22,7 @@ class ChargeTokenAnswer extends BaseStoreV3
      * @Assert\Choice({"capture", "authorize", "refund"})
      * @Assert\NotBlank()
      */
-    protected $billingTransactionType;
+    protected $billingTransactionContext;
 
     /**
      * @Store\Property(description="billing transaction status")
@@ -45,9 +45,9 @@ class ChargeTokenAnswer extends BaseStoreV3
     protected $sha;
 
     /**
-     * @Store\Property(description="callback we will call after creditcard from")
-     * @PBAssert\Type(type="id", idPrefixes={"chargetoken"})
+     * @Store\Property(description="form token attached to the transaction")
+     * @PBAssert\Type(type="id", idPrefixes={"formtoken"})
      * @Assert\NotBlank
      */
-    protected $chargeToken;
+    protected $formToken;
 }

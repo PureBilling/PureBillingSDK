@@ -25,8 +25,8 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
  * @method getParentBillingTransaction()
  * @method getCustomer()
  * @method getOrigin()
- * @method getChargeToken()
- * @method getExternalId()
+ * @method getFormToken()
+ * @method getMerchantReference()
  * @method getIp()
  * @method getCreationDateTime()
  * @method getErrorCode()
@@ -84,7 +84,7 @@ class BillingTransaction extends BaseStoreV3
      * @Assert\Choice({"capture", "authorize", "refund"})
      * @Assert\NotBlank()
      */
-    protected $billingTransactionType;
+    protected $billingTransactionContext;
 
     /**
      * @Store\Property(description="billing transaction status")
@@ -168,16 +168,16 @@ class BillingTransaction extends BaseStoreV3
     /**
      * @Store\Property(description="origin associated to the transaction")
      * @Store\EntityMapping("formToken")
-     * @PBAssert\Type(type="id", idPrefixes={"chargetoken"})
+     * @PBAssert\Type(type="id", idPrefixes={"formtoken"})
      */
-    protected $chargeToken;
+    protected $formToken;
 
     /**
      * @Store\Property(description="your user internal Id. if null at creation, pureBilling id is used")
      * @Assert\Type("string")
      * @Store\EntityMapping("externalId")
      */
-    protected $externalId;
+    protected $merchantReference;
 
     /**
      * @Store\Property(description="ip of the charge")

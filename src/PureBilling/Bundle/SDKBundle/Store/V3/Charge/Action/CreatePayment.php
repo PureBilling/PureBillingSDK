@@ -9,21 +9,21 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
 
 /**
- * Class ChargeToken
+ * Class CreatePayment
  * @package PureBilling\Bundle\SDKBundle\Store\V3\Charge\Action
  *
- * @method setChargeToken(string $token)
+ * @method setFormToken(string $token)
  * @method setTemporaryPaymentMethodToken(string $temporaryPaymentMethodToken)
  * @method setDefaultMerchantCallbackn(string $defaultMerchantCallback)
  */
-class ChargeToken extends BaseStoreV3
+class CreatePayment extends BaseStoreV3
 {
     /**
      * @Store\Property(description="callback we will call after creditcard from")
-     * @PBAssert\Type(type="id", idPrefixes={"chargetoken"})
+     * @PBAssert\Type(type="id", idPrefixes={"formtoken"})
      * @Assert\NotBlank
      */
-    protected $chargeToken;
+    protected $formToken;
 
     /**
      * @Store\Property(description="callback we will call after creditcard from")
