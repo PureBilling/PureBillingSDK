@@ -100,7 +100,7 @@ class Subscribe extends Action
      */
     protected $billingCycles;
 
-        /**
+    /**
      * @Store\Property(description="customer ip during the purchase")
      * @Assert\Type("string")
      * @Assert\Ip(version="all")
