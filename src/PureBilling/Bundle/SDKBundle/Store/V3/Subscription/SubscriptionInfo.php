@@ -25,10 +25,9 @@ class SubscriptionInfo extends BaseStoreV3
     protected $creationDateTime;
 
     /**
-     * @Store\Property(description="when the next invoice will be created")
+     * @Store\Property(description="when the next invoice will be created", keepIfNull=True)
      * @PBAssert\Type(type="datetime")
-     * @Assert\NotBlank()
-     * @Store\EntityMapping("nextBillingDate")
+     * @Store\EntityMapping("endDatetime")
      */
     protected $cancellationDateTime;
 
@@ -41,14 +40,14 @@ class SubscriptionInfo extends BaseStoreV3
     protected $subscriptionAmount;
 
     /**
-     * @Store\Property(description="when the next invoice will be created")
+     * @Store\Property(description="when the next invoice will be created", keepIfNull=True)
      * @Assert\Type("numeric")
      * @Assert\GreaterThan(0)
      */
     protected $initialAmount;
 
     /**
-     * @Store\Property(description="Subscription External Id")
+     * @Store\Property(description="Subscription External Id", keepIfNull=True)
      * @Assert\Type("string")
      * @Store\EntityMapping("externalId")
      */
@@ -82,36 +81,43 @@ class SubscriptionInfo extends BaseStoreV3
     protected $billingCycle;
 
     /**
-     * @Store\Property(description="Number of cycles to bill, null if infinite")
+     * @Store\Property(description="Number of cycles to bill, null if infinite", keepIfNull=True)
      * @Assert\Type("integer")
      * @Assert\GreaterThan(0)
-     * @Store\EntityMapping("billingCycles")
+     * @Store\EntityMapping("numberOfBillingCycles")
      */
-    protected $NumberOfBillingCycles;
+    protected $numberOfBillingCycles;
 
     /**
-     * @Store\Property(description="country where the purchase is done")
+     * @Store\Property(description="country where the purchase is done", keepIfNull=True)
      * @Assert\Type("string")
      * @PBAssert\Country()
      */
     protected $country;
 
     /**
-     * @Store\Property(description="customer ip during the purchase")
+     * @Store\Property(description="customer ip during the purchase", keepIfNull=True)
      * @Assert\Type("string")
      * @Assert\Ip(version="all")
      */
     protected $ip;
 
     /**
-     * @Store\Property(description="Metadata copied to the first invoice")
+     * @Store\Property(description="Metadata copied to the first invoice", keepIfNull=True)
      * @Assert\Type("array")
      */
     protected $metadata =  array();
 
     /**
-     * @Store\Property(description="Short offer description")
+     * @Store\Property(description="Short offer description", keepIfNull=True)
      * @Assert\Type("string")
      */
     protected $shortOfferDescription;
+
+    /**
+     * @Store\Property(description="billing method to use to bill the invoice.", keepIfNull=True)
+     * @PBAssert\Type(type="id", idPrefixes={"creditcard", "internetplus", "paypal", "iban"})
+     * @Store\EntityMapping("paymentMethod.publicKey")
+     */
+    protected $paymentMethod;
 }

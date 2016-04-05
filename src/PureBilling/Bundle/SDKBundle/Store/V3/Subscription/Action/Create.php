@@ -51,7 +51,7 @@ class Create extends BaseStoreV3
      * @Assert\Type("integer")
      * @Assert\GreaterThan(0)
      */
-    protected $NumberOfBillingCycles;
+    protected $numberOfBillingCycles;
 
     /**
      * @Store\Property(description="billing method to use to bill the invoice.")

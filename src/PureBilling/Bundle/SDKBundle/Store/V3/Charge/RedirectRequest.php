@@ -11,13 +11,6 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 class RedirectRequest extends BaseStoreV3
 {
     /**
-     * @Store\Property(description="billing transaction id")
-     * @PBAssert\Type(type="id", idPrefixes={"redirect", "billing"})
-     * @Assert\NotBlank()
-     */
-    protected $id;
-
-    /**
      * @Store\Property(description="URL you should redirect your user to")
      * @Assert\Type("string")
      * @Assert\NotBlank
@@ -55,13 +48,4 @@ class RedirectRequest extends BaseStoreV3
      * @Assert\NotNull()
      */
     protected $allowIFrame=true;
-
-    public function setBillingTransaction($bt)
-    {
-        $this->billingTransaction = $bt;
-
-        if (!$this->id) {
-            return $this->id = $bt;
-        }
-    }
 }
