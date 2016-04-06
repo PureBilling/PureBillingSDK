@@ -84,4 +84,10 @@ class Create extends BaseStoreV3
      * @Assert\Type("string")
      */
     protected $shortOfferDescription;
+
+    /**
+     * @Store\Property(description="When the subscription starts. now by default")
+     * @PBAssert\Type(type="datetime")
+     */
+    protected $startDate;
 }

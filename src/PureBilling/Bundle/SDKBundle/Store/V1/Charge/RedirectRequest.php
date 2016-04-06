@@ -55,6 +55,12 @@ class RedirectRequest extends Element
      */
     protected $allowIFrame=true;
 
+    /**
+     * @Store\Property(description="POST data to sent with the URL")
+     * @Assert\Type("array")
+     */
+    protected $postData;
+
     public function setBillingTransaction($bt)
     {
         $this->billingTransaction = $bt;

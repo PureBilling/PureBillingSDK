@@ -120,4 +120,11 @@ class SubscriptionInfo extends BaseStoreV3
      * @Store\EntityMapping("paymentMethod.publicKey")
      */
     protected $paymentMethod;
+
+    /**
+     * @Store\Property(description="When the subscription starts. now by default")
+     * @PBAssert\Type(type="datetime")
+     * @Store\EntityMapping("startDate")
+     */
+    protected $startDate;
 }

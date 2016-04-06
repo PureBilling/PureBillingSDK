@@ -36,16 +36,15 @@ class RedirectRequest extends BaseStoreV3
     protected $template;
 
     /**
-     * @Store\Property(description="all billing actions (succesfull or not)")
-     * @PBAssert\Type(type="id", idPrefixes={"billing"})
-     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V3\Charge\BillingTransaction")
-     */
-    protected $billingTransaction;
-
-    /**
      * @Store\Property(description="Boolean flag set to true if the redirect can be contained on a iframe")
      * @Assert\Type("boolean")
      * @Assert\NotNull()
      */
     protected $allowIFrame=true;
+
+    /**
+     * @Store\Property(description="POST data to sent with the URL")
+     * @Assert\Type("array")
+     */
+    protected $postData;
 }
