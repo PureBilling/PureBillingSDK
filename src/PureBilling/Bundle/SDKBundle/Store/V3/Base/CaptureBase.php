@@ -15,7 +15,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
  * @method setPSPAccount(string $PSPAccount)
  * @method setMerchantReference(string $merchantReference)
  * @method setNotificationCallbackUrl(string $notificationCallbackUrl)
- * @method setMerchantCallback(string $merchantCallback)
+ * @method setMerchantCallbackUrl(string $merchantCallbackUrl)
  * @method setStrongAuthenticationStatus(string $mode)
  * @method setFormToken(string $formToken)
  */
@@ -85,10 +85,10 @@ abstract class CaptureBase extends BaseStoreV3
     protected $formToken;
 
     /**
-     * @Store\Property(description="callback when a redirection is needed (like for 3D-secure). Ignored if paymentMethod is a NewPaymentForm store")
+     * @Store\Property(description="callback to call if you are using redirection forms")
      * @Assert\Type("string")
      */
-    protected $merchantCallback;
+    protected $merchantCallbackUrl;
 
     /**
      * @Store\Property(description="session token")

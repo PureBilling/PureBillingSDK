@@ -38,7 +38,7 @@ class Capture extends CaptureBase
      * @Assert\Type("string")
      * @Assert\Ip(version="all")
      */
-    protected $ip;
+    protected $declaredIp;
 
     /**
      * @Store\Property(description="transaction currency")

@@ -43,8 +43,8 @@ class RedirectRequest extends BaseStoreV3
     protected $allowIFrame=true;
 
     /**
-     * @Store\Property(description="POST data to sent with the URL")
+     * @Store\Property(description="POST data to sent with the URL", keepIfNull=true)
      * @Assert\Type("array")
      */
-    protected $postData;
+    protected $postData = array();
 }

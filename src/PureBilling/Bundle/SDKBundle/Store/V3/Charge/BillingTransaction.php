@@ -173,18 +173,18 @@ class BillingTransaction extends BaseStoreV3
     protected $formToken;
 
     /**
-     * @Store\Property(description="your user internal Id. if null at creation, pureBilling id is used")
+     * @Store\Property(description="your user internal Id. if null at creation, pureBilling id is used", keepIfNull=True)
      * @Assert\Type("string")
      * @Store\EntityMapping("externalId")
      */
     protected $merchantReference;
 
     /**
-     * @Store\Property(description="ip of the charge")
+     * @Store\Property(description="ip of the charge", keepIfNull=True)
      * @Assert\Type("string")
      * @Store\EntityMapping("originIp")
      */
-    protected $ip;
+    protected $declaredIp;
 
     /**
      * @Store\Property(description="Creation date time of the billing")
@@ -231,7 +231,7 @@ class BillingTransaction extends BaseStoreV3
     protected $PSPTransactionInfo;
 
     /**
-     * @Store\Property(description="Short description of billed item")
+     * @Store\Property(description="Short description of billed item", keepIfNull=true)
      * @Assert\Type("string")
      * @Store\EntityMapping("shortDescription")
      */
@@ -293,11 +293,11 @@ class BillingTransaction extends BaseStoreV3
     protected $strongAuthenticationStatus;
 
     /**
-     * @Store\Property(description="merchant callback called if there is a redirection")
+     * @Store\Property(description="merchant callback called if there is a redirection", keepIfNull=True)
      * @Assert\Type("string")
      * @Store\EntityMapping("merchantCallback")
      */
-    protected $merchantCallback;
+    protected $merchantCallbackUrl;
 
     /**
      * @Store\Property(description="Option used to create the transaction")
