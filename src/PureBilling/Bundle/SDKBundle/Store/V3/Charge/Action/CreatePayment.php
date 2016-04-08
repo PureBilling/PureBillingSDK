@@ -14,7 +14,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
  *
  * @method setFormToken(string $token)
  * @method setTemporaryPaymentMethodToken(string $temporaryPaymentMethodToken)
- * @method setDefaultMerchantCallbackn(string $defaultMerchantCallback)
+ * @method setDefaultMerchantCallbackUrl(string $defaultMerchantCallback)
  */
 class CreatePayment extends BaseStoreV3
 {
@@ -30,12 +30,6 @@ class CreatePayment extends BaseStoreV3
      * @PBAssert\Type(type="id", idPrefixes={"tempcreditcard", "tempiban", "paypalbraintreenonce"})
      */
     protected $temporaryPaymentMethodToken;
-
-    /**
-     * @Store\Property(description="default callback to use if there is no merchant callback previously defined (internal)")
-     * @PBAssert\Type(type="string")
-     */
-    protected $defaultMerchantCallback;
 
     /**
      * @Store\Property(description="merchant public key")
@@ -72,9 +66,17 @@ class CreatePayment extends BaseStoreV3
     protected $fromJsClient=false;
 
     /**
-     * @Store\Property(description="calback to use if not already defined on the token creation")
+     * @Store\Property(description="url to call after the payment process, if a redirection is needed (without js client)")
+     * @PBAssert\Type(type="string")
+     */
+    protected $defaultMerchantCallbackUrl;
+
+    /**
+     * @Store\Property(description="url to call after the payment process, if iframe is supported (managed by the js client)")
      * @Assert\Type(type="string")
      */
-    protected $merchantCallback;
+    protected $kryptonCallbackUrl;
+
+
 
 }

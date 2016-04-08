@@ -13,7 +13,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
  *
  * @method setChargeToken(string $token)
  * @method setTemporaryPaymentMethodToken(string $temporaryPaymentMethodToken)
- * @method setDefaultMerchantCallbackn(string $defaultMerchantCallback)
+ * @method setDefaultMerchantCallback(string $defaultMerchantCallback)
  */
 class ChargeToken extends Element
 {
@@ -75,4 +75,9 @@ class ChargeToken extends Element
      */
     protected $merchantCallback;
 
+    /**
+     * @Store\Property(description="used for V3 compatibility")
+     * @Assert\Type(type="string")
+     */
+    protected $kryptonCallbackUrl;
 }
