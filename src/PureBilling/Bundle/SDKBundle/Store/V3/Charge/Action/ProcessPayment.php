@@ -16,7 +16,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
  * @method setTemporaryPaymentMethodToken(string $temporaryPaymentMethodToken)
  * @method setDefaultMerchantCallbackUrl(string $defaultMerchantCallback)
  */
-class CreatePayment extends BaseStoreV3
+class ProcessPayment extends BaseStoreV3
 {
     /**
      * @Store\Property(description="callback we will call after creditcard from")

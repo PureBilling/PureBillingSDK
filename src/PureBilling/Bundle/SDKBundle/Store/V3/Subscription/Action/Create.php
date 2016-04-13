@@ -13,7 +13,7 @@ class Create extends BaseStoreV3
      * @Store\Property(description="your subscription external Id")
      * @Assert\Type("string")
      */
-    protected $merchantReference;
+    protected $orderId;
 
     /**
      * @Store\Property(description="Amount to bill each period")

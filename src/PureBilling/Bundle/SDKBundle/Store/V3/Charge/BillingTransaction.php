@@ -17,7 +17,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
  * @method getPaymentMethodType()
  * @method getBillingTransactionType()
  * @method getStatus()
- * @method getDetailledStatus()
+ * @method getDetailedStatus()
  * @method getAmount()
  * @method getCurrency()
  * @method getCountry()
@@ -26,9 +26,10 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
  * @method getCustomer()
  * @method getOrigin()
  * @method getFormToken()
- * @method getMerchantReference()
- * @method getIp()
- * @method getCreationDateTime()
+ * @method getOrderId()
+ * @method getIpAddress()
+ * @method getCreationDate()
+ * @method getExpectedCaptureDate()
  * @method getErrorCode()
  * @method getMessage()
  * @method getNotificationCallbackUrl()
@@ -84,7 +85,7 @@ class BillingTransaction extends BaseStoreV3
      * @Assert\Choice({"capture", "authorize", "refund"})
      * @Assert\NotBlank()
      */
-    protected $billingTransactionContext;
+    protected $creationContext;
 
     /**
      * @Store\Property(description="billing transaction status")
@@ -96,14 +97,14 @@ class BillingTransaction extends BaseStoreV3
     protected $status;
 
     /**
-     * @Store\Property(description="billing transaction detailled status")
+     * @Store\Property(description="billing transaction detailed status")
      * @Assert\Type("string")
      * @Store\EntityMapping("workflowState")
      * @Assert\Choice({"cancelled", "collected", "collecting", "redirected", "authorized", "authorizedcancelled",
      *                 "recovering", "refused", "error", "refunded", "transmitted", "create"})
      * @Assert\NotBlank()
      */
-    protected $detailledStatus;
+    protected $detailedStatus;
 
     /**
      * @Store\Property(description="amount (billed or to bill)")
@@ -128,6 +129,14 @@ class BillingTransaction extends BaseStoreV3
      * @PBAssert\Country()
      */
     protected $country;
+
+    /**
+     * @Store\Property(description="shop ID")
+     * @Assert\Type("string")
+     * @Assert\NotBlank()
+     * @Store\EntityMapping("owner.login")
+     */
+    protected $shopId;
 
     /**
      * @Store\Property(description="invoice attached to the payment if any")
@@ -177,21 +186,27 @@ class BillingTransaction extends BaseStoreV3
      * @Assert\Type("string")
      * @Store\EntityMapping("externalId")
      */
-    protected $merchantReference;
+    protected $orderId;
 
     /**
      * @Store\Property(description="ip of the charge", keepIfNull=True)
      * @Assert\Type("string")
      * @Store\EntityMapping("originIp")
      */
-    protected $declaredIp;
+    protected $ipAddress;
 
     /**
      * @Store\Property(description="Creation date time of the billing")
      * @Store\EntityMapping("creationDateTime")
      * @PBAssert\Type(type="datetime")
      */
-    protected $creationDateTime;
+    protected $creationDate;
+
+    /**
+     * @Store\Property(description="expected capture date", keepIfNull=True)
+     * @PBAssert\Type(type="datetime")
+     */
+    protected $expectedCaptureDate;
 
     /**
      * @Store\Property(description="last error code", keepIfNull=True)
@@ -262,11 +277,11 @@ class BillingTransaction extends BaseStoreV3
     protected $paymentMethodSource;
 
     /**
-     * @Store\Property(description="Metadata")
+     * @Store\Property(description="Metadata", keepIfNull=true)
      * @Assert\Type("array")
      * @Store\EntityMapping("merchantMetadata")
      */
-    protected $metadata =  array();
+    protected $metadata;
 
     /**
      * @Store\Property(description="merchant change notification callback. Returned on demand, see propertiesToExpand.")
@@ -290,7 +305,7 @@ class BillingTransaction extends BaseStoreV3
      * @Assert\Choice({"enabled", "disabled"})
      * @Store\EntityMapping("strongAuthenticationStatusString")
      */
-    protected $strongAuthenticationStatus;
+    protected $strongAuthenticationState;
 
     /**
      * @Store\Property(description="merchant callback called if there is a redirection", keepIfNull=True)
@@ -307,11 +322,11 @@ class BillingTransaction extends BaseStoreV3
      */
     protected $options;
 
-    public function setDetailledStatus($status)
+    public function setDetailedStatus($status)
     {
         if ($status == 'WaitingCollecting') $status = 'redirected';
 
-        $this->detailledStatus = strtolower($status);
+        $this->detailedStatus = strtolower($status);
     }
 
     public function setErrorCode($code)

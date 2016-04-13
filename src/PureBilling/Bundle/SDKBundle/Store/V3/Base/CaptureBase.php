@@ -50,7 +50,7 @@ abstract class CaptureBase extends BaseStoreV3
      * @Store\Property(description="merchant reference", recommended=true)
      * @Assert\Type("string")
      */
-    protected $merchantReference;
+    protected $orderId;
 
     /**
      * @Store\Property(description="If defined, every transaction change will be notified to this callback")
@@ -76,7 +76,7 @@ abstract class CaptureBase extends BaseStoreV3
      * @Assert\Choice({"auto", "enabled", "disabled"})
      * @Assert\NotBlank()
      */
-    protected $strongAuthenticationStatus = 'auto';
+    protected $strongAuthenticationState = 'auto';
 
     /**
      * @Store\Property(description="Key of the used payment form")

@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use PureMachine\Bundle\SDKBundle\Store\Annotation as Store;
 use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 
-class CreatePaymentAnswer extends BaseStoreV3
+class ProcessPaymentAnswer extends BaseStoreV3
 {
     /**
      * @Store\Property(description="billing transaction id")
@@ -22,7 +22,7 @@ class CreatePaymentAnswer extends BaseStoreV3
      * @Assert\Choice({"capture", "authorize", "refund"})
      * @Assert\NotBlank()
      */
-    protected $billingTransactionContext;
+    protected $creationContext;
 
     /**
      * @Store\Property(description="billing transaction status")

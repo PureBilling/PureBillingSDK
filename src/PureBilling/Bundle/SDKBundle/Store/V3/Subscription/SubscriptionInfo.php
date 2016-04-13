@@ -22,14 +22,14 @@ class SubscriptionInfo extends BaseStoreV3
      * @Assert\NotBlank()
      * @Store\EntityMapping("creationDateTime")
      */
-    protected $creationDateTime;
+    protected $creationDate;
 
     /**
      * @Store\Property(description="when the next invoice will be created", keepIfNull=True)
      * @PBAssert\Type(type="datetime")
      * @Store\EntityMapping("endDatetime")
      */
-    protected $cancellationDateTime;
+    protected $cancelationDate;
 
     /**
      * @Store\Property(description="when the next invoice will be created")
@@ -51,7 +51,7 @@ class SubscriptionInfo extends BaseStoreV3
      * @Assert\Type("string")
      * @Store\EntityMapping("externalId")
      */
-    protected $merchantReference;
+    protected $orderId;
 
     /**
      * @Store\Property(description="when the next invoice will be created")
@@ -106,7 +106,7 @@ class SubscriptionInfo extends BaseStoreV3
      * @Store\Property(description="Metadata copied to the first invoice", keepIfNull=True)
      * @Assert\Type("array")
      */
-    protected $metadata =  array();
+    protected $metadata;
 
     /**
      * @Store\Property(description="Short offer description", keepIfNull=True)
