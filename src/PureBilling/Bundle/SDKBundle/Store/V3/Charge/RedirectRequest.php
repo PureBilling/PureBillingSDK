@@ -47,4 +47,11 @@ class RedirectRequest extends BaseStoreV3
      * @Assert\Type("array")
      */
     protected $postData = array();
+
+    /**
+     * @Store\Property(description="related billing transaction if any")
+     * @Assert\Type("string")
+     * @PBAssert\Type(type="id", idPrefixes={"billing"})
+     */
+    protected $billingTransaction;
 }

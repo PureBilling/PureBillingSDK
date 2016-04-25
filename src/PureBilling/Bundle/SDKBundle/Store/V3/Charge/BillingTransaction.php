@@ -284,12 +284,11 @@ class BillingTransaction extends BaseStoreV3
     protected $metadata;
 
     /**
-     * @Store\Property(description="merchant change notification callback. Returned on demand, see propertiesToExpand.")
-     * @Assert\Type("array")
-     * @Store\AllowedId("update")
-     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Common\UpdateNotification")
+     * @Store\Property(description="payment method details", keepIfNull=True)
+     * @Assert\Type("object")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V3\PaymentMethod\PaymentMethodDetails")
      */
-    protected $updateNotifications;
+    protected $paymentMethodDetails;
 
     /**
      * @Store\Property(description="extra information associated to the billing transaction")

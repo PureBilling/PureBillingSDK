@@ -8,7 +8,7 @@ use PureBilling\Bundle\SDKBundle\Constraints as PBAssert;
 use PureBilling\Bundle\SDKBundle\Store\V3\Base\CaptureBase;
 
 /**
- * Class Capture
+ * Class CreatePayment
  *
  * @method setCountry(string $country)
  * @method setIp(string $ip)
@@ -16,11 +16,11 @@ use PureBilling\Bundle\SDKBundle\Store\V3\Base\CaptureBase;
  * @method setCustomer(string $customer)
  * @method setMetadata(array $metadata)
  */
-class Capture extends CaptureBase
+class CreatePayment extends CaptureBase
 {
     /**
      * @Store\Property(description="amount to bill. 5.00 for euro will bill 5.00 EUR.")
-     * @Assert\Type("numeric")
+     * @Assert\Type("integer")
      * @Assert\GreaterThan(0)
      * @Assert\NotBlank()
      */
@@ -49,16 +49,33 @@ class Capture extends CaptureBase
     protected $currency;
 
     /**
-     * @Store\Property(description="Transaction origin. if null, owner default origin is used")
-     * @PBAssert\Type(type="id", idPrefixes={"origin"})
-     */
-    protected $origin;
-
-    /**
      * @Store\Property(description="customer associated to the transaction. If not, we create a new one, or we use the one associated with the paymentMethod", recommended=true)
      * @PBAssert\Type(type="id", idPrefixes={"customer"})
      */
     protected $customer;
+
+    /**
+     * @Store\Property(description="Metadata")
+     * @Assert\Type("array")
+     */
+    protected $metadata =  array();
+
+    /**
+     * @Store\Property(description="card specific options")
+     * @Assert\Type("object")
+     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V3\PaymentMethod\PaymentMethodOptions")
+     */
+    protected $paymentMethodOptions;
+
+    /**
+     * PureBilling specific
+     */
+
+    /**
+     * @Store\Property(description="Payment Service Provider Account to use. if NULL, use the backoffice configuration")
+     * @PBAssert\Type(type="id", idPrefixes={"pspa"})
+     */
+    protected $PSPAccount = null;
 
     /**
      * @Store\Property(description="invoice to attach to the capture, if any")
@@ -67,8 +84,21 @@ class Capture extends CaptureBase
     protected $invoice;
 
     /**
-     * @Store\Property(description="Metadata")
-     * @Assert\Type("array")
+     * @Store\Property(description="Transaction origin. if null, owner default origin is used")
+     * @PBAssert\Type(type="id", idPrefixes={"origin"})
      */
-    protected $metadata =  array();
+    protected $origin;
+
+    /**
+     * @Store\Property(description="Short description of billed item", recommended=true)
+     * @Assert\Type("string")
+     */
+    protected $shortDescription;
+
+    /**
+     * @Store\Property(description="If true, try to recover transaction. Available depending payment method")
+     * @Assert\Type("boolean")
+     * @Assert\NotNull()
+     */
+    protected $automaticRecovery = false;
 }

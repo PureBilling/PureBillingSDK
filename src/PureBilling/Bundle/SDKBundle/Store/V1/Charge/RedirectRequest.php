@@ -12,7 +12,6 @@ class RedirectRequest extends Element
     /**
      * @Store\Property(description="billing transaction id")
      * @PBAssert\Type(type="id", idPrefixes={"redirect", "billing"})
-     * @Assert\NotBlank()
      */
     protected $id;
 
@@ -42,7 +41,7 @@ class RedirectRequest extends Element
     protected $template;
 
     /**
-     * @Store\Property(description="all billing actions (succesfull or not)")
+     * @Store\Property(description="related billing transaction if any")
      * @PBAssert\Type(type="id", idPrefixes={"billing"})
      * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V1\Charge\BillingTransaction")
      */

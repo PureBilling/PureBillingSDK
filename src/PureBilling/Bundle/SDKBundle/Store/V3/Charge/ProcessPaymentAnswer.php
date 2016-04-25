@@ -17,18 +17,16 @@ class ProcessPaymentAnswer extends BaseStoreV3
     protected $billingTransaction;
 
     /**
-     * @Store\Property(description="billing transaction type")
-     * @Assert\Type("string")
-     * @Assert\Choice({"capture", "authorize", "refund"})
-     * @Assert\NotBlank()
-     */
-    protected $creationContext;
-
-    /**
      * @Store\Property(description="billing transaction status")
      * @Assert\Type("boolean")
      */
     protected $isTest;
+
+    /**
+     * @Store\Property(description="billing transaction status")
+     * @Assert\Type("string")
+     */
+    protected $sha;
 
     /**
      * @Store\Property(description="billing transaction status")
@@ -39,15 +37,17 @@ class ProcessPaymentAnswer extends BaseStoreV3
     protected $status;
 
     /**
-     * @Store\Property(description="billing transaction status")
-     * @Assert\Type("string")
-     */
-    protected $sha;
-
-    /**
      * @Store\Property(description="form token attached to the transaction")
      * @PBAssert\Type(type="id", idPrefixes={"formtoken"})
      * @Assert\NotBlank
      */
     protected $formToken;
+
+    /**
+     * @Store\Property(description="billing transaction type")
+     * @Assert\Type("string")
+     * @Assert\Choice({"capture", "authorize", "refund"})
+     */
+    protected $creationContext;
+
 }

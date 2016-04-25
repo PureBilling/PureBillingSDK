@@ -27,7 +27,6 @@ class ChargeTokenAnswer extends Element
      * @Store\Property(description="billing transaction type")
      * @Assert\Type("string")
      * @Assert\Choice({"capture", "authorize", "refund"})
-     * @Assert\NotBlank()
      */
     protected $billingTransactionType;
 

@@ -44,6 +44,10 @@ class BaseStoreV3 extends BaseStore
     {
         $parts = explode('V3', get_class($this));
 
+        if (count($parts) == 1) {
+            return get_class($this);
+        }
+        
         return str_replace('\\', '/', 'V3' . $parts[1]);
     }
 

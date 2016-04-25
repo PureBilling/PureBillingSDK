@@ -89,16 +89,4 @@ abstract class CaptureBase extends BaseStoreV3
      * @Assert\Type("string")
      */
     protected $merchantCallbackUrl;
-
-    /**
-     * @Store\Property(description="session token")
-     * @Assert\Type(type="string")
-     */
-    protected $sessionToken;
-
-    /**
-     * @Store\Property(description="browser token")
-     * @Assert\Type(type="string")
-     */
-    protected $browserToken;
 }
