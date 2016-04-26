@@ -317,6 +317,16 @@ class BillingTransaction extends Element
         $this->detailledStatus = strtolower($status);
     }
 
+    public function getDetailedStatus()
+    {
+        return $this->getDetailledStatus();
+    }
+
+    public function setDetailedStatus($status)
+    {
+        return $this->setDetailledStatus($status);
+    }
+
     public function setErrorCode($code)
     {
         if (is_scalar($code)) {
