@@ -286,7 +286,7 @@ class BillingTransaction extends BaseStoreV3
     /**
      * @Store\Property(description="payment method details", keepIfNull=True)
      * @Assert\Type("object")
-     * @Store\StoreClass("PureBilling\Bundle\SDKBundle\Store\V3\PaymentMethod\PaymentMethodDetails")
+     * @Store\StoreClass({"PureBilling\Bundle\SDKBundle\Store\V3\PaymentMethod\Details\CardDetails"})
      */
     protected $paymentMethodDetails;
 
