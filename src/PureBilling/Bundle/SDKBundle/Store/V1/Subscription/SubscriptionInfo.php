@@ -158,4 +158,14 @@ class SubscriptionInfo extends Element
     {
         $this->detailledStatus = strtolower($dStatus);
     }
+
+    public function setDetailedStatus($dStatus)
+    {
+        return $this->setDetailledStatus($dStatus);
+    }
+
+    public function getDetailedStatus()
+    {
+        return $this->getDetailledStatus();
+    }
 }
