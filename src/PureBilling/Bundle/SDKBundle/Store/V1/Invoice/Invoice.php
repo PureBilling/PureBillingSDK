@@ -205,4 +205,14 @@ class Invoice extends NewInvoice
     {
         $this->totalAmount = (float) $amount;
     }
+
+    public function setDetailedStatus($dStatus)
+    {
+        return $this->setDetailledStatus($dStatus);
+    }
+
+    public function getDetailedStatus()
+    {
+        return $this->getDetailledStatus();
+    }
 }
