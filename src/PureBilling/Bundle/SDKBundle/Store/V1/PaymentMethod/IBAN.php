@@ -104,8 +104,8 @@ class IBAN extends PaymentMethod
      * @Store\Property(description="Stats token. If not defined, use cookies")
      * @Assert\Type("string")
      * @Assert\NotBlank
-     * @Assert\Choice({"enabled", "disabled"})
+     * @Assert\Choice({"auto", "enabled", "disabled"})
      * @Store\EntityMapping("strongAuthenticationStatusString")
      */
-    protected $strongAuthenticationStatus;
+    protected $strongAuthenticationStatus = "auto";
 }
