@@ -101,4 +101,10 @@ class CreatePayment extends CaptureBase
      * @Assert\NotNull()
      */
     protected $automaticRecovery = false;
+
+    /**
+     * @Store\Property(description="version answer, internal")
+     * @Assert\Type("string")
+     */
+    protected $_versionAnswer = "V3";
 }
